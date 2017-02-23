@@ -2,11 +2,11 @@
 
 The Perspective API is part of the
 [ConversationAI](https://conversationai.github.io) research effort that
-aimsaims to help increase participation, quality, and empathy in online
-conversation at scale. Our three primary areas of research are:
+aims to help increase empathy, quality, and participation in online
+conversation at scale.
 
 This repo contains a [quickstart guide](quickstart.md) as well as the [API
-reference documentation](api_reference.md) for the Persective Comment Analyzer
+reference documentation](api_reference.md) for the Perspective Comment Analyzer
 API.
 
 Note that the API is currently in trusted tester phase and not generally
