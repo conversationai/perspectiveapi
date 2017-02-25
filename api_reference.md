@@ -57,7 +57,7 @@ by thousands of human moderators.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely
     to make people leave a discussion. Currently, this model doesn't return
-    span scores (it only returns summary scores).
+    span scores (it only returns summary scores). This model is a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) imputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973). Note that there are many kinds of toxic language that are disproportionatly represented in our dataset, which leads to obviously incorrect scores. Please use the [SuggestCommentScore](#suggestcommentscore-request) method to help improve the model.
 
 ### Experimental
 
@@ -67,7 +67,7 @@ removed with little notice.
 
 *   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
     lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
-    model returns summary scores as well as span scores.
+    model returns summary scores as well as span scores. This model uses character-level n-grams fed into a logistic regression, a method that has has been surprisingly [effective at detecting abusive language](http://www2016.net/proceedings/proceedings/p145.pdf).
 
 The following experimental attributes were trained on New York Times data tagged
 by their moderation team.
