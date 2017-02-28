@@ -57,7 +57,7 @@ by thousands of human moderators.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely
     to make people leave a discussion. Currently, this model doesn't return
-    span scores (it only returns summary scores). This model is a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) imputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973). Note that there are many kinds of toxic language that are disproportionatly represented in our dataset, which leads to obviously incorrect scores. Please use the [SuggestCommentScore](#suggestcommentscore-request) method to help improve the model.
+    span scores (it only returns summary scores). This model is a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973). Note that there are many kinds of toxic language that are disproportionately represented in our dataset, which leads to obviously incorrect scores. Please use the [SuggestCommentScore](#suggestcommentscore-request) method to help improve the model.
 
 ### Experimental
 
