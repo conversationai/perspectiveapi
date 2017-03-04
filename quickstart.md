@@ -31,7 +31,7 @@
 
     ```shell
     $ curl -H "Content-Type: application/json" --data \
-        '{comment: {text: "what kind of idiot name is foo?"}, requestedAttributes: {TOXICITY:{}} }' \
+        '{comment: {text: "what kind of idiot name is foo?"}, languages: ['en'], requestedAttributes: {TOXICITY:{}} }' \
         https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
     {
       "attributeScores": {
