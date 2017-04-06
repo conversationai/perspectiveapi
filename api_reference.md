@@ -117,7 +117,8 @@ example.
   },
   "languages": [string],
   "doNotStore": bool,
-  "clientToken": string
+  "clientToken": string,
+  "sessionId": string,
 }
 ```
 
@@ -134,6 +135,7 @@ Field | Description
 `languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", "zh", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all attributes only support English. Explicitly specifying a language other than "en" will fail. If the language autodetection determines the comment is in a non-English language, the request also fails.
 `doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
 `clientToken`            | *(optional)* An opaque token that is echoed back in the response.
+`sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session.
 
 Note that only `comment.text` and `requestedAttributes` are required.
 
