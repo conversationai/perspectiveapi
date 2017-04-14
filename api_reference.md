@@ -4,8 +4,8 @@
  * [Key concepts](#key-concepts)
  * [Attributes](#attributes)
  * [Methods](#methods)
-   * [Scoring comments](#scoring-comments)
-   * [Sending feedback](#sending-feedback)
+   * [Scoring comments](#scoring-comments-analyzecomment)
+   * [Sending feedback](#sending-feedback-suggestcommentscore)
  * [API client libraries](#api-client-libraries)
 
 ## Using the API
