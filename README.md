@@ -5,13 +5,23 @@ The Perspective API is part of the
 aims to help increase empathy, participation and quality in online
 conversation at scale.
 
-This repo contains a [quickstart guide](quickstart.md) as well as the [API
+This github repository contains a [quickstart guide](quickstart.md) and the [API
 reference documentation](api_reference.md) for the Perspective Comment Analyzer
 API.
 
 Note that the API is currently in trusted tester phase and not generally
 available. Please see our [main site](https://www.perspectiveapi.com/) for the
 form to request API access.
+
+Example demo code:
+
+ * [A simple server](https://github.com/conversationai/perspectiveapi-simple-server)
+   that can hold your API key and access the Perspective API.
+ * [An example of an authorship
+   experience](https://github.com/conversationai/perspectiveapi-authorship-demo)
+   gives an author feedback as they type.
+ * [A proxy to the API](https://github.com/conversationai/perspectiveapi-proxy)
+   with access restrictions and a simple UI to debug calls to the API. 
 
 If you would like to receive email updates about the API - for example when we
 add new models, or deprecate old ones - you can subscribe to
