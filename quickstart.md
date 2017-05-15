@@ -1,3 +1,5 @@
+[Back to Conversation AI Overview](https://conversationai.github.io/) | [Back to Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md)
+
 # Perspective API Quickstart
 
 1.  **Get whitelisted.** To use the API, your you need to have your email
@@ -57,5 +59,6 @@
     gives the API's "toxicity" score for the comment. In this case, the comment
     got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
 
-See the [API reference](api_reference.md) docs for details on all of the request
-and response fields, as well as the available values for `requestedAttributes`.
+See the [API reference documentation](api_reference.md) for details on all of the request and response fields, as well as the available values for `requestedAttributes`.
+In particular, there are quite a few different [experimental attributes](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#attributes), such as obscene, attack on a commenter, spam, etc.
+Add yourself to our [perspectiveapi-announce@ Google Group](https://groups.google.com/forum/#!forum/perspective-announce/join) to get updates when we add new models to make changes to the API.
