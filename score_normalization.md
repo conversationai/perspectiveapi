@@ -4,7 +4,8 @@ FIXME(jetpack): finalize schedule.
 
 On **Xday, 2017-XX-XX**, Perspective will begin to return /normalized/ scores by
 default. With this change, the score values from **all** of our models will
-shift. See [What's changing and why?](#what-why) for details on the change.
+shift. See [What's changing and why?](#whats-changing-and-why-what-why) for
+details on the change.
 
 You **need to take action** if you use specific thresholds in your application
 (for example, holding high-scoring comments for human moderation, auto-approving
@@ -30,11 +31,12 @@ once the rollout is complete.
 ## What should I do?
 
 To avoid using out-of-date score thresholds in your application, you can:
-* Consult the [score mappings](#mappings) to update your thresholds.
-* Configure your application for a [controlled migration](#versions).
+* Consult the [score mappings](#score-mappings) to update your thresholds.
+* Configure your application for a
+  [controlled migration](#i-want-to-control-when-i-migrate).
 
 
-## What's changing and why? {what-why}
+## What's changing and why?
 
 We are applying probability calibration to our models so that our scores
 represent probabilities more accurately. For example, a toxicity score of
@@ -46,7 +48,7 @@ score thresholds will remain valid. This should also make scores more consistent
 across our different models.
 
 
-## I want to control when I migrate {versions}
+## I want to control when I migrate
 
 You can control when you migrate to normalized scores by requesting **versioned
 attributes**. Using this method, you can atomically update your application to
@@ -83,7 +85,7 @@ scores on Tuesday, 2017-06-27, so please plan to complete your migration by
 then.
 
 
-## Score mappings {mappings}
+## Score mappings
 
 These tables show how the score values are changing. You can use these tables to
 update your score thresholds. For example, if your moderation interface
