@@ -4,8 +4,8 @@ FIXME(jetpack): finalize schedule.
 
 On **Xday, 2017-XX-XX**, Perspective will begin to return /normalized/ scores by
 default. With this change, the score values from **all** of our models will
-shift. See [What's changing and why?](#whats-changing-and-why-what-why) for
-details on the change.
+shift. See [What's changing and why?](#whats-changing-and-why) for details on
+the change.
 
 You **need to take action** if you use specific thresholds in your application
 (for example, holding high-scoring comments for human moderation, auto-approving
