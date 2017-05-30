@@ -1,9 +1,7 @@
 # Perspective API score normalization change
 
-FIXME(jetpack): finalize schedule.
-
-On **Xday, 2017-XX-XX**, Perspective will begin to return /normalized/ scores by
-default. With this change, the score values from **all** of our models will
+On **Tuesday, 2017-06-13**, Perspective will begin to return /normalized/ scores
+by default. With this change, the score values from **all** of our models will
 shift. See [What's changing and why?](#whats-changing-and-why) for details on
 the change.
 
@@ -18,10 +16,8 @@ changing.
 
 ## When is it happening?
 
-FIXME(jetpack): finalize schedule.
-
-We plan to change our models to return normalized scores by default on **Xday,
-2017-XX-XX** around 1pm EDT, (10am PDT, 5pm UTC).
+We plan to change our models to return normalized scores by default on
+**Tuesday, 2017-06-13** around 1pm EDT, (10am PDT, 5pm UTC).
 
 We will send a message to
 [perspective-announce](http://groups.google.com/forum/#!forum/perspective-announce)
@@ -54,11 +50,9 @@ You can control when you migrate to normalized scores by requesting **versioned
 attributes**. Using this method, you can atomically update your application to
 use updated thresholds and receive normalized scores.
 
-FIXME(jetpack): finalize schedule.
-
 A controlled migration process would be:
 1.  Configure your application to use versioned, non-normalized attribute names.
-2.  After the rollout on 2017-XX-XX, re-configure your application to use
+2.  After the rollout on 2017-06-13, re-configure your application to use
     unversioned, normalized attribute names along with updating your score
     thresholds, according to the [score mappings](#score-mappings).
 
@@ -78,10 +72,8 @@ Use the following versioned attribute names for the non-normalized scores:
 next version of the attributes listed above: `TOXICITY@3`, and the `..@2` for
 the rest).
 
-FIXME(jetpack): finalize schedule.
-
 NOTE: We plan to **remove** the versioned attributes for the non-normalized
-scores on Tuesday, 2017-06-27, so please plan to complete your migration by
+scores on Tuesday, 2017-07-11, so please plan to complete your migration by
 then.
 
 
