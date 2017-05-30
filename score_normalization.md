@@ -68,13 +68,21 @@ Use the following versioned attribute names for the non-normalized scores:
 * SPAM@1
 * UNSUBSTANTIAL@1
 
-(If you want to migrate to normalized scores now, you can do so by using the
-next version of the attributes listed above: `TOXICITY@3`, and the `..@2` for
-the rest).
+Notes:
 
-NOTE: We plan to **remove** the versioned attributes for the non-normalized
-scores on Tuesday, 2017-07-11, so please plan to complete your migration by
-then.
+* When you request a versioned attribute, the attribute names in the [response
+  object]
+  (https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#analyzecomment-response)
+  will also include the version (e.g., you'll get scores for `TOXICITY@2`
+  instead of just `TOXICITY`). This allows you request multiple versions of the
+  same attribute. However, most users will probably want to remove this version
+  specification from the attribute name (for example, by using a regex to remove
+  `@.*` from the attribute name).
+* If you want to migrate to normalized scores now, you can do so by using the
+  next version of the attributes listed above: `TOXICITY@3`, and the `..@2` for
+  the rest.
+* We plan to **remove** the versioned attributes for the non-normalized scores
+  on Tuesday, 2017-07-11, so please plan to complete your migration by then.
 
 
 ## Score mappings
