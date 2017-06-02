@@ -35,9 +35,9 @@ To avoid using out-of-date score thresholds in your application, you can:
 ## What's changing and why?
 
 We are applying
-[probability calibration](http://scikit-learn.org/stable/modules/calibration.html)
-to our attributes so that our scores represent probabilities more accurately.
-For example, a toxicity score of **0.80** can be interpreted as the model having
+[probability calibration](http://scikit-learn.org/stable/modules/calibration.html) to
+our models so that our scores represent probabilities more accurately. For
+example, a toxicity score of **0.80** can be interpreted as the model having
 **80% confidence** that the comment should be classified as toxic.
 
 ### Benefits of score normalization with probability calibration
@@ -63,9 +63,9 @@ Score normalization has a number of benefits:
   or low score. Normalization should make all our models' score ranges more
   consistent with each other.
 
-Once the migration to normalized scores is complete, future attribute updates
-should be less disruptive, models will be more consistent across the API, and
-the score values can be more accurately interpreted as probabilites.
+Once the migration to normalized scores is complete, future model updates should
+be less disruptive, models will be more consistent across the API, and the score
+values can be more accurately interpreted as probabilites.
 
 ### Implementation details
 
@@ -91,8 +91,8 @@ world distribution. So, an even 50% balance is a natural choice.
 ## I want to control when I migrate
 
 You can control when you migrate to normalized scores by requesting **versioned
-attributes**. Using this method, you can atomically update your application to
-use updated thresholds and receive normalized scores.
+model attribute names**. Using this method, you can atomically update your
+application to use updated thresholds and receive normalized scores.
 
 A controlled migration process would be:
 1.  Configure your application to use versioned, non-normalized attribute names.
