@@ -4,7 +4,7 @@
 
  * [Using the API](#using-the-api)
  * [Key concepts](#key-concepts)
- * [Attributes](#attributes)
+ * [Models](#models)
  * [Methods](#methods)
    * [Scoring comments](#scoring-comments-analyzecomment)
    * [Sending feedback](#sending-feedback-suggestcommentscore)
@@ -22,57 +22,70 @@ request.
     comment. A comment could be a single post to a web page's comments section,
     a forum post, a message to a mailing list, a chat message, etc.
 
-*   An **attribute** is a dimension that the comment is scored on, for example,
-    "toxic", "obscene", "thoughtful", "off-topic", etc.
+*   A **model** is a dimension that the comment is scored on, for example,
+    "toxic", "obscene", "thoughtful", "off-topic", etc. This is also referred to
+    as an **attribute**.
 
-*   The API can return **attribute scores** in different formats, known as
+*   The API can return **model attribute scores** in different formats, known as
     **score types**. The default score type is a probability score between 0 to
     1, with higher values indicating greater likelihood of the attribute label.
 
 *   A **span** is a continuous section of text. The API can return **span
-    scores**, which are attribute scores for particular subparts of the
-    request's comment. For example, if the API only found one sentence in a
-    paragraph to be "toxic", it could return a high "toxic" span score for the
-    span corresponding to that sentence while giving a low "toxic" span score to
-    the rest of the comment.
+    scores**, which are model scores for particular subparts of the request's
+    comment. For example, if the API only found one sentence in a paragraph to
+    be "toxic", it could return a high "toxic" span score for the span
+    corresponding to that sentence while giving a low "toxic" span score to the
+    rest of the comment.
 
-*   An attribute **summary score** provides an overall attribute score for the
-    entire comment. While the API may return multiple span scores for a given
-    input, it will always return exactly one summary score.
+*   A model's **summary score** provides an overall score for the entire
+    comment. While the API may return multiple span scores for a given input, it
+    will always return exactly one summary score.
 
 *   *(Coming soon)* **Context** is a representation of the conversation context
     for the comment (for example, an article which is being commented on, or
     another comment that is being replied to). It is used in the analysis of the
-    comment text, for example when determining the "off-topic" attribute score.
+    comment text, for example when determining the "off-topic" model score.
 
-    *Note:* you can send context with your requests, however our current
-    attributes are not making use of it, so sending context won't change the any
-    attribute's scores.
+    *Note:* you can send context with your requests, however our current models
+    are not making use of it, so sending context won't change any model's
+    scores.
 
-## Attributes
+## Models
 
 ### Alpha
 
-The following alpha attributes are **recommended** for use. They have been tested
+The following alpha models are **recommended** for use. They have been tested
 across multiple domains and trained on hundreds of thousands of comments tagged
 by thousands of human moderators.
 
-*   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely
-    to make people leave a discussion. Currently, this model doesn't return
-    span scores (it only returns summary scores). This model is a [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973). Note that there are many kinds of toxic language that are disproportionately represented in our dataset, which leads to obviously incorrect scores. Please use the [SuggestCommentScore](#suggestcommentscore-request) method to help improve the model.
+*   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
+    make people leave a discussion. Currently, this model doesn't return span
+    scores (it only returns summary scores). This model is a
+    [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN)
+    trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec)
+    inputs. You can also train your own
+    [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on
+    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973).
+    Note that there are many kinds of toxic language that are disproportionately
+    represented in our dataset, which leads to obviously incorrect scores.
+    Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
+    help improve the model.
 
 ### Experimental
 
-The following attributes are experimental. They were targeted for a single
-usecase, so may not generalize to your usecase well. They may be deprecated or
-removed with little notice.
+The following models are experimental. They were targeted for a single usecase,
+so may not generalize to your usecase well. They may be deprecated or removed
+with little notice.
 
 *   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
     lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
-    model returns summary scores as well as span scores. This model uses character-level n-grams fed into a logistic regression, a method that has has been surprisingly [effective at detecting abusive language](http://www2016.net/proceedings/proceedings/p145.pdf).
+    model returns summary scores as well as span scores. This model uses
+    character-level n-grams fed into a logistic regression, a method that has
+    has been surprisingly
+    [effective at detecting abusive language](http://www2016.net/proceedings/proceedings/p145.pdf).
 
-The following experimental attributes were trained on New York Times data tagged
-by their moderation team.
+The following experimental models were trained on New York Times data tagged by
+their moderation team.
 
 *   **ATTACK_ON_AUTHOR**: Attack on author of original article or post.
 *   **ATTACK_ON_COMMENTER**: Attack on fellow commenter.
@@ -132,10 +145,10 @@ Field | Description
 `context.entries`        | *(optional)* A list of objects providing the context for `comment`. Currently ignored by the API.
 `context.entries[].text` | *(optional)* The text of a context object.
 `context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`.
-`requestedAttributes`    | **(required)** A map from attribute name to attribute configuration object. See the [attributes section](#attributes) below for a list of available attributes. If no attribute configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice.
-`requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
-`requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this attribute. By default, all scores are returned.
-`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", "zh", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all attributes only support English. Explicitly specifying a language other than "en" will fail. If the language autodetection determines the comment is in a non-English language, the request also fails.
+`requestedAttributes`    | **(required)** A map from model attribute name to attribute configuration object. See the [attributes section](#attributes) below for a list of available attributes. If no attribute configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice.
+`requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
+`requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
+`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", "zh", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all models only support English. Explicitly specifying a language other than "en" will fail. If the language autodetection determines the comment is in a non-English language, the request also fails.
 `doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
 `clientToken`            | *(optional)* An opaque token that is echoed back in the response.
 `sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session.
@@ -169,8 +182,8 @@ Note that only `comment.text` and `requestedAttributes` are required.
 
 Field | Description
 ----- | -----------
-`attributeScores` | A map from attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
-`attributeScores[name].summaryScore.value` | The attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed).
+`attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
+`attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed).
 `attributeScores[name].summaryScore.type`  | This mirrors the requested `scoreType` for this attribute.
 `attributeScores[name].spanScores`         | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all.
 `attributeScores[name].spanScores[].begin`   | Beginning of the text span in the request comment.
@@ -182,8 +195,8 @@ Field | Description
 
 #### `AnalyzeComment` example
 
-This is a request for the "TOXICITY" and "UNSUBSTANTIAL" attributes for a
-comment that's explicitly in English.
+This is a request for the "TOXICITY" and "UNSUBSTANTIAL" models for a comment
+that's explicitly in English.
 
 ```json
 // Request
@@ -199,13 +212,13 @@ comment that's explicitly in English.
 }
 ```
 
-The response contains the "TOXICITY" and "UNSUBSTANTIAL" attribute scores.
-Each attribute has a single overall `summaryScore` as well as two `spanScores`.
+The response contains the "TOXICITY" and "UNSUBSTANTIAL" model scores. Each
+attribute has a single overall `summaryScore` as well as two `spanScores`.
 
-Both attributes return the same spans in this case: the span [0, 31)
-(corresponding to "What kind of idiot name is foo?") and the span [32, 56)
-(corresponding to "Sorry, I like your name."). Attributes may not always return
-the same spans, however.
+Both models return the same spans in this case: the span [0, 31) (corresponding
+to "What kind of idiot name is foo?") and the span [32, 56) (corresponding to
+"Sorry, I like your name."). Models may not always return the same spans,
+however.
 
 ```json
 // Response
