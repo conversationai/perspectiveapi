@@ -61,8 +61,7 @@ Score normalization has a number of benefits:
   different models can have very different *characteristics*. Users would need
   to evaluate each models' behavior to get a "feel" for what constitutes a high
   or low score. Normalization should make all our models' score ranges more
-  consistent with each other. We have also found that a 50/50 balance of data 
-  tends to result in the full 0 to 1 range being meaningful.
+  consistent with each other.
 
 Once the migration to normalized scores is complete, future model updates should
 be less disruptive, models will be more consistent across the API, and the score
@@ -86,7 +85,9 @@ match the real world distribution as closely as possible, and the same holds for
 calibration data. For example, if obscenity in comments is actually very rare,
 using a calibration dataset with a 50/50 balance will result in elevated scores.
 Because we're aiming to build generally useful models, we don't *know* the real
-world distribution. So, an even 50% balance is a natural choice.
+world distribution. So, an even 50% balance is a natural choice. We have also 
+found that a 50/50 balance of data tends to result in the full 0 to 1 range 
+being meaningful.
 
 
 ## I want to control when I migrate
