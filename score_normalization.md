@@ -61,7 +61,8 @@ Score normalization has a number of benefits:
   different models can have very different *characteristics*. Users would need
   to evaluate each models' behavior to get a "feel" for what constitutes a high
   or low score. Normalization should make all our models' score ranges more
-  consistent with each other.
+  consistent with each other. We have also found that a 50/50 balance of data 
+  tends to result in the full 0 to 1 range being meaningful.
 
 Once the migration to normalized scores is complete, future model updates should
 be less disruptive, models will be more consistent across the API, and the score
