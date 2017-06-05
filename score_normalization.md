@@ -34,21 +34,67 @@ To avoid using out-of-date score thresholds in your application, you can:
 
 ## What's changing and why?
 
-We are applying probability calibration to our models so that our scores
-represent probabilities more accurately. For example, a toxicity score of
-**0.80** can be interpreted as our model having **80% confidence** that the
-comment should be classified as toxic.
+We are applying
+[probability calibration](http://scikit-learn.org/stable/modules/calibration.html) to
+our models so that our scores represent probabilities more accurately. For
+example, a toxicity score of **0.80** can be interpreted as the model having
+**80% confidence** that the comment should be classified as toxic.
 
-This means that future model updates should be less disruptive, because your
-score thresholds will remain valid. This should also make scores more consistent
-across our different models.
+### Benefits of score normalization with probability calibration
+
+Score normalization has a number of benefits:
+
+* **Interpretability**: When using probability calibration specfically, the
+  calibrated scores can be intepreted as probabilities. Currently, our models
+  return scores between 0 and 1, *but* they aren't all properly calibrated as
+  probabilities. For example, while a score of 0.4 indicates a higher confidence
+  than a score of 0.2, a non-normalized 0.4 **doesn't** necessarily mean that
+  the model thinks the comment is more likely to be non-toxic than toxic,
+  despite 0.4 being less than the 0.5 (50%) mark. Probability calibration
+  improves interpretability in this regard.
+* **Consistency over time**: "Raw" scores can shift as we change the underlying
+  models or training datasets. This is problematic for usecases involving *score
+  thresholds*: the same score threshold can result in a different
+  precision/recall performance for a new version of a model. Applying a
+  normalization process to updated models minimizes this disruption.
+* **Consistency across models**: With non-normalized scores, score ranges for
+  different models can have very different *characteristics*. Users would need
+  to evaluate each models' behavior to get a "feel" for what constitutes a high
+  or low score. Normalization should make all our models' score ranges more
+  consistent with each other.
+
+Once the migration to normalized scores is complete, future model updates should
+be less disruptive, models will be more consistent across the API, and the score
+values can be more accurately interpreted as probabilites.
+
+### Implementation details
+
+We are
+using [isotonic regression](https://en.wikipedia.org/wiki/Isotonic_regression)
+for probability calibration. The data used for computing the regression is a
+50/50 class-balanced subset of the test set.
+
+The class balance of the dataset used for calibration can greatly affect the
+calibration results. As a dataset changes over time, its class balance can also
+vary. Different datasets can also have very different class balances. In order
+to achieve our goal of consistency over time and across models, we chose to use
+a stable class balance in computing the calibration.
+
+Why a 50/50 balance? In machine learning, datasets used for training should
+match the real world distribution as closely as possible, and the same holds for
+calibration data. For example, if obscenity in comments is actually very rare,
+using a calibration dataset with a 50/50 balance will result in elevated scores.
+Because we're aiming to build generally useful models, we don't *know* the real
+world distribution. So, an even 50% balance is a natural choice. We have also 
+found that a 50/50 balance of data tends to result in the full 0 to 1 range 
+being meaningful.
 
 
 ## I want to control when I migrate
 
 You can control when you migrate to normalized scores by requesting **versioned
-attributes**. Using this method, you can atomically update your application to
-use updated thresholds and receive normalized scores.
+model attribute names**. Using this method, you can atomically update your
+application to use updated thresholds and receive normalized scores.
 
 A controlled migration process would be:
 1.  Configure your application to use versioned, non-normalized attribute names.
