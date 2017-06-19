@@ -23,8 +23,8 @@ request.
     a forum post, a message to a mailing list, a chat message, etc.
 
 *   A **model** is a dimension that the comment is scored on, for example,
-    "toxic", "obscene", "thoughtful", "off-topic", etc. This is also referred to
-    as an **attribute**.
+    "toxic", "obscene", "thoughtful", "off-topic", etc. This is also sometimes referred to
+    as an **attribute** or **model attribute**.
 
 *   The API can return **model attribute scores** in different formats, known as
     **score types**. The default score type is a probability score between 0 to
@@ -140,7 +140,7 @@ example.
 
 Field | Description
 ----- | -----------
-`comment.text`           | **(required)** The text to score.
+`comment.text`           | **(required)** The text to score. This is assumed to be utf8 raw text of the text to be checked. Emoji and other non-ascii characters can be included (raw HTML will probably result in lower performance).
 `comment.type`           | *(optional)* The text type of `comment.text`. Either "PLAIN_TEXT" or "HTML". Currently only "PLAIN_TEXT" is supported.
 `context.entries`        | *(optional)* A list of objects providing the context for `comment`. Currently ignored by the API.
 `context.entries[].text` | *(optional)* The text of a context object.
