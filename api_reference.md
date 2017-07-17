@@ -92,7 +92,6 @@ their moderation team.
 *   **INCOHERENT**: Difficult to understand, nonsensical.
 *   **INFLAMMATORY**: Intending to provoke or inflame.
 *   **OBSCENE**: Obscene or vulgar language such as cursing.
-*   **OFF_TOPIC**: Not related to the original topic.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
 *   **LIKELY_TO_REJECT**: Overall measure of the likelihood for the comment to
