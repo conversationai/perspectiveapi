@@ -7,8 +7,8 @@ Score normalization of our models is intended to do two things:
 
 *   Provide a way to interpret the scores of a model as a probability (e.g.
     that the comment will be considered toxic).
-*   Enable models to be improved, e.g. by retrained on additional data, without
-    those using the model have to change any thresholds the use.
+*   Enable models to be improved, e.g. without normalization, clients using the
+    model would have to change the thresholds they use each time our models are retrained with additional examples.
 
 
 ## When did score-normalizing start happening?

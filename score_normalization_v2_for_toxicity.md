@@ -33,6 +33,10 @@ you can:
 
 ## What's changing and why?
 
+TL;DR: The latest calibration gives less extreme scores than the previous
+calibration - it increases the scores that used to fall in the low end of the
+score range, and lowers the scores at the highest end.
+
 Our normalization process applies a version of [probability
 calibration](http://scikit-learn.org/stable/modules/calibration.html) to make
 the scores approximate probabilities. For example, so that a toxicity score of
@@ -52,31 +56,32 @@ single decision, not a distribution of them.
 ## I want to control when I migrate
 
 You can control when you migrate to normalized scores by requesting **versioned
-model attribute names**. Using this method, you can atomically update your
+model names**. Using this method, you can atomically update your
 application to use updated thresholds and receive normalized scores.
 
+If you want to migrate to fixed normalized scores now, you can do so by using
+the next version of the model listed above: `TOXICITY@4`.
+
 A controlled migration process would be:
-1.  Configure your application to use a versioned attribute name before the
+1.  Configure your application to use a versioned model name before the
     rollout.
-    * You can choose, either `TOXICITY@2` for uncalibrated or `TOXICITY@3` for
-      our first attempt at calibration, which is currently serving if you
-      request just `TOXICITY`).
-2.  Sometime the rollout - whenever you feel like it - re-configure your
-    application to use unversioned, normalized attribute names along with
+    * Request `TOXICITY@3` for the current default model (you're using
+    `TOXICITY@3` if you just request `TOXICITY`). This was our first attempt
+    at calibration.
+2.  Within 3 months after the rollout (by 2017-11-15), re-configure your
+    application to use unversioned, normalized model names along with
     updating your score thresholds, according to the [score
-    mappings](#score-mappings).
+    mappings below](#score-mappings).
 
 Notes:
 
-* When you request a versioned attribute, the attribute names in the [response
+* When you request a versioned model, the model names in the [response
   object](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#analyzecomment-response)
   will also include the version (e.g., if you request `TOXICITY@3` you'll get
   scores for `TOXICITY@3` instead of just `TOXICITY`). This allows you request
-  multiple versions of the same attribute. However, most users will probably
-  want to remove this version specification from the attribute name (for
-  example, by using a regex to remove `@.*` from the attribute name).
-* If you want to migrate to fixed normalized scores now, you can do so by using
-  the next version of the attributes listed above: `TOXICITY@4`.
+  multiple versions of the same model. However, most users will probably
+  want to remove this version specification from the model name (for
+  example, by using a regex to remove `@.*` from the model name).
 
 
 ## Score mappings
@@ -84,40 +89,13 @@ Notes:
 These tables show how the score values are changing. You can use these tables to
 update your score thresholds. For example, if your moderation interface
 currently uses a red border for comments with TOXICITY score > 0.85, you would
-change that threshold to be ~0. instead.
+change that threshold to be ~0.78 instead.
 
 
 ### TOXICITY
 
 The following tables can be used to help identify how you want to change any
 thresholds associated with the TOXICITY models.
-
-
-TOXICITY@2          | TOXICITY@4
-not normalized      | better normalized
-(before 2017-06-13) | (after 2017-08-15)
-------------------- | -------------------
-0.00 | 0.00
-0.05 | 0.13
-0.10 | 0.23
-0.15 | 0.33
-0.20 | 0.37
-0.25 | 0.48
-0.30 | 0.51
-0.35 | 0.57
-0.40 | 0.63
-0.45 | 0.67
-0.50 | 0.70
-0.55 | 0.77
-0.60 | 0.80
-0.65 | 0.80
-0.70 | 0.86
-0.75 | 0.87
-0.80 | 0.91
-0.85 | 0.94
-0.90 | 0.95
-0.95 | 0.98
-1.00 | 1.00
 
 
 TOXICITY@3         | TOXICITY@4
@@ -145,6 +123,33 @@ kinda normalized   | better normalized
 0.90 | 0.84
 0.95 | 0.88
 1.00 | 0.98
+
+
+TOXICITY@2          | TOXICITY@4
+not normalized      | better normalized
+(before 2017-06-13) | (after 2017-08-15)
+------------------- | -------------------
+0.00 | 0.00
+0.05 | 0.13
+0.10 | 0.23
+0.15 | 0.33
+0.20 | 0.37
+0.25 | 0.48
+0.30 | 0.51
+0.35 | 0.57
+0.40 | 0.63
+0.45 | 0.67
+0.50 | 0.70
+0.55 | 0.77
+0.60 | 0.80
+0.65 | 0.80
+0.70 | 0.86
+0.75 | 0.87
+0.80 | 0.91
+0.85 | 0.94
+0.90 | 0.95
+0.95 | 0.98
+1.00 | 1.00
 
 
 TOXICITY@2          | TOXICITY@3         | TOXICITY@4
