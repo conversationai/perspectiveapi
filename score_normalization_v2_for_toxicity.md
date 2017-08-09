@@ -99,9 +99,9 @@ thresholds associated with the TOXICITY models.
 
 
 | TOXICITY@3         | TOXICITY@4         |
+| ------------------ | ------------------ |
 | kinda normalized   | better normalized  |
 | (until 2017-08-15) | (after 2017-08-15) |
-| ------------------ | ------------------ |
 | 0.00 | 0.00 |
 | 0.05 | 0.28 |
 | 0.10 | 0.37 |
@@ -126,9 +126,9 @@ thresholds associated with the TOXICITY models.
 
 
 TOXICITY@2 | TOXICITY@4
+------------------- | ------------------
 not normalized | better normalized
 (before 2017-06-13) | (after 2017-08-15)
-------------------- | ------------------
 0.00 | 0.00
 0.05 | 0.13
 0.10 | 0.23
@@ -153,9 +153,9 @@ not normalized | better normalized
 
 
 TOXICITY@2 | TOXICITY@3 | TOXICITY@4
+------------------- | ------------------- | ------------------
 not normalized | kinda normalized | better normalized
 (before 2017-06-13) | (until 2017-08-15) | (after 2017-08-15)
-------------------- | ------------------ | ------------------
 0.00 | 0.00 | 0.00
 0.05 | 0.01 | 0.13
 0.10 | 0.03 | 0.23
