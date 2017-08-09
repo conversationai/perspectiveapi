@@ -56,20 +56,20 @@ single decision, not a distribution of them.
 ## I want to control when I migrate
 
 You can control when you migrate to normalized scores by requesting **versioned
-model names**. Using this method, you can atomically update your
-application to use updated thresholds and receive normalized scores.
+model names**.
 
 If you want to migrate to fixed normalized scores now, you can do so by using
 the next version of the model listed above: `TOXICITY@4`.
 
-A controlled migration process would be:
+A controlled migration process for moving to new normalized score later
+involves:
 1.  Configure your application to use a versioned model name before the
     rollout.
-    * Request `TOXICITY@3` for the current default model (you're using
-    `TOXICITY@3` if you just request `TOXICITY`). This was our first attempt
-    at calibration.
+    * Request `TOXICITY@3` for the current default model (you are currently
+    using `TOXICITY@3` if you just request `TOXICITY`). This was our first
+    attempt at calibration.
 2.  Within 3 months after the rollout (by 2017-11-15), re-configure your
-    application to use unversioned, normalized model names along with
+    application to use the unversioned model name (`TOXICITY`), along with
     updating your score thresholds, according to the [score
     mappings below](#score-mappings).
 
@@ -78,8 +78,8 @@ Notes:
 * When you request a versioned model, the model names in the [response
   object](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#analyzecomment-response)
   will also include the version (e.g., if you request `TOXICITY@3` you'll get
-  scores for `TOXICITY@3` instead of just `TOXICITY`). This allows you request
-  multiple versions of the same model. However, most users will probably
+  scores for `TOXICITY@3` instead of just `TOXICITY`). This allows you to
+  request multiple versions of the same model. However, most users will probably
   want to remove this version specification from the model name (for
   example, by using a regex to remove `@.*` from the model name).
 
@@ -98,10 +98,10 @@ The following tables can be used to help identify how you want to change any
 thresholds associated with the TOXICITY models.
 
 
-TOXICITY@3         | TOXICITY@4
-kinda normalized   | better normalized
+TOXICITY@3 | TOXICITY@4
+kinda normalized | better normalized
 (until 2017-08-15) | (after 2017-08-15)
------------------- | -------------------
+------------------ | ------------------
 0.00 | 0.00
 0.05 | 0.28
 0.10 | 0.37
@@ -125,10 +125,10 @@ kinda normalized   | better normalized
 1.00 | 0.98
 
 
-TOXICITY@2          | TOXICITY@4
-not normalized      | better normalized
+TOXICITY@2 | TOXICITY@4
+not normalized | better normalized
 (before 2017-06-13) | (after 2017-08-15)
-------------------- | -------------------
+------------------- | ------------------
 0.00 | 0.00
 0.05 | 0.13
 0.10 | 0.23
@@ -152,10 +152,10 @@ not normalized      | better normalized
 1.00 | 1.00
 
 
-TOXICITY@2          | TOXICITY@3         | TOXICITY@4
-not normalized      | kinda normalized   | better normalized
+TOXICITY@2 | TOXICITY@3 | TOXICITY@4
+not normalized | kinda normalized | better normalized
 (before 2017-06-13) | (until 2017-08-15) | (after 2017-08-15)
-------------------- | ------------------ | -------------------
+------------------- | ------------------ | ------------------
 0.00 | 0.00 | 0.00
 0.05 | 0.01 | 0.13
 0.10 | 0.03 | 0.23

@@ -5,22 +5,24 @@
 
 Score normalization of our models is intended to do two things:
 
-*   Provide a way to interpret the scores of a model as a probability (e.g.
-    that the comment will be considered toxic).
-*   Enable models to be improved, e.g. without normalization, clients using the
-    model would have to change the thresholds they use each time our models are retrained with additional examples.
+*   Provide a way to interpret the scores of a model as a probability (e.g. how
+    likely is it that the comment will be perceived as toxic).
+*   Enable models to be improved without any action needed by most clients,
+    Without normalization, clients using the model would have to change the
+    thresholds they use each time our models are retrained with additional
+    examples.
 
 
 ## When did score-normalizing start happening?
 
 *   [v1 of score normalization](score_normalization_v1.md) on 2017-06-13
-    we introduced score normalization for all models.
+    introduced score normalization for all models.
 *   [v2 of score normalization](score_normalization_v2_for_toxicity.md) on
-    2017-08-15 we will fix our normalization of TOXICITY scores (other models
-    are not affected).
+    2017-08-15: fixes will go live for our normalization of TOXICITY scores
+    (other models are not affected).
 
 
-## And how to you do it?
+## How is score normalization done?
 
 Our normalization process applies a version of [probability calibration by
 isotonic regression](http://scikit-learn.org/stable/modules/calibration.html) to
@@ -36,4 +38,4 @@ control is not perfect: if the newly introduced examples are differently
 difficult to previous ones, some change in scores is still likely.
 However, in practice, we think this will be reasonably stable, and clients will be able to have the same 'sense' of what a threshold means.
 
-We are always looking for better ways to provide stability, so if you know of better ways to do this, please do [file an issue](https://github.com/conversationai/perspectiveapi/issues).
+We are always looking for better ways to provide stability, so if you know of better ways to do this, please do [suggest it on github](https://github.com/conversationai/perspectiveapi/issues).
