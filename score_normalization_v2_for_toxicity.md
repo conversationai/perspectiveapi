@@ -1,6 +1,6 @@
 # Perspective API score normalization: fixes for Toxicity
 
-On **Tuesday, 2017-08-15**, we plan to update the scores for the TOXICITY model
+On **Wednesday, 2017-08-23**, we updated the scores for the TOXICITY model
 in the Perspective API. All other models are not affected.
 
 **You may need to take action** if you use specific thresholds for the Toxicity
@@ -15,8 +15,7 @@ changing.
 
 ## When is it happening?
 
-We plan to start returning the updated Toxicity scores on **Tuesday,
-2017-08-15**. We will send a message to
+We updated the Toxicity scores on **Wednesday, 2017-08-23**. We will send a message to
 [perspective-announce](http://groups.google.com/forum/#!forum/perspective-announce)
 once the rollout is complete.
 
