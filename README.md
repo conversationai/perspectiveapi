@@ -22,6 +22,14 @@ Example demo code:
    gives an author feedback as they type.
  * [A proxy to the API](https://github.com/conversationai/perspectiveapi-proxy)
    with access restrictions and a simple UI to debug calls to the API. 
+ * [Conversation AI - Moderator](https://github.com/conversationai/conversationai-moderator) 
+   a comment moderation system that provide hint and assist UI for moderators based 
+   on a plugable model of computational assistants, including support for using 
+   Perspective API models. There are also plugins to support moderation of different platforms, e.g.:
+   * [plugin for Discourse](https://github.com/conversationai/conversationai-moderator-discourse)
+   * [plugin for Wordpress](https://github.com/conversationai/conversationai-moderator-wordpress)
+   * [plugin for Reddit](https://github.com/conversationai/conversationai-moderator-reddit)
+     (incomplete, does not yet support actions)
 
 If you would like to receive email updates about the API - for example when we
 add new models, or deprecate old ones - you can subscribe to
