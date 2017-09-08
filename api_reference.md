@@ -97,11 +97,32 @@ their moderation team.
 *   **ATTACK_ON_COMMENTER**: Attack on fellow commenter.
 *   **INCOHERENT**: Difficult to understand, nonsensical.
 *   **INFLAMMATORY**: Intending to provoke or inflame.
+*   **LIKELY_TO_REJECT**: Overall measure of the likelihood for the comment to
+    be rejected according by the NYT's moderation.
 *   **OBSCENE**: Obscene or vulgar language such as cursing.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
-*   **LIKELY_TO_REJECT**: Overall measure of the likelihood for the comment to
-    be rejected according by the NYT's moderation.
+
+### Versions
+
+Models are versioned. We re-retrain them and release a new version when we get enough new trusted examples, either from [our demo](https://www.perspectiveapi.com) or from other clients of the API who ask us use their examples to make the models better (see the `AnalyzeComment` and `SuggestCommentScore` methods below). To use a specific version of a model, use a model name of the form `MODEL_NAME@VERSION_NUMBER`. If you don't append an `@VERSION_NUMBER` to a model name
+
+The latest version numbers are in the following table.
+
+Model Attribute Name | Latest Version Name
+---------------------|-----------------------
+ATTACK_ON_AUTHOR     | ATTACK_ON_AUTHOR@2 
+ATTACK_ON_COMMENTER  | ATTACK_ON_COMMENTER@2
+INCOHERENT           | INCOHERENT@2
+INFLAMMATORY         | INFLAMMATORY@2
+LIKELY_TO_REJECT     | LIKELY_TO_REJECT@2
+OBSCENE              | OBSCENE@2
+SEVERE_TOXICITY      | SEVERE_TOXICITY@1
+SPAM                 | SPAM@1
+TOXICITY             | TOXICITY@5
+UNSUBSTANTIAL        | UNSUBSTANTIAL@2
+
+Announcements about new  models and versions of models (and depricated stuff) are sent to the: [`perspective-announce email group`](https://groups.google.com/forum/#!forum/perspective-announce); subscribe to stay up to date.
 
 ## Methods
 
@@ -150,7 +171,7 @@ Field | Description
 `context.entries`        | *(optional)* A list of objects providing the context for `comment`. Currently ignored by the API.
 `context.entries[].text` | *(optional)* The text of a context object.
 `context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`.
-`requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#models) for a list of available model attribute names. If no configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice.
+`requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#models) for a list of available model attribute names. If no configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple model names here to get scores from multiple models in a single request.
 `requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
 `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
 `languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", "zh", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all models only support English. Explicitly specifying a language other than "en" will fail. If the language autodetection determines the comment is in a non-English language, the request also fails.
