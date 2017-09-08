@@ -10,7 +10,7 @@ reference documentation](api_reference.md) for the Perspective Comment Analyzer
 API.
 
 Note that the API is currently in trusted tester phase and not generally
-available. Please see our [main site](https://www.perspectiveapi.com/) for the
+available. Please see our [API demo and access request site](https://www.perspectiveapi.com/) for the
 form to request API access.
 
 Example demo code:
