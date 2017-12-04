@@ -386,8 +386,7 @@ The response is not particularly interesting:
 
 ## API client libraries
 
-Since the API isn't yet fully public, there aren't ready-made client libraries.
-However, you can effectively generate one at runtime with the [Google API Client
+You can generate API client libraries using the [Google API Client
 Libraries](https://developers.google.com/api-client-library/). The API Client
 Libraries have been released for many languages. Here, we walk through a few
 versions.
@@ -493,3 +492,12 @@ You should see something like:
 ```
 
 Which shows that our old timey exclamations get lower toxicity scores.
+
+There is also a ready-made Node.js client, which can be installed from
+NPM:
+
+```
+npm install perspective-api-client
+```
+
+See the docs [on the project's GitHub page](https://github.com/sloria/perspective-api-client).
