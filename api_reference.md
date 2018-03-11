@@ -65,9 +65,11 @@ by thousands of human moderators.
     trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec)
     inputs. You can also train your own
     [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on
-    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973).
+    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973)
+    - see [our Kaggle  competition](kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+    lots of resources to help build your own models.
     Note that there are many kinds of toxic language that are disproportionately
-    represented in our dataset, which leads to obviously incorrect scores.
+    represented in our dataset, which leads to some obviously incorrect scores.
     Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
     help improve the model.
 
@@ -80,15 +82,15 @@ with little notice.
 *   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the 
     TOXICITY model, but is trained to recognise examples that were considered
     to be 'very toxic' by crowdworkers. This makes it much less sensitive to 
-    comments that include positive uses of curse-words for example. The labels
-    and methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that we
-    have made publicly available.
+    comments that include positive uses of curse-words for example. A labelled dataset
+    and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is 
+    available for the toxicity model.
 *   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
     lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
     model returns summary scores as well as span scores. This model uses
     character-level n-grams fed into a logistic regression, a method that has
     has been surprisingly
-    [effective at detecting abusive language](http://www2016.net/proceedings/proceedings/p145.pdf).
+    [effective at detecting abusive language](https://dl.acm.org/citation.cfm?id=2883062).
 
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
