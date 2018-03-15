@@ -16,11 +16,13 @@ First, follow the [quickstart guide](quickstart.md) to enable the API for your
 project, generate an API key, and ensure you're able to make a successful
 request.
 
-### Quota Limits
+### Quota and character length Limits
 
 You can check your quota limits by going to [your google cloud project's Perspective API page](https://pantheon.corp.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check 
 your projects quota usage at 
 [the cloud console quota usage page](https://pantheon.corp.google.com/iam-admin/quotas).
+
+The maximum text size per request is 3000 bytes.
 
 ## Key concepts
 
@@ -172,10 +174,10 @@ example.
 
 Field | Description
 ----- | -----------
-`comment.text`           | **(required)** The text to score. This is assumed to be utf8 raw text of the text to be checked. Emoji and other non-ascii characters can be included (raw HTML will probably result in lower performance).
+`comment.text`           | **(required)** The text to score. This is assumed to be utf8 raw text of the text to be checked. Emoji and other non-ascii characters can be included (raw HTML will probably result in lower performance). The maximum size of comment.text request is 3000 bytes.
 `comment.type`           | *(optional)* The text type of `comment.text`. Either "PLAIN_TEXT" or "HTML". Currently only "PLAIN_TEXT" is supported.
 `context.entries`        | *(optional)* A list of objects providing the context for `comment`. Currently ignored by the API.
-`context.entries[].text` | *(optional)* The text of a context object.
+`context.entries[].text` | *(optional)* The text of a context object. The maximum size of context entry is 1MB.
 `context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`.
 `requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#models) for a list of available model attribute names. If no configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple model names here to get scores from multiple models in a single request.
 `requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
@@ -247,8 +249,8 @@ that's explicitly in English.
 The response contains the "TOXICITY" and "UNSUBSTANTIAL" model scores. Each
 attribute has a single overall `summaryScore` as well as two `spanScores`.
 
-Both models return the same spans in this case: the span [0, 31) (corresponding
-to "What kind of idiot name is foo?") and the span [32, 56) (corresponding to
+Both models return the same spans in this case: the span `[0, 31)` (corresponding
+to "What kind of idiot name is foo?") and the span `[32, 56)` (corresponding to
 "Sorry, I like your name."). Models may not always return the same spans,
 however.
 
