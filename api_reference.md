@@ -16,6 +16,12 @@ First, follow the [quickstart guide](quickstart.md) to enable the API for your
 project, generate an API key, and ensure you're able to make a successful
 request.
 
+### Quota Limits
+
+You can check your quota limits by going to [your google cloud project's Perspective API page](https://pantheon.corp.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check 
+your projects quota usage at 
+[the cloud console quota usage page](https://pantheon.corp.google.com/iam-admin/quotas).
+
 ## Key concepts
 
 *   A **comment** is the text to be scored. Each API request contains a single
