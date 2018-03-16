@@ -18,9 +18,9 @@ request.
 
 ### Quota and character length Limits
 
-You can check your quota limits by going to [your google cloud project's Perspective API page](https://pantheon.corp.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check 
+You can check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check 
 your projects quota usage at 
-[the cloud console quota usage page](https://pantheon.corp.google.com/iam-admin/quotas).
+[the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
 
 The maximum text size per request is 3000 bytes.
 
