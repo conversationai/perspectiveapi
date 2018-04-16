@@ -103,12 +103,12 @@ with little notice.
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
 
-*   **ATTACK_ON_AUTHOR**: Attack on author of original article or post.
+*   **ATTACK_ON_AUTHOR**: Attack on the author of an article or post.
 *   **ATTACK_ON_COMMENTER**: Attack on fellow commenter.
 *   **INCOHERENT**: Difficult to understand, nonsensical.
 *   **INFLAMMATORY**: Intending to provoke or inflame.
 *   **LIKELY_TO_REJECT**: Overall measure of the likelihood for the comment to
-    be rejected according by the NYT's moderation.
+    be rejected according to the NYT's moderation.
 *   **OBSCENE**: Obscene or vulgar language such as cursing.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
