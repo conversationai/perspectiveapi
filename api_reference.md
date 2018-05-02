@@ -74,10 +74,10 @@ by thousands of human moderators.
     inputs. You can also train your own
     [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on
     [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973)
-    - see [our Kaggle  competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
-    lots of resources to help build your own models.
+    - [Our Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+    has lots of useful resources to help build your own models.
     Note that there are many kinds of toxic language that are disproportionately
-    represented in our dataset, which leads to some obviously incorrect scores.
+    represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases.
     Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
     help improve the model.
 *   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the 
