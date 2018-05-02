@@ -80,19 +80,19 @@ by thousands of human moderators.
     represented in our dataset, which leads to some obviously incorrect scores.
     Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
     help improve the model.
-
-### Experimental
-
-The following models are experimental. They were targeted for a single usecase,
-so may not generalize to your usecase well. They may be deprecated or removed
-with little notice.
-
 *   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the 
     TOXICITY model, but is trained to recognise examples that were considered
     to be 'very toxic' by crowdworkers. This makes it much less sensitive to 
     comments that include positive uses of curse-words for example. A labelled dataset
     and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is 
     available for the toxicity model.
+
+### Experimental
+
+The following models are experimental. They were targeted for a single usecase,
+so may not generalize to your usecase well. They may be deprecated or removed
+with little notice (typically a few months).
+
 *   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
     lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
     model returns summary scores as well as span scores. This model uses
