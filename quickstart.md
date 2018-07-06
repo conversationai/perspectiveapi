@@ -19,12 +19,17 @@
     page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview)
     and click **_Enable_**. If you haven't yet been whitelisted, you'll get a
     permissions error at this point.
-
+    
 4.  **Generate an API key.** To authenticate your requests, you'll need to
     generate credentials for your project. Using an API key is the simplest
     option. Go to the [API credentials
     page](https://console.developers.google.com/apis/credentials), click
     **_Create credentials_**, and choose "API Key".
+    
+    Note that it typically takes only a few minutes for a new API key to 
+    have access after the API is enabled, but it can on occasion 
+    take up to an hour; until the API key is enabled, you may get errors of
+    the form "API Key not found. Please pass a valid API key".
 
 5.  **Make an AnalyzeComment request.**
 
@@ -58,7 +63,7 @@
     In the response ,the field `attributeScores.TOXICITY.summaryScore.value`
     gives the toxicity model's score for the comment. In this case, the comment
     got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
-
+    
 See the [API reference documentation](api_reference.md) for details on all of
 the request and response fields, as well as the available values for
 `requestedAttributes`. There are quite a few
