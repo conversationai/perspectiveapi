@@ -9,6 +9,7 @@
    * [Scoring comments](#scoring-comments-analyzecomment)
    * [Sending feedback](#sending-feedback-suggestcommentscore)
  * [API client libraries](#api-client-libraries)
+ * [Privacy and Terms of Service](#privacy-and-terms-of-service)
 
 ## Using the API
 
@@ -512,3 +513,7 @@ npm install perspective-api-client
 ```
 
 See the docs [on the project's GitHub page](https://github.com/sloria/perspective-api-client).
+
+## Privacy and Terms of Service
+
+The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/), and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
