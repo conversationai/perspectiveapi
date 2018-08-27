@@ -514,6 +514,9 @@ npm install perspective-api-client
 
 See the docs [on the project's GitHub page](https://github.com/sloria/perspective-api-client).
 
+## Related research
+Perspective is part of the [Conversation-AI research project](https://conversationai.github.io/). If you have questions about Perspective or our research, you can email us at conversationai-questions@google.com
+
 ## Privacy and Terms of Service
 
 The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/), and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
