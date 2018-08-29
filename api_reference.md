@@ -61,6 +61,18 @@ The maximum text size per request is 3000 bytes.
 
 ## Models
 
+To give a sense of the scores our models give on actual comments, see [this CSV
+of scored
+comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
+These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
+from our [Kaggle
+competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
+
+Sorting by each model gives a sense of each model's behavior. These examples may
+differ quite a bit from the types of comments in your particular use case, so we
+strongly recommend evaluating on your own data as well.
+
+
 ### Alpha
 
 The following alpha models are **recommended** for use. They have been tested
