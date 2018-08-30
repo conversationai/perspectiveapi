@@ -110,8 +110,8 @@ thoroughly.
 *   **IDENTITY_ATTACK**: negative, discriminatory, or hateful comment based on
     criteria including (but not limited to) race or ethnicity, religion, gender,
     nationality or citizenship, disability, age, or sexual orientation.
-*   **INSULT**: insulting, inflammatory, or negative towards a person or a group
-    of people.
+*   **INSULT**: insulting, inflammatory, or negative comment towards a person
+    or a group of people.
 *   **PROFANITY**: swear words, curse words, or other obscene or profane
     language.
 *   **THREAT**: describes an intention to inflict pain, injury, or violence
