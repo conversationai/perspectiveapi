@@ -68,9 +68,9 @@ These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
 from our [Kaggle
 competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
 
-Sorting by each model gives a sense of each model's behavior. These examples may
-differ quite a bit from the types of comments in your particular use case, so we
-strongly recommend evaluating on your own data as well.
+Sorting by each model's scores gives a sense of the model's behavior. These
+examples may differ quite a bit from the types of comments in your particular
+use case, so we strongly recommend evaluating on your own data as well.
 
 
 ### Alpha
