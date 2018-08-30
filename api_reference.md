@@ -107,17 +107,17 @@ overall toxicity. They were trained on a relatively smaller amount of data
 compared to the primary toxicity models above and have not been tested as
 thoroughly.
 
-*   **IDENTITY_HATE**: Inciting hatred or anger against a person or group based
-    on identity attributes like race, religion, sexual orientation, disability,
-    or gender.
-*   **INSULT**: derogatory name calling, pejorative labelling or putting others
-    down.
-*   **PROFANITY**: contains swear words, curse words, or other vulgar, explicit
-    or offensive language.
-*   **SEXUALLY_EXPLICIT**: contains references to sexual acts, body parts, other
-    lewd content.
+*   **IDENTITY_ATTACK**: negative, discriminatory, or hateful comment based on
+    criteria including (but not limited to) race or ethnicity, religion, gender,
+    nationality or citizenship, disability, age, or sexual orientation.
+*   **INSULT**: insulting, inflammatory, or negative towards a person or a group
+    of people.
+*   **PROFANITY**: swear words, curse words, or other obscene or profane
+    language.
 *   **THREAT**: describes an intention to inflict pain, injury, or violence
     against an individual or group.
+*   **SEXUALLY_EXPLICIT**: contains references to sexual acts, body parts, or
+    other lewd content.
 *   **FLIRTATION**: pickup lines, complimenting appearance, subtle sexual
     innuendos, etc.
 
