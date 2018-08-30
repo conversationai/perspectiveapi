@@ -61,6 +61,18 @@ The maximum text size per request is 3000 bytes.
 
 ## Models
 
+To give a sense of the scores our models give on actual comments, see [this CSV
+of scored
+comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
+These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
+from our [Kaggle
+competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
+
+Sorting by each model's scores gives a sense of the model's behavior. These
+examples may differ quite a bit from the types of comments in your particular
+use case, so we strongly recommend evaluating on your own data as well.
+
+
 ### Alpha
 
 The following alpha models are **recommended** for use. They have been tested
@@ -81,25 +93,34 @@ by thousands of human moderators.
     represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases.
     Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
     help improve the model.
-*   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the 
+*   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the
     TOXICITY model, but is trained to recognise examples that were considered
-    to be 'very toxic' by crowdworkers. This makes it much less sensitive to 
+    to be 'very toxic' by crowdworkers. This makes it much less sensitive to
     comments that include positive uses of curse-words for example. A labelled dataset
-    and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is 
+    and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is
     available for the toxicity model.
 
 ### Experimental
 
-The following models are experimental. They were targeted for a single usecase,
-so may not generalize to your usecase well. They may be deprecated or removed
-with little notice (typically a few months).
+The following experimental models give more fine-grained classifications than
+overall toxicity. They were trained on a relatively smaller amount of data
+compared to the primary toxicity models above and have not been tested as
+thoroughly.
 
-*   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
-    lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
-    model returns summary scores as well as span scores. This model uses
-    character-level n-grams fed into a logistic regression, a method that has
-    has been surprisingly
-    [effective at detecting abusive language](https://dl.acm.org/citation.cfm?id=2883062).
+*   **IDENTITY_ATTACK**: negative, discriminatory, or hateful comment based on
+    criteria including (but not limited to) race or ethnicity, religion, gender,
+    nationality or citizenship, disability, age, or sexual orientation.
+*   **INSULT**: insulting, inflammatory, or negative towards a person or a group
+    of people.
+*   **PROFANITY**: swear words, curse words, or other obscene or profane
+    language.
+*   **THREAT**: describes an intention to inflict pain, injury, or violence
+    against an individual or group.
+*   **SEXUALLY_EXPLICIT**: contains references to sexual acts, body parts, or
+    other lewd content.
+*   **FLIRTATION**: pickup lines, complimenting appearance, subtle sexual
+    innuendos, etc.
+
 
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
@@ -114,21 +135,39 @@ their moderation team.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
 
+
+The following models are experimental. They were targeted for a single usecase,
+so may not generalize to your usecase well. They may be deprecated or removed
+with little notice (typically a few months).
+
+*   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
+    lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
+    model returns summary scores as well as span scores. This model uses
+    character-level n-grams fed into a logistic regression, a method that has
+    has been surprisingly
+    [effective at detecting abusive language](https://dl.acm.org/citation.cfm?id=2883062).
+
 ### Versions
 
 Models are versioned. We re-retrain them and release a new version when we get enough new trusted examples, either from [our demo](https://www.perspectiveapi.com) or from other clients of the API who ask us use their examples to make the models better (see the `AnalyzeComment` and `SuggestCommentScore` methods below). To use a specific version of a model, use a model name of the form `MODEL_NAME@VERSION_NUMBER`. If a request does not specify a `@VERSION_NUMBER` at the end of a model name, it will use the latest version of the model. The latest version numbers are in the following table.
 
 Model Attribute Name | Latest Version Name
 ---------------------|-----------------------
-ATTACK_ON_AUTHOR     | ATTACK_ON_AUTHOR@2 
+TOXICITY             | TOXICITY@6
+SEVERE_TOXICITY      | SEVERE_TOXICITY@2
+IDENTITY_HATE        | IDENTITY_HATE@2
+INSULT               | INSULT@2
+PROFANITY            | PROFANITY@2
+SEXUALLY_EXPLICIT    | SEXUALLY_EXPLICIT@2
+THREAT               | THREAT@2
+FLIRTATION           | FLIRTATION@2
+ATTACK_ON_AUTHOR     | ATTACK_ON_AUTHOR@2
 ATTACK_ON_COMMENTER  | ATTACK_ON_COMMENTER@2
 INCOHERENT           | INCOHERENT@2
 INFLAMMATORY         | INFLAMMATORY@2
 LIKELY_TO_REJECT     | LIKELY_TO_REJECT@2
 OBSCENE              | OBSCENE@2
-SEVERE_TOXICITY      | SEVERE_TOXICITY@1
 SPAM                 | SPAM@1
-TOXICITY             | TOXICITY@5
 UNSUBSTANTIAL        | UNSUBSTANTIAL@2
 
 Announcements about new  models and versions of models (and depricated stuff) are sent to the: [`perspective-announce email group`](https://groups.google.com/forum/#!forum/perspective-announce); subscribe to stay up to date.
