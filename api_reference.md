@@ -107,9 +107,7 @@ overall toxicity. They were trained on a relatively smaller amount of data
 compared to the primary toxicity models above and have not been tested as
 thoroughly.
 
-*   **IDENTITY_ATTACK**: negative, discriminatory, or hateful comment based on
-    criteria including (but not limited to) race or ethnicity, religion, gender,
-    nationality or citizenship, disability, age, or sexual orientation.
+*   **IDENTITY_ATTACK**: negative or hateful comments comments targeting someone because of their identity.
 *   **INSULT**: insulting, inflammatory, or negative comment towards a person
     or a group of people.
 *   **PROFANITY**: swear words, curse words, or other obscene or profane
@@ -155,7 +153,7 @@ Model Attribute Name | Latest Version Name
 ---------------------|-----------------------
 TOXICITY             | TOXICITY@6
 SEVERE_TOXICITY      | SEVERE_TOXICITY@2
-IDENTITY_HATE        | IDENTITY_HATE@2
+IDENTITY_ATTACK      | IDENTITY_ATTACK@2
 INSULT               | INSULT@2
 PROFANITY            | PROFANITY@2
 SEXUALLY_EXPLICIT    | SEXUALLY_EXPLICIT@2
