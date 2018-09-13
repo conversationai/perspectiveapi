@@ -107,7 +107,7 @@ overall toxicity. They were trained on a relatively smaller amount of data
 compared to the primary toxicity models above and have not been tested as
 thoroughly.
 
-*   **IDENTITY_ATTACK**: negative or hateful comments comments targeting someone because of their identity.
+*   **IDENTITY_ATTACK**: negative or hateful comments targeting someone because of their identity.
 *   **INSULT**: insulting, inflammatory, or negative comment towards a person
     or a group of people.
 *   **PROFANITY**: swear words, curse words, or other obscene or profane
