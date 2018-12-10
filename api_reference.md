@@ -80,13 +80,12 @@ across multiple domains and trained on hundreds of thousands of comments tagged
 by thousands of human moderators.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
-    make people leave a discussion. Currently, this model doesn't return span
-    scores (it only returns summary scores). This model is a
+    make people leave a discussion (see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details). This model is a
     [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN)
     trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec)
     inputs. You can also train your own
     [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on
-    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973)
+    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore [our open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
     - [Our Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
     has lots of useful resources to help build your own models.
     Note that there are many kinds of toxic language that are disproportionately
@@ -119,6 +118,7 @@ thoroughly.
 *   **FLIRTATION**: pickup lines, complimenting appearance, subtle sexual
     innuendos, etc.
 
+For more details on how these were trained, see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md).
 
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
