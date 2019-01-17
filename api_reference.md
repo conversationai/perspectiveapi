@@ -101,6 +101,8 @@ by thousands of human moderators.
 
 ### Experimental
 
+#### Toxicity subtypes
+
 The following experimental models give more fine-grained classifications than
 overall toxicity. They were trained on a relatively smaller amount of data
 compared to the primary toxicity models above and have not been tested as
@@ -120,6 +122,27 @@ thoroughly.
 
 For more details on how these were trained, see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md).
 
+
+#### Toxicity moels in Spanish, French and German
+
+The following models are our first non-English TOXICITY models. Only use these if you are
+interested in testing an experimental model and are willing to change your code once the
+production models are available. These models are experimental and have not been tested as
+thoroughly as their English counterparts.
+
+TOXICITY_EXPERIMENTAL
+SEVERE_TOXICITY_EXPERIMENTAL
+PROFANITY_EXPERIMENTAL
+IDENTITY_ATTACK_EXPERIMENTAL
+INSULT_EXPERIMENTAL
+THREAT_EXPERIMENTAL
+
+Please refer to the rest of the documentation bellow to appropriately set the
+language fields in your request.
+
+#### New York Times moderation models
+
+
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
 
@@ -133,6 +156,7 @@ their moderation team.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
 
+#### Other experimentla models
 
 The following models are experimental. They were targeted for a single usecase,
 so may not generalize to your usecase well. They may be deprecated or removed
