@@ -156,7 +156,7 @@ their moderation team.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
 
-#### Other experimentla models
+#### Other experimental models
 
 The following models are experimental. They were targeted for a single usecase,
 so may not generalize to your usecase well. They may be deprecated or removed
