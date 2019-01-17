@@ -130,12 +130,12 @@ interested in testing an experimental model and are willing to change your code 
 production models are available. These models are experimental and have not been tested as
 thoroughly as their English counterparts.
 
-*   TOXICITY_EXPERIMENTAL
-*   SEVERE_TOXICITY_EXPERIMENTAL
-*   PROFANITY_EXPERIMENTAL
-*   IDENTITY_ATTACK_EXPERIMENTAL
-*   INSULT_EXPERIMENTAL
-*   THREAT_EXPERIMENTAL
+*   **TOXICITY_EXPERIMENTAL**
+*   **SEVERE_TOXICITY_EXPERIMENTAL**
+*   **PROFANITY_EXPERIMENTAL**
+*   **IDENTITY_ATTACK_EXPERIMENTAL**
+*   **INSULT_EXPERIMENTAL**
+*   **THREAT_EXPERIMENTAL**
 
 Please refer to the rest of the documentation bellow to appropriately set the
 language fields in your request.
