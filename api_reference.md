@@ -101,7 +101,7 @@ by thousands of human moderators.
 
 ### Experimental
 
-#### Toxicity subtypes
+#### Toxicity subtypes models for English comments
 
 The following experimental models give more fine-grained classifications than
 overall toxicity. They were trained on a relatively smaller amount of data
@@ -123,7 +123,7 @@ thoroughly.
 For more details on how these were trained, see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md).
 
 
-#### Toxicity moels in Spanish, French and German
+#### Toxicity models for Spanish, French and German comments
 
 The following models are our first non-English TOXICITY models. Only use these if you are
 interested in testing an experimental model and are willing to change your code once the
