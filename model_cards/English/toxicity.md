@@ -7,65 +7,66 @@ Toxicity classifies rude, disrespectful, or unreasonable comment that is likely 
 
 ## Performance overview
 
-
-Add image
-
+![enter image description here](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1.png)
 
 
 ## Intended use
 
 
-**Human-assisted moderation**
+#### Human-assisted moderation
 Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions. 
 
-**Author feedback**
+#### Author feedback
 Assist authors in real-time when their comments might violate your community guidelines or be may be perceived as “Toxic” to the conversation. Use simple feedback tools when the assistant gets it wrong. 
 
-**Read better comments**
+#### Read better comments
 Organize comments on topics that are often difficult to discuss online. Build new tools that help people explore the conversation. 
 
 
 ## Uses to avoid
 
-**Fully automated moderation**
+#### Fully automated moderation
 Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions. 
 
-**Character judgement**
+#### Character judgement
 This model only helps detect Toxicity in what a person said, and is not intended to detect anything about the individual who said it.
 
 
 
 ## Model data
 
-**Training data**
+####Training data
 Proprietary from Perspective API, which includes comments from a online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”.
 
-**Evaluation data**
+####Evaluation data
 A synthetic test set generated using a template-based approach, where identity terms are swapped into a variety of template sentences.
 
-**Caveats**
+####Caveats
 Synthetic test data covers only a small set of very specific comments. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
 
 
 ## Fairness
 
-**Values**
+#### Values
 Community, Transparency, Inclusivity, Privacy, and Topic neutrality. Because of privacy considerations, the model does not take into account user history when making judgments about toxicity.
 
-**Group factors**
+#### Group factors
+
 Identity terms referencing frequently attacked groups, focusing on sexual orientation, gender identity, and race.
 
-**Evaluation data**
+#### Evaluation data
+
 Real data often has disproportionate amounts of toxicity directed at specific groups, while the synthetic test set ensures that we evaluate on data that represents both toxic and non-toxic statements referencing a variety of groups.
 
 
-## Quantitative Analysis
+## Unitary Identity Subgroup Evaluation
 
-**Unitary terms 1-11**
-
-
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1.png)
 
 
+## Intersectional Identity Subgroup Evaluation
+
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1.png)
 
 | Test set   | Description                         |
 |----------------|-------------------------------|
