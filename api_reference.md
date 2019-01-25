@@ -75,7 +75,7 @@ use case, so we strongly recommend evaluating on your own data as well.
 ### Model Cards
 For each Alpha model, we aim to publish an associated "Model Card" that shares details
 about model training and evaluation results. Current model cards are posted 
-[here](https://github.com/conversationai/perspectiveapi/blob/master/model_cards/README.md).
+[here](model_cards/README.md).
 
 ### Alpha
 
