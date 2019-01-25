@@ -35,13 +35,13 @@ This model only helps detect Toxicity in what a person said, and is not intended
 
 ## Model data
 
-####Training data
+#### Training data
 Proprietary from Perspective API, which includes comments from a online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”.
 
-####Evaluation data
+#### Evaluation data
 A synthetic test set generated using a template-based approach, where identity terms are swapped into a variety of template sentences.
 
-####Caveats
+#### Caveats
 Synthetic test data covers only a small set of very specific comments. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
 
 
