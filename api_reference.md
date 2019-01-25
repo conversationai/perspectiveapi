@@ -72,12 +72,17 @@ Sorting by each model's scores gives a sense of the model's behavior. These
 examples may differ quite a bit from the types of comments in your particular
 use case, so we strongly recommend evaluating on your own data as well.
 
-
 ### Alpha
 
 The following alpha models are **recommended** for use. They have been tested
 across multiple domains and trained on hundreds of thousands of comments tagged
 by thousands of human moderators.
+
+#### Model Cards
+For each Alpha model, we aim to publish an associated 
+["Model Card"](https://github.com/conversationai/perspectiveapi/blob/master/model_cards/README.md)
+that shares details about model training and evaluation result. You can see Model Cards for the 
+TOXICITY models [here]().
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion (see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details). This model is a
