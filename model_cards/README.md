@@ -5,6 +5,6 @@ intended usage, model training processes, and evaluation results, including
 evaluation across demographic groups and communities to measure unintended bias.
 Model Cards were introduced at the 2019 
 [Fairness, Accountability, and Transparency* Conference](https://fatconference.org/index.html) 
-in [Model Cards for Model Reporting](https://dl.acm.org/citation.cfm?id=3287596)
+in *[Model Cards for Model Reporting](https://dl.acm.org/citation.cfm?id=3287596)*
 by M. Mitchell et al.
 
