@@ -14,22 +14,27 @@ Toxicity classifies rude, disrespectful, or unreasonable comment that is likely 
 
 
 #### Human-assisted moderation
-Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions. 
+Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions.
+&nbsp;
 
 #### Author feedback
-Assist authors in real-time when their comments might violate your community guidelines or be may be perceived as “Toxic” to the conversation. Use simple feedback tools when the assistant gets it wrong. 
+Assist authors in real-time when their comments might violate your community guidelines or be may be perceived as “Toxic” to the conversation. Use simple feedback tools when the assistant gets it wrong.
+&nbsp;
 
 #### Read better comments
-Organize comments on topics that are often difficult to discuss online. Build new tools that help people explore the conversation. 
+Organize comments on topics that are often difficult to discuss online. Build new tools that help people explore the conversation.
+&nbsp;
 
 
 ## Uses to avoid
 
 #### Fully automated moderation
-Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions. 
+Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions.
+&nbsp;
 
 #### Character judgement
 This model only helps detect Toxicity in what a person said, and is not intended to detect anything about the individual who said it.
+&nbsp;
 
 
 
@@ -40,23 +45,25 @@ Proprietary from Perspective API, which includes comments from a online forums s
 
 #### Evaluation data
 A synthetic test set generated using a template-based approach, where identity terms are swapped into a variety of template sentences.
+&nbsp;
 
 #### Caveats
 Synthetic test data covers only a small set of very specific comments. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
-
+&nbsp;
 
 ## Fairness
 
 #### Values
 Community, Transparency, Inclusivity, Privacy, and Topic neutrality. Because of privacy considerations, the model does not take into account user history when making judgments about toxicity.
+&nbsp;
 
 #### Group factors
-
 Identity terms referencing frequently attacked groups, focusing on sexual orientation, gender identity, and race.
+&nbsp;
 
 #### Evaluation data
-
 Real data often has disproportionate amounts of toxicity directed at specific groups, while the synthetic test set ensures that we evaluate on data that represents both toxic and non-toxic statements referencing a variety of groups.
+&nbsp;
 
 
 ## Unitary Identity Subgroup Evaluation
