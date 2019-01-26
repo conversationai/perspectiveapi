@@ -7,7 +7,8 @@ Toxicity classifies rude, disrespectful, or unreasonable comment that is likely 
 
 ## Performance overview
 
-![enter image description here](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1.png)
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/auc.png)
+
 
 
 ## Intended use
