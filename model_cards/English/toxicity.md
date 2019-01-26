@@ -69,13 +69,13 @@ Real data often has disproportionate amounts of toxicity directed at specific gr
 
 ## Unitary Identity Subgroup Evaluation
 [See full list of test set results](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
-![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1b.png)
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1d.png)
 
 
 ## Intersectional Identity Subgroup Evaluation
 [See full list of test set results](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 
-![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1b.png)
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1e.png)
 
 | Test set   | Description                         |
 |----------------|-------------------------------|
