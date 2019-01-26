@@ -71,7 +71,6 @@ To measuring unintended bias, we calculate three separate ROC-AUC results, each 
 
 
 ## Intersectional Identity Subgroup Evaluation
-[View spreadsheet for a full list of test set results](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1g.png)
 
