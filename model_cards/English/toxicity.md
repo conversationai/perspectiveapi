@@ -66,7 +66,7 @@ Real data often has disproportionate amounts of toxicity directed at specific gr
 
 ## Unitary Identity Subgroup Evaluation
 To measuring unintended bias, we calculate three separate ROC-AUC results, each on different subsets of the test set.
-[See full list of test set results](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
+[See our full model cards for our Toxicity models here, including results for more identity terms and intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1f.png)
 
 
@@ -79,3 +79,8 @@ To measuring unintended bias, we calculate three separate ROC-AUC results, each 
 |Subgroup AUC|Here, we restrict the test set to only the examples within the specific identity subgroup. A low value in this metric means the model does a poor job of distinguishing toxic and non-toxic comments within the group.     
 |BPSN AUC         |Here, we restrict the test set to only the non-toxic examples within the identity subgroup and the toxic examples outside the group. A low value in this metric means that the model confuses non-toxic examples in the identity subgroup with toxic examples from other groups, likely meaning that the model predicts higher toxicity scores for non-toxic examples in the identity group than it should.  
 |BNSP AUC         |Here, we restrict the test set to only the toxic examples within the identity subgroup and the non-toxic examples outside the group. A low value here means that the model confuses toxic examples in the identity subgroup with non-toxic examples from other groups, likely meaning that the model predicts lower toxicity scores for toxic examples in the identity group than it should.|
+
+#### Get involved
+If you have any questions, feedback, or additional things you'd like to see in the model card,
+[please reach out to us at here.](https://docs.google.com/forms/d/e/1FAIpQLScgwNY8PAsVxwYRSknUUHBU2Lai85rqeOuD17lTDWmDEUqq3Q/viewform)
+
