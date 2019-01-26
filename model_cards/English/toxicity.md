@@ -1,7 +1,4 @@
 # Toxicity 
-
-    TOXICITY@6
-
 Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with word-vector inputs. You can also train your own deep CNN for text classification on our public toxicity dataset, and explore our open-source model training tools to train your own models.
 
 
@@ -68,6 +65,7 @@ Real data often has disproportionate amounts of toxicity directed at specific gr
 
 
 ## Unitary Identity Subgroup Evaluation
+To measuring unintended bias, we calculate three separate ROC-AUC results, each on different subsets of the test set.
 [See full list of test set results](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1f.png)
 
