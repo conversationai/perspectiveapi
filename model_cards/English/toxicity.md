@@ -65,8 +65,15 @@ Real data often has disproportionate amounts of toxicity directed at specific gr
 
 
 ## Unitary Identity Subgroup Evaluation
-To measuring unintended bias, we calculate three separate ROC-AUC results, each on different subsets of the test set.
-[See our full model cards for our Toxicity models here, including results for more identity terms and intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
+To measure unintended bias, we calculate three separate ROC-AUC results for each identity. Each result captures a different type of unintended bias and each is calculated by restricting the data set to different subsets:
+
+| Test set   | Description                         |
+|----------------|-------------------------------|
+|Subgroup AUC|Here, we restrict the data set to only the examples that mention the specific identity subgroup. A low value in this metric means the model does a poor job of distinguishing between toxic and non-toxic comments that mention the identity.
+|BPSN AUC         |Here, we restrict the test set to the non-toxic examples that mention the identity and the toxic examples that do not. A low value in this metric means that the model confuses non-toxic examples that mention the identity with toxic examples that do not, likely meaning that the model predicts higher toxicity scores than it should for non-toxic examples mentioning the identity.  
+|BNSP AUC         |Here, we restrict the test set to the toxic examples that mention the identity and the non-toxic examples that do not. A low value here means that the model confuses toxic examples that mention the identity with non-toxic examples that do not, likely meaning that the model predicts lower toxicity scores than it should for toxic examples mentioning the identity.|
+
+[See our full results for our Toxicity models here, including results for more identity terms and more intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1f.png)
 
 
@@ -74,11 +81,6 @@ To measuring unintended bias, we calculate three separate ROC-AUC results, each 
 
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1g.png)
 
-| Test set   | Description                         |
-|----------------|-------------------------------|
-|Subgroup AUC|Here, we restrict the test set to only the examples within the specific identity subgroup. A low value in this metric means the model does a poor job of distinguishing toxic and non-toxic comments within the group.     
-|BPSN AUC         |Here, we restrict the test set to only the non-toxic examples within the identity subgroup and the toxic examples outside the group. A low value in this metric means that the model confuses non-toxic examples in the identity subgroup with toxic examples from other groups, likely meaning that the model predicts higher toxicity scores for non-toxic examples in the identity group than it should.  
-|BNSP AUC         |Here, we restrict the test set to only the toxic examples within the identity subgroup and the non-toxic examples outside the group. A low value here means that the model confuses toxic examples in the identity subgroup with non-toxic examples from other groups, likely meaning that the model predicts lower toxicity scores for toxic examples in the identity group than it should.|
 
 #### Get involved
 If you have any questions, feedback, or additional things you'd like to see in the model card,
