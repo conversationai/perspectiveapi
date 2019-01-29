@@ -27,11 +27,11 @@ Organize comments on topics that are often difficult to discuss online. Build ne
 ## Uses to avoid
 
 #### Fully automated moderation
-Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions.
+Perspective is not intended to be used for fully automated moderation. Machine learning models will always make some mistakes, so it is essential to build in systems for humans to catch and correct those mistakes.  
 &nbsp;
 
 #### Character judgement
-This model only helps detect Toxicity in what a person said, and is not intended to detect anything about the individual who said it.
+In order to maintain user privacy, the TOXICITY model only helps detect toxicity in an individual statement, and is not intended to detect anything about the individual who said it. In addition, Perspective does not use prior information about an individual to inform toxicity predictions.
 &nbsp;
 
 
