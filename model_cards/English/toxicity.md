@@ -77,12 +77,12 @@ To measure unintended bias, we calculate three separate ROC-AUC results for each
 |BNSP AUC         |Here, we restrict the test set to the toxic examples that mention the identity and the non-toxic examples that do not. A low value here means that the model confuses toxic examples that mention the identity with non-toxic examples that do not, likely meaning that the model predicts lower toxicity scores than it should for toxic examples mentioning the identity.|
 
 Below are unintended bias evaluation results for a subset of identities for two versions of our model, the initial TOXICITY@1, launched in February 2017, and the latest TOXICITY@6, launched in August 2018. [See our results for all versions of Toxicity models here, including results for more identity terms and more intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
-![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1f.png)
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/unitary.png)
 
 
 ## Intersectional Identity Subgroup Evaluation
 The intersectional evaluation shows results for comments mentioning two identities.  
-![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1g.png)
+![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/intersectional.png)
 
 
 #### Get involved
