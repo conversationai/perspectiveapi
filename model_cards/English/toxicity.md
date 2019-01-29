@@ -2,7 +2,7 @@
 Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with word-vector inputs. You can also train your own deep CNN for text classification on our public toxicity dataset, and explore our open-source model training tools to train your own models.
 
 
-## Performance overview
+## Overview
 
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/auc_wipd.png)
 
