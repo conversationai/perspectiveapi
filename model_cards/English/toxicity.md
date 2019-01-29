@@ -87,5 +87,5 @@ To measure unintended bias, we calculate three separate ROC-AUC results for each
 
 #### Get involved
 If you have any questions, feedback, or additional things you'd like to see in the model card,
-[please reach out to us at here.](https://docs.google.com/forms/d/e/1FAIpQLScgwNY8PAsVxwYRSknUUHBU2Lai85rqeOuD17lTDWmDEUqq3Q/viewform)
+[please reach out to us here.](https://docs.google.com/forms/d/e/1FAIpQLScgwNY8PAsVxwYRSknUUHBU2Lai85rqeOuD17lTDWmDEUqq3Q/viewform)
 
