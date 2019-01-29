@@ -1,5 +1,5 @@
 # Toxicity 
-Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings. You can also train your own deep CNN for text classification on our public toxicity dataset, and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
+Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings. You can also train your own deep CNN for text classification on our [public toxicity dataset](https://conversationai.github.io/), and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
 
 
 ## Overview
@@ -39,13 +39,13 @@ In order to maintain user privacy, the TOXICITY model only helps detect toxicity
 ## Model details
 
 #### Training data
-Proprietary from Perspective API, which includes comments from a online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
+Proprietary from Perspective API, which includes comments from online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
 
 #### Model architecture
-The model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings.
+The model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings, which are fine-tuned during training.
 
 #### Values
-Community, Transparency, Inclusivity, Privacy, and Topic neutrality. Because of privacy considerations, the model does not take into account user history when making judgments about toxicity.
+Community, Transparency, Inclusivity, Privacy, and Topic neutrality. These values guide our product and research decisions. 
 &nbsp;
 
 
@@ -56,7 +56,7 @@ The overall evaluation result (shown above) is calculated using the held out tes
 &nbsp;
 
 #### Unintended bias evaluation data
-The unintended bias evaluation result is calculated using a synthetically generated test set where a range of identity terms are swapped into template sentences, both toxic and non-toxic. Results are presented grouped by identity term. Note that this evaluation looks at only the identity terms present in the text, not the identities of comment authors or readers.
+The unintended bias evaluation result is calculated using a synthetically generated test set where a range of identity terms are swapped into template sentences, both toxic and non-toxic. Results are presented grouped by identity term. Note that this evaluation looks at only the identity terms present in the text. We do not look at the identities of comment authors or readers to protect the privacy of these users, and because bias around identity terms has been the most prevalant so far. 
 &nbsp;
 
 #### Group factors
