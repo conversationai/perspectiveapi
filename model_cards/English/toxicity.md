@@ -1,11 +1,11 @@
 # Toxicity 
-Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings. You can also train your own deep CNN for text classification on our [public toxicity dataset](https://conversationai.github.io/), and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
+The toxicity model classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion.
 
 
 ## Overview
 
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/auc_wipd.png)
-The [ROC-AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve for the current TOXICITY model (TOXICITY@6). This shows True Positive Rate (y-axis) vs. False Positive Rate (x-axis).
+The [ROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve for the current TOXICITY model (TOXICITY@6). This shows True Positive Rate (y-axis) vs. False Positive Rate (x-axis).
 
 
 ## Intended use
@@ -42,10 +42,10 @@ In order to maintain user privacy, the TOXICITY model only helps detect toxicity
 Proprietary from Perspective API, which includes comments from online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
 
 #### Model architecture
-The model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings, which are fine-tuned during training.
+The model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings, which are fine-tuned during training. You can also train your own deep CNN for text classification on our [public toxicity dataset](https://conversationai.github.io/), and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
 
 #### Values
-Community, Transparency, Inclusivity, Privacy, and Topic neutrality. These values guide our product and research decisions. 
+[Community, Transparency, Inclusivity, Privacy, and Topic neutrality](https://conversationai.github.io/). These values guide our product and research decisions. 
 &nbsp;
 
 
@@ -56,7 +56,7 @@ The overall evaluation result (shown above) is calculated using the held out tes
 &nbsp;
 
 #### Unintended bias evaluation data
-The unintended bias evaluation result is calculated using a synthetically generated test set where a range of identity terms are swapped into template sentences, both toxic and non-toxic. Results are presented grouped by identity term. Note that this evaluation looks at only the identity terms present in the text. We do not look at the identities of comment authors or readers to protect the privacy of these users, and because bias around identity terms has been the most prevalant so far. 
+The unintended bias evaluation result is calculated using a synthetically generated test set where a range of identity terms are swapped into template sentences, both toxic and non-toxic. Results are presented grouped by identity term. Note that this evaluation looks at only the identity terms present in the text. We do not look at the identities of comment authors or readers to protect the privacy of these users. 
 &nbsp;
 
 #### Group factors
@@ -64,7 +64,7 @@ Identity terms referencing frequently attacked groups, focusing on sexual orient
 &nbsp;
 
 #### Caveats
-Synthetic test data covers only a small set of very specific comments and identities. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
+The current synthetic test data covers only a small set of very specific comments and identities. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
 &nbsp;
 
 ## Unitary Identity Subgroup Evaluation
@@ -76,12 +76,12 @@ To measure unintended bias, we calculate three separate ROC-AUC results for each
 |BPSN AUC         |Here, we restrict the test set to the non-toxic examples that mention the identity and the toxic examples that do not. A low value in this metric means that the model confuses non-toxic examples that mention the identity with toxic examples that do not, likely meaning that the model predicts higher toxicity scores than it should for non-toxic examples mentioning the identity.  
 |BNSP AUC         |Here, we restrict the test set to the toxic examples that mention the identity and the non-toxic examples that do not. A low value here means that the model confuses toxic examples that mention the identity with non-toxic examples that do not, likely meaning that the model predicts lower toxicity scores than it should for toxic examples mentioning the identity.|
 
-[See our full results for our Toxicity models here, including results for more identity terms and more intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
+Below are unintended bias evaluation results for a subset of identities for two versions of our model, the initial TOXICITY@1, launched in February 2017, and the latest TOXICITY@6, launched in August 2018. [See our results for all versions of Toxicity models here, including results for more identity terms and more intersectional results.](https://docs.google.com/spreadsheets/d/13edevE6WQLhEQ7r3nY4Z1leJZ-M5BbO_4UUQwc33Hr4/edit?usp=sharing)&nbsp;
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1f.png)
 
 
 ## Intersectional Identity Subgroup Evaluation
-
+The intersectional evaluation shows results for comments mentioning two identities.  
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/1g.png)
 
 
