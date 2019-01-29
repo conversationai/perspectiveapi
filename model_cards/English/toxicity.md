@@ -36,33 +36,33 @@ This model only helps detect Toxicity in what a person said, and is not intended
 
 
 
-## Model data
+## Model details
 
 #### Training data
-Proprietary from Perspective API, which includes comments from a online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”.
-
-#### Evaluation data
-A synthetic test set generated using a template-based approach, where identity terms are swapped into a variety of template sentences.
-&nbsp;
-
-#### Caveats
-Synthetic test data covers only a small set of very specific comments. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
-&nbsp;
-
-## Fairness
+Proprietary from Perspective API, which includes comments from a online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
 
 #### Values
 Community, Transparency, Inclusivity, Privacy, and Topic neutrality. Because of privacy considerations, the model does not take into account user history when making judgments about toxicity.
+&nbsp;
+
+
+## Evaluation data
+
+#### Overall evaluation data
+The overall evaluation result (shown above) is calculated using the held out test set associated with the training set for the specific model. Note that this means that each new model version is likely to have a different training and testing set, so overall results are not directly comparable across models.
+&nbsp;
+
+#### Unintended bias evaluation data
+The unintended bias evaluation result is calculated using a synthetically generated test set where a range of identity terms are swapped into template sentences, both toxic and non-toxic. Results are presented grouped by identity term. Note that this evaluation looks at only the identity terms present in the text, not the identities of comment authors or readers.
 &nbsp;
 
 #### Group factors
 Identity terms referencing frequently attacked groups, focusing on sexual orientation, gender identity, and race.
 &nbsp;
 
-#### Evaluation data
-Real data often has disproportionate amounts of toxicity directed at specific groups, while the synthetic test set ensures that we evaluate on data that represents both toxic and non-toxic statements referencing a variety of groups.
+#### Caveats
+Synthetic test data covers only a small set of very specific comments and identities. While these are designed to be representative of common use cases and concerns, it is not comprehensive.
 &nbsp;
-
 
 ## Unitary Identity Subgroup Evaluation
 To measure unintended bias, we calculate three separate ROC-AUC results for each identity. Each result captures a different type of unintended bias and each is calculated by restricting the data set to different subsets:
