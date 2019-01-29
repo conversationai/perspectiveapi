@@ -1,5 +1,5 @@
 # Toxicity 
-Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings. You can also train your own deep CNN for text classification on our public toxicity dataset, and explore our open-source model training tools to train your own models.
+Toxicity classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. This model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings. You can also train your own deep CNN for text classification on our public toxicity dataset, and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
 
 
 ## Overview
