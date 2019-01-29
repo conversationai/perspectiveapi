@@ -1,5 +1,5 @@
 # Toxicity 
-The toxicity model classifies rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion.
+The toxicity model classifies whether a comment is a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion.
 
 
 ## Overview
