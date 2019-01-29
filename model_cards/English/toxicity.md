@@ -12,7 +12,7 @@ The [ROC-AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) c
 
 
 #### Human-assisted moderation
-Make moderation easier with an ML assisted tool that helps prioritize comments for moderation, and create custom tasks for automated actions.
+Make moderation easier with an ML assisted tool that helps prioritize comments for human moderation, and create custom tasks for automated actions. See our [moderator tool](https://github.com/conversationai/conversationai-moderator) as an example.
 &nbsp;
 
 #### Author feedback
