@@ -5,7 +5,7 @@ Toxicity classifies rude, disrespectful, or unreasonable comment that is likely 
 ## Overview
 
 ![](https://github.com/conversationai/perspectiveapi/blob/lucy-model-card/model_cards/auc_wipd.png)
-
+The [ROC-AUC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) curve for the current, TOXICITY@6 model. This shows True Positive Rate (y-axis) vs. False Positive Rate (x-axis).
 
 
 ## Intended use
