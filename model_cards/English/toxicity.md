@@ -16,11 +16,11 @@ Make moderation easier with an ML assisted tool that helps prioritize comments f
 &nbsp;
 
 #### Author feedback
-Assist authors in real-time when their comments might violate your community guidelines or be may be perceived as “Toxic” to the conversation. Use simple feedback tools when the assistant gets it wrong.
+Assist authors in real-time when their comments might violate your community guidelines or be may be perceived as “Toxic” to the conversation. Use simple feedback tools when the assistant gets it wrong. See our [authorship demo](https://github.com/conversationai/perspectiveapi-authorship-demo) as an example.
 &nbsp;
 
 #### Read better comments
-Organize comments on topics that are often difficult to discuss online. Build new tools that help people explore the conversation.
+Organize comments on topics that are often difficult to discuss online. Build new tools that help people explore the conversation. 
 &nbsp;
 
 
