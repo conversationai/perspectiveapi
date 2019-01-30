@@ -8,4 +8,4 @@ Model Cards were introduced at the 2019
 in *[Model Cards for Model Reporting](https://dl.acm.org/citation.cfm?id=3287596)*
 by M. Mitchell et al.
 
-See our TOXICITY model card [here](English/toxicity.md). More model cards to come!
+See our TOXICITY model card [here](English/toxicity.md) and our [model card blog post](https://medium.com/the-false-positive/increasing-transparency-in-machine-learning-models-311ee08ca58a) for more information. More model cards to come!
