@@ -36,6 +36,6 @@ add new models, or deprecate old ones - you can subscribe to
 [perspective-announce](https://groups.google.com/forum/#!forum/perspective-announce/join). You will
 then receive emails updates from perspective-announce@googlegroups.com.
 This list will be used only to share release information, and will never be
-used to ask you login details of any kind.
+used to ask you login details of any kind. For support and to contact us, see: https://support.perspectiveapi.com/. 
 
 The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/), and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
