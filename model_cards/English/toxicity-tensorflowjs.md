@@ -105,42 +105,14 @@ use cases and concerns, it is not comprehensive.
 
 ## Unitary Identity Subgroup Evaluation
 
-To measure unintended bias, we calculate three separate ROC-AUC results for each
-identity. Each result captures a different type of unintended bias and each is
-calculated by restricting the data set to different subsets:
+To measure unintended bias, we follow the definitions presented in
+the model card for the larger, [server based models](toxicity.md).
 
-| Test set     | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
-| Subgroup AUC | Here, we restrict the data set to only the examples that      |
-|              | mention the specific identity subgroup. A low value in this   |
-|              | metric means the model does a poor job of distinguishing      |
-|              | between toxic and non-toxic comments that mention the         |
-|              | identity.                                                     |
-| ------------ | ------------------------------------------------------------- |
-| BPSN AUC     | Here, we restrict the test set to the non-toxic examples that |
-|              | mention the identity and the toxic examples that do not. A    |
-|              | low value in this metric means that the model confuses        |
-|              | non-toxic examples that mention the identity with toxic       |
-|              | examples that do not, likely meaning that the model predicts  |
-|              | higher toxicity scores than it should for non-toxic examples  |
-|              | mentioning the identity.                                      |
-| ------------ | ------------------------------------------------------------- |
-| BNSP AUC     | Here, we restrict the test set to the toxic examples that     |
-|              | mention the identity and the non-toxic examples that do not.  |
-|              | A low value here means that the model confuses toxic examples |
-|              | that mention the identity with non-toxic examples that do     |
-|              | not, likely meaning that the model predicts lower toxicity    |
-|              | scores than it should for toxic examples mentioning the       |
-|              | identity.                                                     |
-| ------------ | ------------------------------------------------------------- |
 
 Below are unintended bias evaluation results for a subset of identities for the
 current version of this model. The bias evaluation notebook is for
 [review](https://github.com/conversationai/conversationai-models/blob/master/experiments/tf_trainer/tf_hub_tfjs/notebook/BiasEvaluation.ipynb),
 along with the [full list of identity terms results](https://docs.google.com/spreadsheets/d/19Wy-o7604HjDk-cUTo3hSutKsHOZ_Y73zyrQyTmrjNA/edit?usp=sharing).
-
-versions of this model For comparison, see our larger, [server based
-models](toxicity.md).
 
 ![](toxicity-tensorflowjs-unitary.png)
 
