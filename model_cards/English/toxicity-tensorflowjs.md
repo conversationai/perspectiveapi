@@ -5,7 +5,7 @@ unreasonable comment that is likely to make people leave a discussion.
 
 ## Overview
 
-I modestly sized model based upon the Universal Sentence Encoder lite, suitable
+A modestly sized model based upon the Universal Sentence Encoder lite, suitable
 for client side (in browser) classificiation applications.
 
 ![](toxicity-tensorflowjs-auc.png)
@@ -112,24 +112,27 @@ calculated by restricting the data set to different subsets:
 | Test set     | Description                                                   |
 | ------------ | ------------------------------------------------------------- |
 | Subgroup AUC | Here, we restrict the data set to only the examples that      |
-:              : mention the specific identity subgroup. A low value in this   :
-:              : metric means the model does a poor job of distinguishing      :
-:              : between toxic and non-toxic comments that mention the         :
-:              : identity.                                                     :
+|              | mention the specific identity subgroup. A low value in this   |
+|              | metric means the model does a poor job of distinguishing      |
+|              | between toxic and non-toxic comments that mention the         |
+|              | identity.                                                     |
+| ------------ | ------------------------------------------------------------- |
 | BPSN AUC     | Here, we restrict the test set to the non-toxic examples that |
-:              : mention the identity and the toxic examples that do not. A    :
-:              : low value in this metric means that the model confuses        :
-:              : non-toxic examples that mention the identity with toxic       :
-:              : examples that do not, likely meaning that the model predicts  :
-:              : higher toxicity scores than it should for non-toxic examples  :
-:              : mentioning the identity.                                      :
+|              | mention the identity and the toxic examples that do not. A    |
+|              | low value in this metric means that the model confuses        |
+|              | non-toxic examples that mention the identity with toxic       |
+|              | examples that do not, likely meaning that the model predicts  |
+|              | higher toxicity scores than it should for non-toxic examples  |
+|              | mentioning the identity.                                      |
+| ------------ | ------------------------------------------------------------- |
 | BNSP AUC     | Here, we restrict the test set to the toxic examples that     |
-:              : mention the identity and the non-toxic examples that do not.  :
-:              : A low value here means that the model confuses toxic examples :
-:              : that mention the identity with non-toxic examples that do     :
-:              : not, likely meaning that the model predicts lower toxicity    :
-:              : scores than it should for toxic examples mentioning the       :
-:              : identity.                                                     :
+|              | mention the identity and the non-toxic examples that do not.  |
+|              | A low value here means that the model confuses toxic examples |
+|              | that mention the identity with non-toxic examples that do     |
+|              | not, likely meaning that the model predicts lower toxicity    |
+|              | scores than it should for toxic examples mentioning the       |
+|              | identity.                                                     |
+| ------------ | ------------------------------------------------------------- |
 
 Below are unintended bias evaluation results for a subset of identities for the
 current version of this model. The bias evaluation notebook is for
