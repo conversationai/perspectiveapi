@@ -12,38 +12,16 @@ for client side (in browser) classificiation applications.
 
 ## Intended use
 
-#### Human-assisted moderation
-
-Make moderation easier with an ML assisted tool that helps prioritize comments
-for human moderation, and create custom tasks for automated actions. See our
-[moderator tool](https://github.com/conversationai/conversationai-moderator) as
-an example.
-
-#### Author feedback
-
-Assist authors in real-time when their comments might violate your community
-guidelines or be may be perceived as “Toxic” to the conversation. Use simple
-feedback tools when the assistant gets it wrong. See our
-[authorship demo](https://github.com/conversationai/perspectiveapi-authorship-demo)
-as an example.
-
-#### Read better comments
-
-Organize comments on topics that are often difficult to discuss online. Build
-new tools that help people explore the conversation.
+This model is similar to the [PerspecticeAPI Toxicity model](toxicity.md) and
+may be used in similar use cases. Because it can run in browser clients, it
+is better suited for circumstances where privacy is a primary concern. However,
+its smaller size comes with a performance penalty, so where network
+communication is possible, the service based model should be preferred.
 
 ## Uses to avoid
 
-#### Fully automated moderation
-
-This model is not intended to be used for fully automated moderation. Machine
-learning models will always make some mistakes, so it is essential to build in
-systems for humans to catch and correct those mistakes.
-
-#### Character judgement
-
-This model only helps detect toxicity in an individual statement, and is not
-intended to detect anything about the individual who said it.
+We do not recommend this model to be used in any application of fully automatic
+moderation.
 
 ## Model details
 
