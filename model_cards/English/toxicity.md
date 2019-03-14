@@ -39,7 +39,7 @@ In order to maintain user privacy, the TOXICITY model only helps detect toxicity
 ## Model details
 
 #### Training data
-Proprietary from Perspective API, which includes comments from online forums such as Wikipedia and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
+Proprietary from Perspective API, which includes comments from online forums such as Wikipedia (CC-BY-SA3 license) and New York Times, with crowdsourced labels of whether the comment is “toxic”, defined as “a rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion”.
 
 #### Model architecture
 The model is a Convolutional Neural Network (CNN) trained with GloVe word embeddings, which are fine-tuned during training. You can also train your own deep CNN for text classification on our [public toxicity dataset](https://conversationai.github.io/), and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
