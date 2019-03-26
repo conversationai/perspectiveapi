@@ -13,6 +13,8 @@ Note that the API is currently in trusted tester phase and not generally
 available. Please see our [API demo and access request site](https://www.perspectiveapi.com/) for the
 form to request API access.
 
+In addition to scoring comments, users can leverage the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time or can use the  ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned.
+
 Example demo code:
 
  * [A simple server](https://github.com/conversationai/perspectiveapi-simple-server)
