@@ -64,6 +64,8 @@
     gives the toxicity model's score for the comment. In this case, the comment
     got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
     
+Users can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.  
+
 See the [API reference documentation](api_reference.md) for details on all of
 the request and response fields, as well as the available values for
 `requestedAttributes`. There are quite a few
