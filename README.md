@@ -9,10 +9,6 @@ This github repository contains a [quickstart guide](quickstart.md) and the [API
 reference documentation](api_reference.md) for the Perspective Comment Analyzer
 API.
 
-Note that the API is currently in trusted tester phase and not generally
-available. Please see our [API demo and access request site](https://www.perspectiveapi.com/) for the
-form to request API access.
-
 Example demo code:
 
  * [A simple server](https://github.com/conversationai/perspectiveapi-simple-server)
@@ -39,3 +35,5 @@ This list will be used only to share release information, and will never be
 used to ask you login details of any kind. For support and to contact us, see: https://support.perspectiveapi.com/. 
 
 The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/), and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
+
+Users can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.
