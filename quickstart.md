@@ -6,7 +6,7 @@
 
     *Note*: Your application doesn't need to be *hosted* on Google Cloud, but you will still need a Google Cloud project to authenticate your API requests.
 
-2.  **Enable the API.** Go to the [Perspective API's overview page (https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
+2.  **Enable the API.** Go to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
     
 4.  **Generate an API key.** To authenticate your requests, you'll need to generate credentials for your project. Using an API key is the simplest option. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "API Key".
     
@@ -49,4 +49,4 @@ the request and response fields, as well as the available values for
 
 Also, subscribe to our [perspectiveapi-announce@ Google Group](https://groups.google.com/forum/#!forum/perspective-announce/join) to get notified when we make changes to the API.
 
-For support and to contact us, see: https://support.perspectiveapi.com. 
+For support and to contact us, visit our [support site](https://support.perspectiveapi.com). 
