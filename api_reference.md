@@ -105,7 +105,7 @@ by thousands of human moderators. These are available in **English (en) and Span
 
 ### Experimental
 
-#### Experimental toxicity sub-attribute models definitions
+#### Experimental toxicity sub-attributes definitions
 
 The following experimental models give more fine-grained classifications than
 overall toxicity. They were trained on a relatively smaller amount of data
@@ -157,7 +157,6 @@ either (1) change how you call the API depending on the comment language, or (2)
 wait until these models become "Alpha", when they'll be handled automatically.
 
 #### New York Times moderation models
-
 
 The following experimental models were trained on New York Times data tagged by
 their moderation team.
