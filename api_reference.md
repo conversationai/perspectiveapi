@@ -81,7 +81,7 @@ about model training and evaluation results. Current model cards are posted
 
 The following alpha models are **recommended** for use. They have been tested
 across multiple domains and trained on hundreds of thousands of comments tagged
-by thousands of human moderators.
+by thousands of human moderators. These are available in **English (en) and Spanish (es)**.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion (see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details). This model is a
@@ -105,7 +105,7 @@ by thousands of human moderators.
 
 ### Experimental
 
-#### Toxicity subtypes models for English comments
+#### Experimental toxicity sub-attribute models definitions
 
 The following experimental models give more fine-grained classifications than
 overall toxicity. They were trained on a relatively smaller amount of data
@@ -127,23 +127,31 @@ thoroughly.
 For more details on how these were trained, see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md).
 
 
-#### Toxicity models for Spanish, French and German comments
+#### Experimental models and supported languages
 
-The following models are our first non-English TOXICITY models. Only use these if you are
+The following models are experimental models. Only use these if you are
 interested in testing an experimental model and are willing to change your code once the
-production models are available. These models are experimental and have not been tested as
-thoroughly as their English counterparts.
+production models are available. These have not been tested as
+thoroughly as their production counterparts.
 
-*   **TOXICITY_EXPERIMENTAL**
-*   **SEVERE_TOXICITY_EXPERIMENTAL**
-*   **PROFANITY_EXPERIMENTAL**
-*   **IDENTITY_ATTACK_EXPERIMENTAL**
-*   **INSULT_EXPERIMENTAL**
-*   **THREAT_EXPERIMENTAL**
+Experimental Model                | Supported Languages
+----------------------------------|-----------------------
+TOXICITY_EXPERIMENTAL             | fr, de
+SEVERE_TOXICITY_EXPERIMENTAL      | fr, de
+IDENTITY_ATTACK                   | en
+IDENTITY_ATTACK_EXPERIMENTAL      | fr, de, es
+INSULT                            | en
+INSULT_EXPERIMENTAL               | fr, de, es
+PROFANITY                         | en
+PROFANITY_EXPERIMENTAL            | fr, de, es
+THREAT                            | en
+THREAT_EXPERIMENTAL               | fr, de, es
+SEXUALLY_EXPLICIT                 | en
+FLIRTATION                        | en
 
 Please refer to the rest of the documentation bellow to appropriately set the
 language field in your request. Currently, if your comments are in both English
-and another experimentally-supported language (Spanish, French, German), there's
+and another experimentally-supported language (French, German), there's
 no simple way to use the API that works for all comments unfortunately. You can
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models become "Alpha", when they'll be handled automatically.
@@ -253,7 +261,7 @@ Field | Description
 `requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
 `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
 `spanAnnotations`        | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per sentence level). Defaults to false.
-`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", "zh", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all alpha models only support English and some experimental toxicity models support French, Spanish and German. As stated earlier, there is no simple way to use the API if you have comments in multiple languages.
+`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all alpha models only support English and Spanish. Some experimental toxicity models are available in English, Spanish, French, and German. As stated earlier, there is no simple way to use the API if you have comments in multiple languages.
 `doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
 `clientToken`            | *(optional)* An opaque token that is echoed back in the response.
 `sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction.
