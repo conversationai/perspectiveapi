@@ -132,7 +132,7 @@ For more details on how these were trained, see the [Toxicity and sub-attribute 
 The following models are experimental models. Only use these if you are
 interested in testing an experimental model and are willing to change your code once the
 production models are available. These have not been tested as
-thoroughly as their production counterparts.
+thoroughly as their production counterparts. If you would like to support Perspective in new languages, you can contribute data [here](https://docs.google.com/forms/d/e/1FAIpQLScAivfFHiwq08JfsHuIkTbdECLK0nSmyBi4JMvaqDrom2aVQw/viewform)
 
 Experimental Model                | Supported Languages
 ----------------------------------|-----------------------
