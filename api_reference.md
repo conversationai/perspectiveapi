@@ -19,8 +19,8 @@ request.
 
 ### Quota and character length Limits
 
-You can check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check 
-your projects quota usage at 
+You can check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check
+your projects quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
 
 The maximum text size per request is 3000 bytes.
@@ -74,14 +74,14 @@ use case, so we strongly recommend evaluating on your own data as well.
 
 ### Model Cards
 For each Alpha model, we aim to publish an associated "Model Card" that shares details
-about model training and evaluation results. Current model cards are posted 
+about model training and evaluation results. Current model cards are posted
 [here](model_cards/README.md).
 
 ### Alpha
 
 The following alpha models are **recommended** for use. They have been tested
 across multiple domains and trained on hundreds of thousands of comments tagged
-by thousands of human moderators. These are available in **English (en) and Spanish (es)**.
+by thousands of human moderators. These are available in **English (en), Spanish (es), and French(fr)**.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion (see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details). This model is a
@@ -136,8 +136,8 @@ thoroughly as their production counterparts. If you would like to support Perspe
 
 Experimental Model                | Supported Languages
 ----------------------------------|-----------------------
-TOXICITY_EXPERIMENTAL             | fr, de
-SEVERE_TOXICITY_EXPERIMENTAL      | fr, de
+TOXICITY_EXPERIMENTAL             | de
+SEVERE_TOXICITY_EXPERIMENTAL      | de
 IDENTITY_ATTACK                   | en
 IDENTITY_ATTACK_EXPERIMENTAL      | fr, de, es
 INSULT                            | en
@@ -150,9 +150,7 @@ SEXUALLY_EXPLICIT                 | en
 FLIRTATION                        | en
 
 Please refer to the rest of the documentation bellow to appropriately set the
-language field in your request. Currently, if your comments are in both English
-and another experimentally-supported language (French, German), there's
-no simple way to use the API that works for all comments unfortunately. You can
+language field in your request. Currently if you want to use the API on German and another Alpha language (e.g. French and German or English and German) there is no simple way to do that. You can
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models become "Alpha", when they'll be handled automatically.
 
@@ -260,7 +258,7 @@ Field | Description
 `requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
 `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
 `spanAnnotations`        | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per sentence level). Defaults to false.
-`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all alpha models only support English and Spanish. Some experimental toxicity models are available in English, Spanish, French, and German. As stated earlier, there is no simple way to use the API if you have comments in multiple languages.
+`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all alpha models only support English, Spanish, and French. Some experimental toxicity models are available in English, Spanish, French, and German. There is no simple way to use the API across Alpha models and experimentally supported languages.
 `doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
 `clientToken`            | *(optional)* An opaque token that is echoed back in the response.
 `sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction.
@@ -591,10 +589,10 @@ npm install perspective-api-client
 See the docs [on the project's GitHub page](https://github.com/sloria/perspective-api-client).
 
 ## Related research
-Perspective is part of the [Conversation-AI research project](https://conversationai.github.io/). You can email your research-related questions to conversationai-questions@google.com.  
+Perspective is part of the [Conversation-AI research project](https://conversationai.github.io/). You can email your research-related questions to conversationai-questions@google.com.
 
 ## Support
-For Perspective support questions and to contact us, see: https://support.perspectiveapi.com/. 
+For Perspective support questions and to contact us, see: https://support.perspectiveapi.com/.
 
 
 ## Privacy and Terms of Service
