@@ -150,7 +150,7 @@ SEXUALLY_EXPLICIT                 | en
 FLIRTATION                        | en
 
 Please refer to the rest of the documentation bellow to appropriately set the
-language field in your request. Currently if you want to use the API on German and another Alpha language (e.g. French and German or English and German etc ..) there is no simple way to do that. You can
+language field in your request. Currently if you want to use the API on German and another Alpha language (e.g. French and German or English and German) there is no simple way to do that. You can
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models become "Alpha", when they'll be handled automatically.
 
