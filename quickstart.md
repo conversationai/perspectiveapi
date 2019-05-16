@@ -39,7 +39,7 @@
 
     The curl command issued an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model.
 
-    In the response ,the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
+    In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
     
 Users can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.  
 
