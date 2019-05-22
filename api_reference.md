@@ -61,57 +61,19 @@ The maximum text size per request is 3000 bytes.
 
 ## Models
 
-To give a sense of the scores our models give on actual comments, see [this CSV
-of scored
-comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
-These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
-from our [Kaggle
-competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
+### Toxicity and subtypes model definitions
 
-Sorting by each model's scores gives a sense of the model's behavior. These
-examples may differ quite a bit from the types of comments in your particular
-use case, so we strongly recommend evaluating on your own data as well.
-
-### Model Cards
-For each Alpha model, we aim to publish an associated "Model Card" that shares details
-about model training and evaluation results. Current model cards are posted
-[here](model_cards/README.md).
-
-### Alpha
-
-The following alpha models are **recommended** for use. They have been tested
-across multiple domains and trained on hundreds of thousands of comments tagged
-by thousands of human moderators. These are available in **English (en), Spanish (es), and French(fr)**.
+The models are the only one with production support in a couple of languages.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
-    make people leave a discussion (see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details). This model is a
-    [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN)
-    trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec)
-    inputs. You can also train your own
-    [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on
-    [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore [our open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
-    - [Our Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
-    has lots of useful resources to help build your own models.
-    Note that there are many kinds of toxic language that are disproportionately
-    represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases.
-    Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
-    help improve the model.
-*   **SEVERE_TOXICITY**: This model uses the same deep-CNN algorithm as the
-    TOXICITY model, but is trained to recognise examples that were considered
-    to be 'very toxic' by crowdworkers. This makes it much less sensitive to
+    make people leave a discussion.
+*   **SEVERE_TOXICITY**: a very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a       discussion or give up on sharing their perspective. This model is much less sensitive to
     comments that include positive uses of curse-words for example. A labelled dataset
     and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is
     available for the toxicity model.
-
-### Experimental
-
-#### Experimental toxicity sub-attributes definitions
-
-The following experimental models give more fine-grained classifications than
-overall toxicity. They were trained on a relatively smaller amount of data
-compared to the primary toxicity models above and have not been tested as
-thoroughly.
-
+    
+The toxicity subtypes models are only available as experimental models. 
+    
 *   **IDENTITY_ATTACK**: negative or hateful comments targeting someone because of their identity.
 *   **INSULT**: insulting, inflammatory, or negative comment towards a person
     or a group of people.
@@ -123,11 +85,50 @@ thoroughly.
     other lewd content.
 *   **FLIRTATION**: pickup lines, complimenting appearance, subtle sexual
     innuendos, etc.
+    
+See the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details.
 
-For more details on how these were trained, see the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md).
+To give a sense of the scores our TOXICITY models give on actual comments, see [this CSV
+of scored
+comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
+These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
+from our [Kaggle
+competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
 
+Sorting by each model's scores gives a sense of the model's behavior. These
+examples may differ quite a bit from the types of comments in your particular
+use case, so we strongly recommend evaluating on your own data as well.
 
-#### Experimental models and supported languages
+### Model architecture
+
+Most of our models are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN)
+trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own
+[deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore [our open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
+
+[Our Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+has lots of useful resources to help build your own models.
+Note that there are many kinds of toxic language that are disproportionately
+represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases.
+Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
+help improve the model.
+
+### Model Cards
+For each production model, we aim to publish an associated "Model Card" that shares details
+about model training and evaluation results. Current model cards are posted
+[here](model_cards/README.md).
+
+### Production models
+
+We recommend using **production models**. They have been tested
+across multiple domains and trained on hundreds of thousands of comments tagged
+by thousands of human moderators. Below you will find language support and attribute name for your API request.
+
+Production Model                  | Supported Languages
+----------------------------------|-----------------------
+TOXICITY                          | en, fr, es
+SEVERE_TOXICITY                   | en, fr, es
+
+### Experimental models
 
 The following models are experimental models. Only use these if you are
 interested in testing an experimental model and are willing to change your code once the
@@ -150,9 +151,11 @@ SEXUALLY_EXPLICIT                 | en
 FLIRTATION                        | en
 
 Please refer to the rest of the documentation bellow to appropriately set the
-language field in your request. Currently if you want to use the API on an experimental language and another Alpha language (e.g. French and German or English and German) there is no simple way to do that. You can
+language field in your request. Currently if you want to use the API on an experimental language and another production language (e.g. TOXICITY French and German) there is no simple way to do that. You can
 either (1) change how you call the API depending on the comment language, or (2)
-wait until these models become "Alpha", when they'll be handled automatically.
+wait until these models join the production track, when they'll be handled automatically.
+
+### Other experimental models
 
 #### New York Times moderation models
 
