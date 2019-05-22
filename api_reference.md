@@ -88,7 +88,7 @@ The toxicity subtypes models are only available as experimental models.
     
 See the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details.
 
-To get a sense of the scores our TOXICITY models give on actual comments, see [this CSV
+To get a sense of the scores our Toxicity and subtypes models give on actual comments, see [this CSV
 of scored
 comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
 These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
@@ -150,7 +150,7 @@ THREAT_EXPERIMENTAL               | fr, de, es, it, pt
 SEXUALLY_EXPLICIT                 | en
 FLIRTATION                        | en
 
-Please refer to the rest of the documentation bellow to appropriately set the
+Please refer to the rest of the documentation below to appropriately set the
 language field in your request. Currently if you want to use the API on an experimental language and another production language (e.g. TOXICITY French and German) there is no simple way to do that. You can
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models join the production track, when they'll be handled automatically.
