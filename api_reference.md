@@ -63,7 +63,7 @@ The maximum text size per request is 3000 bytes.
 
 ### Toxicity and subtypes model definitions
 
-These models are the only one with production support in a couple of languages. See the for the full list.
+These models are the only ones with production support in a couple of languages. See the for the full list.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion.
