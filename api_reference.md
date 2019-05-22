@@ -63,7 +63,7 @@ The maximum text size per request is 3000 bytes.
 
 ### Toxicity and subtypes model definitions
 
-The models are the only one with production support in a couple of languages.
+These models are the only one with production support in a couple of languages. See the for the full list.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion.
@@ -88,7 +88,7 @@ The toxicity subtypes models are only available as experimental models.
     
 See the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details.
 
-To give a sense of the scores our TOXICITY models give on actual comments, see [this CSV
+To get a sense of the scores our TOXICITY models give on actual comments, see [this CSV
 of scored
 comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
 These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
@@ -117,7 +117,7 @@ For each production model, we aim to publish an associated "Model Card" that sha
 about model training and evaluation results. Current model cards are posted
 [here](model_cards/README.md).
 
-### Production models
+### Production Toxicity models
 
 We recommend using **production models**. They have been tested
 across multiple domains and trained on hundreds of thousands of comments tagged
@@ -128,7 +128,7 @@ Production Model                  | Supported Languages
 TOXICITY                          | en, fr, es
 SEVERE_TOXICITY                   | en, fr, es
 
-### Experimental models
+### Experimental Toxicity models
 
 The following models are experimental models. Only use these if you are
 interested in testing an experimental model and are willing to change your code once the
@@ -155,7 +155,11 @@ language field in your request. Currently if you want to use the API on an exper
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models join the production track, when they'll be handled automatically.
 
-### Other experimental models
+### More experimental models
+
+The following models are experimental. They were targeted for a single usecase,
+so may not generalize to your usecase well. They may be deprecated or removed
+with little notice (typically a few months).
 
 #### New York Times moderation models
 
@@ -172,11 +176,7 @@ their moderation team.
 *   **SPAM**: Irrelevant and unsolicited commercial content.
 *   **UNSUBSTANTIAL**: Trivial or short comments.
 
-#### Other experimental models
-
-The following models are experimental. They were targeted for a single usecase,
-so may not generalize to your usecase well. They may be deprecated or removed
-with little notice (typically a few months).
+#### TOXICITY_FAST
 
 *   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
     lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
@@ -261,7 +261,7 @@ Field | Description
 `requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
 `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
 `spanAnnotations`        | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per sentence level). Defaults to false.
-`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all alpha models only support English, Spanish, and French. There is no simple way to use the API across Alpha models and experimentally supported languages.
+`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all production models only support English, Spanish, and French. There is no simple way to use the API across languages with production support and languages with experimental support only.
 `doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
 `clientToken`            | *(optional)* An opaque token that is echoed back in the response.
 `sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction.
