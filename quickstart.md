@@ -9,6 +9,8 @@
 2.  **Enable the API.** Go to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
     
 4.  **Generate an API key.** To authenticate your requests, you'll need to generate credentials for your project. Using an API key is the simplest option. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "API Key".
+
+    *Warning*: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. It's strongly recommended that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
     
     Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour; until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key".
 
