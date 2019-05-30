@@ -2,10 +2,10 @@
 
 The Perspective API is part of the
 [Conversation AI](https://conversationai.github.io) research effort that
-aims to help increase empathy, participation and quality in online
+aims to help increase empathy, participation, and quality in online
 conversation at scale.
 
-This github repository contains a [quickstart guide](quickstart.md) and the [API
+This GitHub repository contains a [quickstart guide](quickstart.md) and the [API
 reference documentation](api_reference.md) for the Perspective Comment Analyzer
 API.
 
@@ -30,7 +30,7 @@ Example demo code:
 If you would like to receive email updates about the API - for example when we
 add new models, or deprecate old ones - you can subscribe to
 [perspective-announce](https://groups.google.com/forum/#!forum/perspective-announce/join). You will
-then receive emails updates from perspective-announce@googlegroups.com.
+then receive email updates from perspective-announce@googlegroups.com.
 This list will be used only to share release information, and will never be
 used to ask you login details of any kind. For support and to contact us, see: https://support.perspectiveapi.com/. 
 
