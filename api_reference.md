@@ -20,7 +20,7 @@ request.
 ### Quota and character length Limits
 
 You can check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check
-your projects quota usage at
+your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
 
 The maximum text size per request is 3000 bytes.
@@ -31,8 +31,8 @@ The maximum text size per request is 3000 bytes.
     comment. A comment could be a single post to a web page's comments section,
     a forum post, a message to a mailing list, a chat message, etc.
 
-*   A **model** is a dimension that the comment is scored on, for example,
-    "toxic", "obscene", "thoughtful", "off-topic", etc. This is also sometimes referred to
+*   A **model** is a dimension that the comment is scored on; for example,
+    "toxic," "obscene," "thoughtful," "off-topic," etc. This is also sometimes referred to
     as an **attribute** or **model attribute**.
 
 *   The API can return **model attribute scores** in different formats, known as
@@ -42,8 +42,8 @@ The maximum text size per request is 3000 bytes.
 *   A **span** is a continuous section of text. The API can return **span
     scores**, which are model scores for particular subparts of the request's
     comment. For example, if the API only found one sentence in a paragraph to
-    be "toxic", it could return a high "toxic" span score for the span
-    corresponding to that sentence while giving a low "toxic" span score to the
+    be "toxic," it could return a high "toxic" span score for the span
+    corresponding to that sentence, while giving a low "toxic" span score to the
     rest of the comment.
 
 *   A model's **summary score** provides an overall score for the entire
@@ -51,24 +51,24 @@ The maximum text size per request is 3000 bytes.
     will always return exactly one summary score.
 
 *   *(Coming soon)* **Context** is a representation of the conversation context
-    for the comment (for example, an article which is being commented on, or
-    another comment that is being replied to). It is used in the analysis of the
-    comment text, for example when determining the "off-topic" model score.
+    for the comment; for example, an article that is being commented on, or
+    another comment that is being replied to. It is used in the analysis of the
+    comment text; for example, when determining the "off-topic" model score.
 
     *Note:* you can send context with your requests, however our current models
-    are not making use of it, so sending context won't change any model's
+    are not making use of it--so sending context won't change any model's
     scores.
 
 ## Models
 
 ### Toxicity and subtypes model definitions
 
-These models are the only ones with production support in a couple of languages. See the for the full list.
+These models are the only ones with production support in a couple of languages. Some of the [Experimental toxicity models](#experimental-toxicity-models) have support in more languages.
 
 *   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
     make people leave a discussion.
 *   **SEVERE_TOXICITY**: a very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a       discussion or give up on sharing their perspective. This model is much less sensitive to
-    comments that include positive uses of curse-words for example. A labelled dataset
+    comments that include positive uses of curse words, for example. A labelled dataset
     and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is
     available for the toxicity model.
     
@@ -151,7 +151,7 @@ SEXUALLY_EXPLICIT                 | en
 FLIRTATION                        | en
 
 Please refer to the rest of the documentation below to appropriately set the
-language field in your request. Currently if you want to use the API on an experimental language and another production language (e.g. TOXICITY French and German) there is no simple way to do that. You can
+language field in your request. Currently, if you want to use the API on an experimental language and another production language (e.g., TOXICITY French and German) there is no simple way to do that. You can
 either (1) change how you call the API depending on the comment language, or (2)
 wait until these models join the production track, when they'll be handled automatically.
 
@@ -380,7 +380,7 @@ The `SuggestCommentScore` endpoints submits feedback to the API in the form of a
 suggested score. You can use this method if you disagree with a score and would
 like to improve the model. All submissions to `SuggestCommentScore` are stored
 and used to improve the API and related services. This method should **not** be
-used for private data (i.e. for data that is not accessible publicly), or if the
+used for private data (i.e., for data that is not accessible publicly), or if the
 data submitted contains content written by someone under 13 years old.
 
 > **POST** https://commentanalyzer.googleapis.com/v1alpha1/comments:suggestscore
