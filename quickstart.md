@@ -13,7 +13,7 @@
 
 1. **Enable the API.** 
     1. Command line:
-       `/google/data/ro/teams/cloud-sdk/gcloud services enable commentanalyzer.googleapis.com`
+       `gcloud services enable commentanalyzer.googleapis.com`
        
        OR
        
