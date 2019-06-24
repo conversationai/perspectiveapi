@@ -5,14 +5,20 @@
 1. You'll need a **Google Cloud project** to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and either use an existing project, or follow these steps to create a new one:
 
     1. Sign in with your Google account, if necessary.
-    1. Click Create, or click the "Project" drop-down at the top of the page and then click _New Project_.
+    1. Click Create, or click the "Project" drop-down at the top of the page and then click **_New Project_**.
     1. Name the project.
     1. Click _Create_ again.
     
    The project is now included in the "Project" drop-down at the top of the page.
 
-1. **Enable the API.** Go to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
-    
+1. **Enable the API.** 
+    1. Command line:
+       `gcloud services enable commentanalyzer.googleapis.com`
+       
+       OR
+       
+    1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
+      
 1. **Generate an API key.** To authenticate your requests, you'll need to generate credentials for your project. Using an API key is the simplest option. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "API Key".
 
     *Warning*: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. It's strongly recommended that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
@@ -29,6 +35,11 @@
           languages: ["en"],
           requestedAttributes: {TOXICITY:{}} }' \
         https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
+    ```
+        
+    You should see output similar to this:
+
+    ```shell
     {
       "attributeScores": {
         "TOXICITY": {
