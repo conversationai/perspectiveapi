@@ -14,18 +14,28 @@
 ## Using the API
 
 First, follow the [quickstart guide](quickstart.md) to enable the API for your
-project, generate an API key, and ensure you're able to make a successful
-request.
+project, and ensure you're able to make a successful request.
 
-### Quota and character length Limits
+### Quota and character length limits
 
-You can check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check
-your project's quota usage at
+
+#### Quota limit
+By default, we set the quota to 1 QPS for all Perspective projects.
+
+
+Check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
+
+Visit the Perspective API Support page to [request a quota increase](https://support.perspectiveapi.com/s/request-quota-increase).
+
+#### Character limit
 
 The maximum text size per request is 3000 bytes.
 
 ## Key concepts
+
+
+This section provides summary information that will be elaborated on further in the document.
 
 *   A **comment** is the text to be scored. Each API request contains a single
     comment. A comment could be a single post to a web page's comments section,
@@ -35,9 +45,7 @@ The maximum text size per request is 3000 bytes.
     "toxic," "obscene," "thoughtful," "off-topic," etc. This is also sometimes referred to
     as an **attribute** or **model attribute**.
 
-*   The API can return **model attribute scores** in different formats, known as
-    **score types**. The default score type is a probability score between 0 to
-    1, with higher values indicating greater likelihood of the attribute label.
+*   The API can return **model attribute scores** in different formats, known as **score types**. Currently, the only score type supported is a probability score between 0 and 1, with higher values indicating greater likelihood of the attribute label.
 
 *   A **span** is a continuous section of text. The API can return **span
     scores**, which are model scores for particular subparts of the request's
