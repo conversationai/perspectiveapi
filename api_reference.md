@@ -45,7 +45,7 @@ This section provides summary information that will be elaborated on further in 
     "toxic," "obscene," "thoughtful," "off-topic," etc. This is also sometimes referred to
     as an **attribute** or **model attribute**.
 
-*   The API can return **model attribute scores** in different formats, known as **score types**. Currently, the only score type supported is a probability score between 0 and 1, with higher values indicating greater likelihood of the attribute    label.
+*   The API can return **model attribute scores** in different formats, known as **score types**. Currently, the only score type supported is a probability score between 0 and 1, with higher values indicating greater likelihood of the attribute label.
 
 *   A **span** is a continuous section of text. The API can return **span
     scores**, which are model scores for particular subparts of the request's
