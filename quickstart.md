@@ -27,7 +27,11 @@
 
 1. **Make an AnalyzeComment request.**
 
-    Use the API key you generated in the previous step as the `key` param in this curl command:
+    Run the sample API call below to get scores directly from Perspective API models. You don’t need to build a model locally. 
+    
+     The command issues an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model.
+    
+    The example command uses curl, which should work for most Mac and Linux users, and which you may need to install. Use the API key you generated in the previous step as the `key` param.
 
     ```shell
     $ curl -H "Content-Type: application/json" --data \
@@ -37,7 +41,7 @@
         https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
     ```
         
-    You should see output similar to this:
+    In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
 
     ```shell
     {
@@ -55,15 +59,11 @@
     }
     ```
 
-    The curl command issued an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model.
-
-    In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. A less mean-spirited comment should get a lower score.
-    
-Users can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.  
+    You can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.
 
 See the [API reference documentation](api_reference.md) for details on all of
 the request and response fields, as well as the available values for
-`requestedAttributes`. There are quite a few [experimental models](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#models), such as "obscene", "attack on a commenter", "spam", etc, that you may find interesting.
+`requestedAttributes`. There are quite a few [experimental models](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#models), such as "obscene", "attack on a commenter", "spam", etc., that you may find interesting.
 
 Also, subscribe to our [perspectiveapi-announce@ Google Group](https://groups.google.com/forum/#!forum/perspective-announce/join) to get notified when we make changes to the API.
 
