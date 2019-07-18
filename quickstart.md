@@ -27,12 +27,11 @@
 
 1. **Make an AnalyzeComment request.**
 
-    Run the sample API call below to get scores directly from Perspective API models. You don’t need to build a model locally. 
+    Run one of the sample API calls below to get scores directly from Perspective API models. You don’t need to build a model locally. 
     
-     The command issues an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model.
+     The command issues an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model. Use the API key you generated in the previous step as the `key` param.
     
-    The example command uses curl, which should work for most Mac and Linux users, and which you may need to install. Use the API key you generated in the previous step as the `key` param.
-
+    * The following command uses curl, which should work for most Mac and Linux users, and which you may need to install. 
     ```shell
     $ curl -H "Content-Type: application/json" --data \
         '{comment: {text: "what kind of idiot name is foo?"},
@@ -40,15 +39,14 @@
           requestedAttributes: {TOXICITY:{}} }' \
         https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
     ```
-        
-    In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
+     In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
 
     ```shell
     {
       "attributeScores": {
         "TOXICITY": {
           "summaryScore": {
-            "value": 0.9014498,
+            "value": 0.9208521,
             "type": "PROBABILITY"
           }
         }
@@ -58,8 +56,27 @@
       ]
     }
     ```
+    
+    * Alternatively, the following command uses Python:
 
-    You can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.
+    ```shell
+    import json
+    import requests
+    url='https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE'
+    data='{comment: {text: "what kind of idiot name is foo?"}, languages: ["en"], requestedAttributes: {TOXICITY:{}} }'
+    response = requests.post(url=url, data=data)
+    response_dict = json.loads(response.content)
+    print(response_dict)
+    ```
+    
+    You should see output similar to this:
+       
+    ```shell
+    {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 31, 'score': {'value': 0.9208521, 'type':      'PROBABILITY'}}], 'summaryScore': {'value': 0.9208521, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+    ```
+
+
+You can leverage the ‘DoNotStore’ flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the ‘SuggestCommentScore’ method to submit corrections to improve Perspective over time.
 
 See the [API reference documentation](api_reference.md) for details on all of
 the request and response fields, as well as the available values for
