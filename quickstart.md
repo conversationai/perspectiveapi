@@ -60,18 +60,6 @@
     * Alternatively, the following command uses Python:
 
     ```shell
-    import json
-    import requests
-    url='https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE'
-    data='{comment: {text: "what kind of idiot name is foo?"}, languages: ["en"], requestedAttributes: {TOXICITY:{}} }'
-    response = requests.post(url=url, data=data)
-    response_dict = json.loads(response.content)
-    print(response_dict)
-    ```
-    
-    You should see output similar to this:
-       
-    ```shell
     import json 
     import requests 
     api_key = 'YOUR_KEY_HERE'
@@ -85,6 +73,24 @@
     response = requests.post(url=url, data=json.dumps(data_dict)) 
     response_dict = json.loads(response.content) 
     print(json.dumps(response_dict, indent=2))
+    ```
+    
+    You should see output similar to this:
+       
+    ```shell
+    {
+      "attributeScores": {
+        "TOXICITY": {
+          "summaryScore": {
+            "value": 0.9208521,
+            "type": "PROBABILITY"
+          }
+        }
+      },
+      "languages": [
+        "en"
+      ]
+    }
     ```
 
 
