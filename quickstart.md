@@ -72,7 +72,19 @@
     You should see output similar to this:
        
     ```shell
-    {'attributeScores': {'TOXICITY': {'spanScores': [{'begin': 0, 'end': 31, 'score': {'value': 0.9208521, 'type':      'PROBABILITY'}}], 'summaryScore': {'value': 0.9208521, 'type': 'PROBABILITY'}}}, 'languages': ['en'], 'detectedLanguages': ['en']}
+    import json 
+    import requests 
+    api_key = 'YOUR_KEY_HERE'
+    url = ('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze' +    
+           '?key=' + api_key)
+    data_dict = {
+      'comment': {'text': 'what kind of idiot name is foo?'},
+      'languages': ['en'],
+      'requestedAttributes': {'TOXICITY': {}}
+    }
+    response = requests.post(url=url, data=json.dumps(data_dict)) 
+    response_dict = json.loads(response.content) 
+    print(json.dumps(response_dict, indent=2))
     ```
 
 
