@@ -19,11 +19,22 @@
        
     1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **_Enable_**.
       
-1. **Generate an API key.** To authenticate your requests, you'll need to generate credentials for your project. Using an API key is the simplest option. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "API Key".
+1. **Authenticate your requests.** Although there are a few ways to authenticate your requests, we provide guidance for two: creating a service account (recommended) or generating an API key (may be faster).
 
-    *Warning*: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. It's strongly recommended that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
+    * *Create a service account (recommended)*. This is a Google account that represents an application. It provides the flexibility of authentication across programming languages, platforms, and use cases:
+        1. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "Service account key."
+        1. (Optional) For more information about which selections to make when setting up the service account, or about using command lines, visit [Getting Started with Authentication](https://cloud.google.com/docs/authentication/getting-started).
+
+     OR
+   
+     * *Generate an API key (may be faster)*. This might be for you if you’re getting started working with APIs or want to test the Perspective AI API. 
+        1. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **_Create credentials_**, and choose "API Key".
+
+       *Warning*: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. It's strongly recommended that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
     
-    Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour; until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key".
+       Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour; until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key".
+
+   For information on all authentication options, visit Cloud’s [Authentication Overview](https://cloud.google.com/docs/authentication/).
 
 1. **Make an AnalyzeComment request.**
 
