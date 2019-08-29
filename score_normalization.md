@@ -52,6 +52,7 @@ supports sending our team suggested scores and corrections.
 ## Reporting issues with scores
  
 ### Reporting via API
+
 To report feedback on model scores, submit feedback as a request to the API
 using [`SuggestCommentScore`](api_reference.md#suggestcommentscore-request).
 
