@@ -50,7 +50,7 @@ you can do so using the [suggest comment score upload method](https://support.pe
 You can organize the data in many formats (CSV, JSON, even a spreadsheet) for
 training by the API, but the ideal data format (particularly for large datasets)
 is as a newline delimited JSON file (so called json-lines, where each line is a
-valid JSON entry; more info at [ndjson.org](https://ndjson.org)).
+valid JSON entry. More info at [ndjson.org](https://ndjson.org)).
  
 While all you need are fields for `comment_text` and `labels`, having more
 context can help you in the long run. For this reason, we recommend labeling
@@ -74,9 +74,9 @@ think adds information that could help make a conversation better by knowing.
 As JSON-lines this would look something like:
  
 ```json
-{ "source": "politics chat", "article_id": "90163", "comment_author_id: "4acf39f1e2", parent_id: "47210", comment_text: "You are a stupid idiot", comment_id: "47212", labels: ["obscene"]}
+{ "source": "politics chat", "article_id": "90163", "comment_author_id": "4acf39f1e2", "parent_id": "47210", "comment_text": "You are a stupid idiot", "comment_id": "47212", "labels": ["obscene"]}
 
-{ "source": "politics chat", "article_id": "90163", "comment_author_id: "e9af5bb45", parent_id: "47212", comment_text: "You, are the real dummy here! fool!", comment_id: "47213", labels: ["personal_attack"]}
+{ "source": "politics chat", "article_id": "90163", "comment_author_id": "e9af5bb45", "parent_id": "47212", "comment_text": "You, are the real dummy here! fool!", "comment_id": "47213", "labels": ["personal_attack"]}
 ```
 
 It may be helpful to have context for the comments too, e.g. the article the comment
