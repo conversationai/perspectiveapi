@@ -38,6 +38,7 @@ difficult to previous ones, some change in scores is still likely.
 However, in practice, we think this will be reasonably stable, and clients will
 be able to have the same 'sense' of what a threshold means.
 
+
 We are always looking for better ways to provide stability, so if you know of
 better ways to do this, please
 [open an issue on GitHub](https://github.com/conversationai/perspectiveapi/issues).
@@ -65,3 +66,4 @@ content written by someone under 13 years old.
 To manually submit corrections in bulk, you can use
 [this form](https://docs.google.com/forms/d/e/1FAIpQLScAivfFHiwq08JfsHuIkTbdECLK0nSmyBi4JMvaqDrom2aVQw/viewform?c=0&w=1).
 Read more about this process in the [Contribution guidelines](CONTRIBUTING.md).
+
