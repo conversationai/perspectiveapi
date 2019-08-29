@@ -63,7 +63,7 @@ with some of the following fields:
 | `source` | name of source/publication/section |
 | `comment_id` | unique id for the comment |
 | `article_id` | unique id for the article |
-| `community_id`` | unique id for community or section (e.g. health, news, tech) |
+| `community_id` | unique id for community or section (e.g. health, news, tech) |
 | `parent_id` | null, or comment_id of parent in thread |
 | `comment_text` | text of the comment |
 | `labels` | list of strings of labels associated with this comment |
