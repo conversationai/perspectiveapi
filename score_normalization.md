@@ -1,6 +1,5 @@
 # Score Normalization and Stable Model Updates
 
-
 ## What is score normalization for?
 
 Score normalization of our models is intended to do two things:
@@ -18,7 +17,7 @@ Score normalization of our models is intended to do two things:
 *   [v1 of score normalization](/releases/score_normalization_v1.md) on 2017-06-13
     introduced score normalization for all models.
 *   [v2 of score normalization](/releases/score_normalization_v2_for_toxicity.md) on
-    2017-08-15: fixes will go live for our normalization of TOXICITY scores
+    2017-08-15: fixes will go live for our normalization of `TOXICITY` scores
     (other models are not affected).
 
 
@@ -36,6 +35,9 @@ would result in a shift in the calibration scores. To control for this, we
 perform callibration on a randomly selected 50/50 class split. of course, this
 control is not perfect: if the newly introduced examples are differently
 difficult to previous ones, some change in scores is still likely.
-However, in practice, we think this will be reasonably stable, and clients will be able to have the same 'sense' of what a threshold means.
+However, in practice, we think this will be reasonably stable, and clients will
+be able to have the same 'sense' of what a threshold means.
 
-We are always looking for better ways to provide stability, so if you know of better ways to do this, please do [suggest it on github](https://github.com/conversationai/perspectiveapi/issues).
+We are always looking for better ways to provide stability, so if you know of
+better ways to do this, please
+[open an issue on GitHub](https://github.com/conversationai/perspectiveapi/issues).
