@@ -15,9 +15,9 @@ Score normalization of our models is intended to do two things:
 
 ## When did score-normalizing start happening?
 
-*   [v1 of score normalization](score_normalization_v1.md) on 2017-06-13
+*   [v1 of score normalization](/releases/score_normalization_v1.md) on 2017-06-13
     introduced score normalization for all models.
-*   [v2 of score normalization](score_normalization_v2_for_toxicity.md) on
+*   [v2 of score normalization](/releases/score_normalization_v2_for_toxicity.md) on
     2017-08-15: fixes will go live for our normalization of TOXICITY scores
     (other models are not affected).
 
