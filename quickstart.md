@@ -33,7 +33,7 @@ You'll need a Google Cloud project to authenticate (but not necessarily host) yo
    
 Run one of the sample API calls below to get scores directly from Perspective API models. You don’t need to build a model locally. 
    
-The command issues an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model. Use the API key you generated in the previous step as the `key` param.
+The `AnalyzeComment` command issues an API request to analyze the `comment.text` field for the `requestedAttributes`, in this case the `TOXICITY` model. Use the API key you generated above as the `key` parameter.
 
 Leverage the `DoNotStore` flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the `SuggestCommentScore` method to submit corrections to improve Perspective over time.
 
