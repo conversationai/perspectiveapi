@@ -21,11 +21,13 @@ You'll need a Google Cloud project to authenticate (but not necessarily host) yo
        `gcloud services enable commentanalyzer.googleapis.com`
     1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **Enable**.
 
-1. Generate an API key. To authenticate your requests, you'll need to generate credentials for your project. Using an API key is the simplest option. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials**, and choose "API Key".
+1. Generate an API key to authenticate your requests.
+   
+   Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials**, and choose "API Key".
 
-    > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
-
-    Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+   > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
+	
+   Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
 
 ## Make an `AnalyzeComment` request
    
@@ -39,71 +41,73 @@ Read the [API reference documentation](api_reference.md) for details on all of t
 
 ### Using cURL
 
-The following cURL command should work for most Mac and Linux users. You may need to install cURL to run this command.
+Make an `AnalyzeComment` request with cURL. The following command should work for most Mac and Linux users. You may need to install cURL to run this command.
    
-    ```shell
-    $ curl -H "Content-Type: application/json" --data \
-        '{comment: {text: "what kind of idiot name is foo?"},
+   ```shell
+   $ curl -H "Content-Type: application/json" --data \
+       '{comment: {text: "what kind of idiot name is foo?"},
           languages: ["en"],
           requestedAttributes: {TOXICITY:{}} }' \
-        https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
+       https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR_KEY_HERE
     ```
 
-In the response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. In this case, the comment got a 0.9 out of 1.0. Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
+In the following response, the field `attributeScores.TOXICITY.summaryScore.value` gives the toxicity model's score for the comment. The comment received a score of 0.9 out of 1.0.
 
-    ```shell
-    {
+   ```shell
+   {
       "attributeScores": {
-        "TOXICITY": {
-          "summaryScore": {
-            "value": 0.9208521,
-            "type": "PROBABILITY"
-          }
-        }
+         "TOXICITY": {
+            "summaryScore": {
+               "value": 0.9208521,
+               "type": "PROBABILITY"
+            }
+         }
       },
       "languages": [
-        "en"
+         "en"
       ]
-    }
-    ```
+   }
+   ```
+
+Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
 
 ### Using Python
 
 Make an `AnalyzeComment` request with Python.
 
-    ```shell
-    import json 
-    import requests 
-    api_key = 'YOUR_KEY_HERE'
-    url = ('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze' +    
-           '?key=' + api_key)
-    data_dict = {
-      'comment': {'text': 'what kind of idiot name is foo?'},
-      'languages': ['en'],
-      'requestedAttributes': {'TOXICITY': {}}
-    }
-    response = requests.post(url=url, data=json.dumps(data_dict)) 
-    response_dict = json.loads(response.content) 
-    print(json.dumps(response_dict, indent=2))
-    ```
-    
+   ```shell
+   import json 
+   import requests 
+   api_key = 'YOUR_KEY_HERE'
+   url = ('https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze' +    
+       '?key=' + api_key)
+   data_dict = {
+       'comment': {'text': 'what kind of idiot name is foo?'},
+       'languages': ['en'],
+       'requestedAttributes': {'TOXICITY': {}}
+   }
+   response = requests.post(url=url, data=json.dumps(data_dict)) 
+   response_dict = json.loads(response.content) 
+   print(json.dumps(response_dict, indent=2))
+   ```
+
 You should see output similar to this:
-       
-    ```shell
-    {
+
+   ```shell
+   {
       "attributeScores": {
-        "TOXICITY": {
-          "summaryScore": {
-            "value": 0.9208521,
-            "type": "PROBABILITY"
-          }
-        }
+         "TOXICITY": {
+            "summaryScore": {
+               "value": 0.9208521,
+               "type": "PROBABILITY"
+            }
+         }
       },
       "languages": [
-        "en"
+         "en"
       ]
-    }
-    ```
+   }
+   ```
 
 ## Stay updated
 
