@@ -1,4 +1,4 @@
-# Score Normalization and Stable Model Updates
+# Score Normalization and Feedback
 
 ## What is score normalization for?
 
@@ -41,3 +41,26 @@ be able to have the same 'sense' of what a threshold means.
 We are always looking for better ways to provide stability, so if you know of
 better ways to do this, please
 [open an issue on GitHub](https://github.com/conversationai/perspectiveapi/issues).
+
+## About score feedback
+
+Our models are not perfect and will make errors. It will be unable to detect patterns
+of toxicity it has not seen before, and it will falsely detect comments similar to
+patterns of previous toxic conversations. To help improve the machine learning, the API
+supports sending our team suggested scores and corrections.
+
+## Reporting issues with scores
+ 
+### Reporting via API
+To report feedback on model scores, submit feedback as a request to the API
+using [`SuggestCommentScore`](api_reference.md#suggestcommentscore-request).
+
+Since all submissions are stored and used to improved the API, do not use this for private
+data (i.e. for data that is not accessible publicly), or if the data submitted contains
+content written by someone under 13 years old.
+ 
+### Reporting in bulk
+
+To manually submit corrections in bulk, you can use
+[this form](https://docs.google.com/forms/d/e/1FAIpQLScAivfFHiwq08JfsHuIkTbdECLK0nSmyBi4JMvaqDrom2aVQw/viewform?c=0&w=1).
+Read more about this process in the [Contribution guidelines](CONTRIBUTING.md).
