@@ -4,8 +4,8 @@
 
  * [Using the API](#using-the-api)
  * [Key concepts](#key-concepts)
- * [Models](#models)
- * [Methods](#methods)
+ * [Models](#production-and-experimental-models)
+ * [Methods](#api-methods)
    * [Scoring comments](#scoring-comments-analyzecomment)
    * [Sending feedback](#sending-feedback-suggestcommentscore)
  * [API client libraries](#api-client-libraries)
