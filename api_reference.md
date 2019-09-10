@@ -20,8 +20,8 @@ project, and ensure you're able to make a successful request.
 
 
 #### Quota limit
-By default, we set the quota to 1 QPS for all Perspective projects.
 
+By default, we set the quota to 1 QPS for all Perspective projects.
 
 Check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
@@ -33,7 +33,6 @@ Visit the Perspective API Support page to [request a quota increase](https://sup
 The maximum text size per request is 3000 bytes.
 
 ## Key concepts
-
 
 This section provides summary information that will be elaborated on further in the document.
 
@@ -91,7 +90,7 @@ View the latest version numbers in the [All model types](#all-model-types) table
 
 ### Specifying language
 
-See the `languages` field description in the [Methods](#methods) section below to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
+See the `languages` field description in the [Methods](#api-methods) section below to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
 
 
 ### All model types
