@@ -223,23 +223,22 @@ Note that only `comment.text` and `requestedAttributes` are required.
 }
 ```
 
-Field | Description
------ | -----------
-`attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
-`attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed).
-`attributeScores[name].summaryScore.type`  | This mirrors the requested `scoreType` for this attribute.
-`attributeScores[name].spanScores`         | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all.
-`attributeScores[name].spanScores[].begin`   | Beginning of the text span in the request comment.
-`attributeScores[name].spanScores[].end`     | End of the text span in the request comment.
-`attributeScores[name].spanScores[].score.value` | The attribute score for the span delimited by `begin` and `end`.
-`attributeScores[name].spanScores[].score.type`  | Same as `summaryScore.type`.
-`languages` | Mirrors the request's `languages`. If no languages were specified, the API returns the auto-detected language.
-`clientToken` | Mirrors the request's `clientToken`.
+| Field | Description |
+| ----- | ----------- |
+| `attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
+| `attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed). |
+| `attributeScores[name].summaryScore.type` | This mirrors the requested `scoreType` for this attribute. |
+| `attributeScores[name].spanScores` | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all. |
+| `attributeScores[name].spanScores[].begin` | Beginning of the text span in the request comment. |
+| `attributeScores[name].spanScores[].end` | End of the text span in the request comment. |
+| `attributeScores[name].spanScores[].score.value` | The attribute score for the span delimited by `begin` and `end`. |
+| `attributeScores[name].spanScores[].score.type` | Same as `summaryScore.type`. |
+| `languages` | Mirrors the request's `languages`. If no languages were specified, the API returns the auto-detected language. |
+| `clientToken` | Mirrors the request's `clientToken`. |
 
 #### `AnalyzeComment` example
 
-This is a request for the "TOXICITY" and "UNSUBSTANTIAL" models for a comment
-that's explicitly in English.
+This is a request for the `TOXICITY` and `UNSUBSTANTIAL` models for a comment that's explicitly in English.
 
 ```json
 // Request
@@ -254,14 +253,10 @@ that's explicitly in English.
   }
 }
 ```
+ 
+The response contains the `TOXICITY` and `UNSUBSTANTIAL` model scores. Each attribute has a single overall `summaryScore` as well as two `spanScores`.
 
-The response contains the "TOXICITY" and "UNSUBSTANTIAL" model scores. Each
-attribute has a single overall `summaryScore` as well as two `spanScores`.
-
-Both models return the same spans in this case: the span `[0, 31)` (corresponding
-to "What kind of idiot name is foo?") and the span `[32, 56)` (corresponding to
-"Sorry, I like your name."). Models may not always return the same spans,
-however.
+Both models return the same spans in this case: the span `[0,31)` (corresponding to "What kind of idiot name is foo?") and the span `[32,56)` (corresponding to "Sorry, I like your name."). However, models may not always return the same spans.
 
 ```json
 // Response
