@@ -32,9 +32,30 @@ but you can also contribute data from your own community.
 
 Submitting labeled data lets the Perspective API team train the models on more
 comments, and makes it possible for the API to improve and learn from your
-particular use-case. For instance, if Perspective isn't yet available in your
-language, uploading data can help speed up the process of making models available
-in your language.
+particular use-case.
+
+### What types of datasets are useful?
+
+A useful dataset is either very large or has high-quality, distributed labels.
+
+**Important note**: Please do not include any personally identifiable information
+(i.e. names, usernames, email addresses, etc.) in the datasets you share.
+
+#### Large datasets
+
+Datasets with more than 100,000 comments with labels or datasets with more than
+1 million comments without labels.
+
+#### Labeled datasets
+
+If sharing a labeled dataset, it must have:
+
++ A good quantity and distribution of labels. This includes at least 20,000
+examples of labels being looked for (e.g. toxic comments or rejected comments).
+Having 100,000 different labels which only occur once is not useful.
++ High agreement with a professional reviewer. Have someone on your team or a
+professional re-review the labels for 100 examples. For the data to be useful,
+the re-review should agree with the original labeling more than 75% of the time.
 
 ### Where to contribute
 
