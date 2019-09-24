@@ -4,8 +4,8 @@
 
  * [Using the API](#using-the-api)
  * [Key concepts](#key-concepts)
- * [Models](#models)
- * [Methods](#methods)
+ * [Models](#production-and-experimental-models)
+ * [Methods](#api-methods)
    * [Scoring comments](#scoring-comments-analyzecomment)
    * [Sending feedback](#sending-feedback-suggestcommentscore)
  * [API client libraries](#api-client-libraries)
@@ -20,8 +20,8 @@ project, and ensure you're able to make a successful request.
 
 
 #### Quota limit
-By default, we set the quota to 1 QPS for all Perspective projects.
 
+By default, we set the quota to 1 QPS for all Perspective projects.
 
 Check your quota limits by going to [your google cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
@@ -33,7 +33,6 @@ Visit the Perspective API Support page to [request a quota increase](https://sup
 The maximum text size per request is 3000 bytes.
 
 ## Key concepts
-
 
 This section provides summary information that will be elaborated on further in the document.
 
@@ -67,169 +66,90 @@ This section provides summary information that will be elaborated on further in 
     are not making use of it--so sending context won't change any model's
     scores.
 
-## Models
+## Production and experimental models
 
-### Toxicity and subtypes model definitions
+This section details Perspective API’s production and experimental models, which are described in detail in the [All model types](#all-model-types) table below.
 
-These models are the only ones with production support in a couple of languages. Some of the [Experimental toxicity models](#experimental-toxicity-models) have support in more languages.
+We recommend subscribing to [perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new models, updates to existing models, and deprecations. 
 
-*   **TOXICITY**: rude, disrespectful, or unreasonable comment that is likely to
-    make people leave a discussion.
-*   **SEVERE_TOXICITY**: a very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a       discussion or give up on sharing their perspective. This model is much less sensitive to
-    comments that include positive uses of curse words, for example. A labelled dataset
-    and details of the methodolgy can be found in the same [toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973) that is
-    available for the toxicity model.
-    
-The toxicity subtypes models are only available as experimental models. 
-    
-*   **IDENTITY_ATTACK**: negative or hateful comments targeting someone because of their identity.
-*   **INSULT**: insulting, inflammatory, or negative comment towards a person
-    or a group of people.
-*   **PROFANITY**: swear words, curse words, or other obscene or profane
-    language.
-*   **THREAT**: describes an intention to inflict pain, injury, or violence
-    against an individual or group.
-*   **SEXUALLY_EXPLICIT**: contains references to sexual acts, body parts, or
-    other lewd content.
-*   **FLIRTATION**: pickup lines, complimenting appearance, subtle sexual
-    innuendos, etc.
-    
-See the [Toxicity and sub-attribute annotation guidelines](https://github.com/conversationai/conversationai.github.io/blob/master/crowdsourcing_annotation_schemes/toxicity_with_subattributes.md) for more details.
+### Production models
 
-To get a sense of the scores our Toxicity and subtypes models give on actual comments, see [this CSV
-of scored
-comments](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
-These 2,000 comments are from Wikipedia talk page discussions, randomly sampled
-from our [Kaggle
-competition](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
+We recommend using production models for your API request. Production models have been tested across multiple domains and trained on hundreds of thousands of human-annotated comments.
 
-Sorting by each model's scores gives a sense of the model's behavior. These
-examples may differ quite a bit from the types of comments in your particular
-use case, so we strongly recommend evaluating on your own data as well.
+### Experimental models
+
+We recommend reserving experimental models for non-production use cases. These models have not been tested as thoroughly as production models, and you’ll need to update your code when a model changes from experimental to production. We typically give one month’s notice before deprecating experimental models.
+
+### Latest versions
+
+We retrain models and release new versions periodically. To call a specific version of a model, use the format `MODEL_NAME@VERSION_NUMBER` in the `requestedAttributes` field.
+
+If a request does not specify a `@VERSION_NUMBER` at the end of a model name, it uses the default version, which is often, but not always, the latest version of the model.
+ 
+View the latest version numbers in the [All model types](#all-model-types) table below.
+
+### Specifying language
+
+See the `languages` field description in the [Methods](#api-methods) section below to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
+
+
+### All model types
+
+#### Toxicity models
+ 
+| Model attribute name | Type | Description | Language | Latest version |
+| -------------------- | ---- | ----------- | -------- | -------------- |
+| `TOXICITY` | prod. | Rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. | en, fr, es | 6 |
+| `TOXICITY_EXPERIMENTAL` | exp. | &nbsp; | de, it, pt | &nbsp; |
+| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This model is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity model. | en, fr, es | 2 |
+| `SEVERE_TOXICITY_EXPERIMENTAL` | exp. | &nbsp; | de, it, pt | &nbsp; |
+| `TOXICITY_FAST` | exp. | This model is similar to the `TOXICITY` model, but has lower latency and lower accuracy in its predictions. Unlike `TOXICITY`, this model returns summary scores as well as span scores. This model uses character-level n-grams fed into a logistic regression, a method that has been surprisingly effective at detecting abusive language. | en | &nbsp; |
+| `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en | 2 |
+| `IDENTITY_ATTACK_EXPERIMENTAL` | exp. | &nbsp; | fr, de, es, it, pt | &nbsp; |
+| `INSULT` | exp. | Insulting, inflammatory, or negative comment towards a person or a group of people. | en | 2 |
+| `INSULT_EXPERIMENTAL` | exp. | &nbsp; | fr, de, es, it , pt | &nbsp; |
+| `PROFANITY` | exp. | Swear words, curse words, or other obscene or profane language. | en | 2 |
+| `PROFANITY_EXPERIMENTAL` | exp. | &nbsp; | fr, de, es, it, pt | &nbsp; |
+| `THREAT` | exp. | Describes an intention to inflict pain, injury, or violence against an individual or group. | en | 2 |
+| `THREAT_EXPERIMENTAL` | exp. | &nbsp; | fr, de, es, it, pt | &nbsp; |
+| `SEXUALLY_EXPLICIT` | exp. |Contains references to sexual acts, body parts, or other lewd content. | en | 2 |
+|`FLIRTATION` | exp. | Pickup lines, complimenting appearance, subtle sexual innuendos, etc. | en | 2 |
+ 
+#### New York Times models
+
+These models are experimental because they are trained on a single source of comments&mdash;New York Times (NYT) data tagged by their moderation team&mdash;and therefore may not work well for every use case. 
+
+| Model attribute name | Type | Description | Language | Latest version |
+| -------------------- | ---- | ----------- | -------- | -------------- |
+| `ATTACK_ON_AUTHOR` | exp. | Attack on the author of an article or post. | en | 2 |
+| `ATTACK_ON_COMMENTER` | exp. | Attack on fellow commenter. | en | 2 |
+| `INCOHERENT` | exp. | Difficult to understand, nonsensical. | en | 2 |
+| `INFLAMMATORY` | exp. | Intending to provoke or inflame. | en | 2 |
+| `LIKELY_TO_REJECT` | exp. | Overall measure of the likelihood for the comment to be rejected according to the NYT's moderation. | en | 2 |
+| `OBSCENE` | exp. | Obscene or vulgar language such as cursing. | en | 2 |
+| `SPAM` | exp. | Irrelevant and unsolicited commercial content. | en | 1 |
+| `UNSUBSTANTIAL` | exp. | Trivial or short comments. | en | 2 |
+
 
 ### Model architecture
 
-Most of our models are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN)
-trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own
-[deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on [our public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore [our open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models.
-
-[Our Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
-has lots of useful resources to help build your own models.
-Note that there are many kinds of toxic language that are disproportionately
-represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases.
-Please use the [SuggestCommentScore](#suggestcommentscore-request) method to
-help improve the model.
+Most of our models are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on our [public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore our [open-source model training tools](https://github.com/conversationai/conversationai-models) to train your own models. Our [Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge) also has lots of useful resources to help build your own models.
 
 ### Model Cards
-For each production model, we aim to publish an associated "Model Card" that shares details
-about model training and evaluation results. Current model cards are posted
-[here](model_cards/README.md).
 
-### Production Toxicity models
+For each production model, we aim to publish an associated "Model Card" that shares details about intended usage, model training processes, and evaluation results. Current model cards are posted [here](model_cards/README.md).
 
-We recommend using **production models**. They have been tested
-across multiple domains and trained on hundreds of thousands of comments tagged
-by thousands of human moderators. Below you will find language support and attribute name for your API request.
-
-Production Model                  | Supported Languages
-----------------------------------|-----------------------
-TOXICITY                          | en, fr, es
-SEVERE_TOXICITY                   | en, fr, es
-
-### Experimental Toxicity models
-
-The following models are experimental models. Only use these if you are
-interested in testing an experimental model and are willing to change your code once the
-production models are available. These have not been tested as
-thoroughly as their production counterparts. If you would like to support Perspective in new languages, you can contribute data [here](https://docs.google.com/forms/d/e/1FAIpQLScAivfFHiwq08JfsHuIkTbdECLK0nSmyBi4JMvaqDrom2aVQw/viewform)
-
-Experimental Model                | Supported Languages
-----------------------------------|-----------------------
-TOXICITY_EXPERIMENTAL             | de, it, pt
-SEVERE_TOXICITY_EXPERIMENTAL      | de, it, pt
-IDENTITY_ATTACK                   | en
-IDENTITY_ATTACK_EXPERIMENTAL      | fr, de, es, it, pt
-INSULT                            | en
-INSULT_EXPERIMENTAL               | fr, de, es, it , pt
-PROFANITY                         | en
-PROFANITY_EXPERIMENTAL            | fr, de, es, it, pt
-THREAT                            | en
-THREAT_EXPERIMENTAL               | fr, de, es, it, pt
-SEXUALLY_EXPLICIT                 | en
-FLIRTATION                        | en
-
-Please refer to the rest of the documentation below to appropriately set the
-language field in your request. Currently, if you want to use the API on an experimental language and another production language (e.g., TOXICITY French and German) there is no simple way to do that. You can
-either (1) change how you call the API depending on the comment language, or (2)
-wait until these models join the production track, when they'll be handled automatically.
-
-### More experimental models
-
-The following models are experimental. They were targeted for a single usecase,
-so may not generalize to your usecase well. They may be deprecated or removed
-with little notice (typically a few months).
-
-#### New York Times moderation models
-
-The following experimental models were trained on New York Times data tagged by
-their moderation team.
-
-*   **ATTACK_ON_AUTHOR**: Attack on the author of an article or post.
-*   **ATTACK_ON_COMMENTER**: Attack on fellow commenter.
-*   **INCOHERENT**: Difficult to understand, nonsensical.
-*   **INFLAMMATORY**: Intending to provoke or inflame.
-*   **LIKELY_TO_REJECT**: Overall measure of the likelihood for the comment to
-    be rejected according to the NYT's moderation.
-*   **OBSCENE**: Obscene or vulgar language such as cursing.
-*   **SPAM**: Irrelevant and unsolicited commercial content.
-*   **UNSUBSTANTIAL**: Trivial or short comments.
-
-#### TOXICITY_FAST
-
-*   **TOXICITY_FAST**: This model is similar to the TOXICITY model, but has
-    lower latency and lower accuracy in its predictions. Unlike TOXICITY, this
-    model returns summary scores as well as span scores. This model uses
-    character-level n-grams fed into a logistic regression, a method that has
-    has been surprisingly
-    [effective at detecting abusive language](https://dl.acm.org/citation.cfm?id=2883062).
-
-### Versions
-
-Models are versioned. We re-retrain them and release a new version when we get enough new trusted examples, either from [our demo](https://www.perspectiveapi.com) or from other clients of the API who ask us use their examples to make the models better (see the `AnalyzeComment` and `SuggestCommentScore` methods below). To use a specific version of a model, use a model name of the form `MODEL_NAME@VERSION_NUMBER`. If a request does not specify a `@VERSION_NUMBER` at the end of a model name, it will use the latest version of the model. The latest version numbers are in the following table.
-
-Model Attribute Name | Latest Version Name
----------------------|-----------------------
-TOXICITY             | TOXICITY@6
-SEVERE_TOXICITY      | SEVERE_TOXICITY@2
-IDENTITY_ATTACK      | IDENTITY_ATTACK@2
-INSULT               | INSULT@2
-PROFANITY            | PROFANITY@2
-SEXUALLY_EXPLICIT    | SEXUALLY_EXPLICIT@2
-THREAT               | THREAT@2
-FLIRTATION           | FLIRTATION@2
-ATTACK_ON_AUTHOR     | ATTACK_ON_AUTHOR@2
-ATTACK_ON_COMMENTER  | ATTACK_ON_COMMENTER@2
-INCOHERENT           | INCOHERENT@2
-INFLAMMATORY         | INFLAMMATORY@2
-LIKELY_TO_REJECT     | LIKELY_TO_REJECT@2
-OBSCENE              | OBSCENE@2
-SPAM                 | SPAM@1
-UNSUBSTANTIAL        | UNSUBSTANTIAL@2
-
-Announcements about new  models and versions of models (and depricated stuff) are sent to the: [`perspective-announce email group`](https://groups.google.com/forum/#!forum/perspective-announce); subscribe to stay up to date.
-
-## Methods
+## API Methods
 
 ### Scoring comments: `AnalyzeComment`
 
-To send a comment scoring request to the API, post a request object to this
-endpoint:
+To send a comment scoring request to the API, post a request object to this endpoint:
 
-> **POST** https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze
+```
+https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze
+```
 
-*Note:* If you're using API key authentication, append `?key=YOUR_API_KEY` to
-the end of the request. See the [quickstart](quickstart.md) guide for an
-example.
+If you're using API key authentication, append `?key=YOUR_API_KEY` to the end of the request. See the [quickstart guide](quickstart.md) for an example.
 
 #### `AnalyzeComment` request
 
@@ -258,21 +178,22 @@ example.
 }
 ```
 
-Field | Description
------ | -----------
-`comment.text`           | **(required)** The text to score. This is assumed to be utf8 raw text of the text to be checked. Emoji and other non-ascii characters can be included (raw HTML will probably result in lower performance). The maximum size of comment.text request is 3000 bytes.
-`comment.type`           | *(optional)* The text type of `comment.text`. Either "PLAIN_TEXT" or "HTML". Currently only "PLAIN_TEXT" is supported.
-`context.entries`        | *(optional)* A list of objects providing the context for `comment`. Currently ignored by the API.
-`context.entries[].text` | *(optional)* The text of a context object. The maximum size of context entry is 1MB.
-`context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`.
-`requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#models) for a list of available model attribute names. If no configuration options are specified, sensible defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple model names here to get scores from multiple models in a single request.
-`requestedAttributes[name].scoreType`      | *(optional)* The score type returned for this model attribute. Currently, only "PROBABILITY" is supported. Probability scores are in the range `[0,1]`.
-`requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned.
-`spanAnnotations`        | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per sentence level). Defaults to false.
-`languages`              | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, "en", "es", "fr", "de", etc). If unspecified, the API will autodetect the comment language. If language detection fails, the API returns an error. *Note:* Currently, all production models only support English, Spanish, and French. There is no simple way to use the API across languages with production support and languages with experimental support only.
-`doNotStore`             | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to **false** (request data may be stored). **Important note:** This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old.
-`clientToken`            | *(optional)* An opaque token that is echoed back in the response.
-`sessionId`              | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction.
+| Field | Description |
+| ----- | ----------- |
+| `comment.text` | **(required)** The text to score. This is assumed to be utf8 raw text of the text to be checked. Emoji and other non-ascii characters can be included (HTML will probably result in lower performance). |
+| `comment.type` | *(optional)* The text type of `comment.text`. Either `"PLAIN_TEXT"` or `"HTML"`. Currently only `"PLAIN_TEXT"` is supported.
+| `context.entries` | *(optional)* A list of objects providing the context for `comment`. Currently not supported by the API. |
+| `context.entries[].text` | *(optional)* The text of a context object. The maximum size of context entry is 1MB. |
+| `context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`. Currently only `"PLAIN TEXT"` is supported. |
+| `requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#all-model-types) for a list of available model attribute names. If no configuration options are specified, defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple model names here to get scores from multiple models in a single request. |
+| `requestedAttributes[name].scoreType` | *(optional)* The score type returned for this model attribute. Currently, only `"PROBABILITY"` is supported. Probability scores are in the range `[0,1]`. |
+| `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned. |
+| `spanAnnotations` | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per-sentence level). Defaults to false. |
+| `languages` | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, `"en"`, `"es"`, `"fr"`, `"de"`, etc). If unspecified, the API will auto-detect the comment language. If language detection fails, the API returns an error. **Note:** Currently, all production models only support English, Spanish, and French. There is no simple way to use the API across languages with production support and languages with experimental support only. |
+| `doNotStore` | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to false (request data may be stored). **Warning**: This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old. |
+| `clientToken` | *(optional)* An opaque token that is echoed back in the response. |
+| `sessionId` | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction. |
+| `suggestCommentScore` | *(optional)* Used to notify the Perspective API team of specific biases, in order to help us improve our model. Many kinds of toxic language are disproportionately represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases. Use this method to help us correct them. |
 
 Note that only `comment.text` and `requestedAttributes` are required.
 
@@ -301,23 +222,22 @@ Note that only `comment.text` and `requestedAttributes` are required.
 }
 ```
 
-Field | Description
------ | -----------
-`attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
-`attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed).
-`attributeScores[name].summaryScore.type`  | This mirrors the requested `scoreType` for this attribute.
-`attributeScores[name].spanScores`         | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all.
-`attributeScores[name].spanScores[].begin`   | Beginning of the text span in the request comment.
-`attributeScores[name].spanScores[].end`     | End of the text span in the request comment.
-`attributeScores[name].spanScores[].score.value` | The attribute score for the span delimited by `begin` and `end`.
-`attributeScores[name].spanScores[].score.type`  | Same as `summaryScore.type`.
-`languages` | Mirrors the request's `languages`. If no languages were specified, the API returns the auto-detected language.
-`clientToken` | Mirrors the request's `clientToken`.
+| Field | Description |
+| ----- | ----------- |
+| `attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
+| `attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed). |
+| `attributeScores[name].summaryScore.type` | This mirrors the requested `scoreType` for this attribute. |
+| `attributeScores[name].spanScores` | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all. |
+| `attributeScores[name].spanScores[].begin` | Beginning of the text span in the request comment. |
+| `attributeScores[name].spanScores[].end` | End of the text span in the request comment. |
+| `attributeScores[name].spanScores[].score.value` | The attribute score for the span delimited by `begin` and `end`. |
+| `attributeScores[name].spanScores[].score.type` | Same as `summaryScore.type`. |
+| `languages` | Mirrors the request's `languages`. If no languages were specified, the API returns the auto-detected language. |
+| `clientToken` | Mirrors the request's `clientToken`. |
 
 #### `AnalyzeComment` example
 
-This is a request for the "TOXICITY" and "UNSUBSTANTIAL" models for a comment
-that's explicitly in English.
+This is a request for the `TOXICITY` and `UNSUBSTANTIAL` models for a comment that's explicitly in English.
 
 ```json
 // Request
@@ -332,14 +252,10 @@ that's explicitly in English.
   }
 }
 ```
+ 
+The response contains the `TOXICITY` and `UNSUBSTANTIAL` model scores. Each attribute has a single overall `summaryScore` as well as two `spanScores`.
 
-The response contains the "TOXICITY" and "UNSUBSTANTIAL" model scores. Each
-attribute has a single overall `summaryScore` as well as two `spanScores`.
-
-Both models return the same spans in this case: the span `[0, 31)` (corresponding
-to "What kind of idiot name is foo?") and the span `[32, 56)` (corresponding to
-"Sorry, I like your name."). Models may not always return the same spans,
-however.
+Both models return the same spans in this case: the span `[0,31)` (corresponding to "What kind of idiot name is foo?") and the span `[32,56)` (corresponding to "Sorry, I like your name."). However, models may not always return the same spans.
 
 ```json
 // Response
