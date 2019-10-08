@@ -28,9 +28,8 @@ You'll need a Google Cloud project to authenticate (but not host) your API reque
       1. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials** and choose "Service account key".
 	  1. (Optional) For more information about which selections to make when setting up the service account or about how to use the command line, visit [Getting Started with Authentication](//cloud.google.com/docs/authentication/getting-started).
    + _Generate an API key (may be faster)._ This option may be best if you are new to working with APIs or want to test the Perspective API.
-   > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
-   
-      + Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+      + **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
+      + It typically takes only a few minutes for a new API key to have access after the API is enabled, but it can take up to an hour. Until the API key is enabled, you may get errors in the form of "API Key not found. Please pass a valid API key."
 
 For information on all authentication options, visit [Cloud’s Authentication Overview](//cloud.google.com/docs/authentication/).
 
