@@ -4,15 +4,17 @@
 
 ## Prerequisites
 
-You'll need a Google Cloud project to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and either use an existing project, or follow these steps to create a new one:
+You'll need a Google Cloud project to authenticate (but not host) your API requests. Visit the [Google Cloud console](https://console.developers.google.com/) and either use an existing project (if you have one), or follow these steps to create a new project:
 
 1. Sign in with your Google account, if necessary.
 
-1. Click **Create**, or click the "Project" drop-down at the top of the page and then click **New Project**.
+1. Click the "Project" drop-down at the top of the page and then click **New Project**.
 
-1. Name the project.
+1. Create a "Project name"
 
-1. Click **Create** again. The project is now included in the "Project" drop-down at the top of the page.
+1. Choose the parent location on Google Cloud for this project.
+
+1. Click **Create**. The project is now included in the "Project" drop-down at the top of the page.
 
 ## Enable the API
 
@@ -21,13 +23,16 @@ You'll need a Google Cloud project to authenticate (but not necessarily host) yo
        `gcloud services enable commentanalyzer.googleapis.com`
     1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **Enable**.
 
-1. Generate an API key to authenticate your requests.
-   
-   Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials**, and choose "API Key".
-
+1. Authenticate your requests. Although there are multiple ways to authenticate your API requests, we provide guidance for two: creating a service account (recommended) or generating an API key (may be faster).
+   + _Create a service account (recommended)._ Create a Google account which represents an application. This provides flexibility of authentication across programming languages, platforms, and use cases:
+      1. Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials** and choose "Service account key".
+	  1. (Optional) For more information about which selections to make when setting up the service account or about how to use the command line, visit [Getting Started with Authentication](//cloud.google.com/docs/authentication/getting-started).
+   + _Generate an API key (may be faster)._ This option may be best if you are new to working with APIs or want to test the Perspective API.
    > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
-	
-   Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+   
+      + Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+
+For information on all authentication options, visit [Cloud’s Authentication Overview](//cloud.google.com/docs/authentication/).
 
 ## Make an `AnalyzeComment` request
    
@@ -42,6 +47,8 @@ Read the [API reference documentation](api_reference.md) for details on all of t
 ### Using cURL
 
 Make an `AnalyzeComment` request with cURL. The following command should work for most Mac and Linux users. You may need to install cURL to run this command.
+
+Replace `YOUR_KEY_HERE` with your API key.
    
    ```shell
    $ curl -H "Content-Type: application/json" --data \
