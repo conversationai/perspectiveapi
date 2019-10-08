@@ -18,9 +18,10 @@ You'll need a Google Cloud project to authenticate (but not host) your API reque
 
 ## Enable the API
 
+Enable the Perspective API and authenticate your requests.
+
 1. Enable the API via command line or the web UI.
-    1. Command line:
-       `gcloud services enable commentanalyzer.googleapis.com`
+    1. Command line: `gcloud services enable commentanalyzer.googleapis.com`
     1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **Enable**.
 
 1. Authenticate your requests. Although there are multiple ways to authenticate your API requests, we provide guidance for two: creating a service account (recommended) or generating an API key (may be faster).
@@ -114,6 +115,62 @@ You should see output similar to this:
       ]
    }
    ```
+   
+### Using Node.js
+
+To use Node.js, you must have installed `npm` and the
+[`googleapis`](https://github.com/google/google-api-nodejs-client/) client:
+
+```
+npm install googleapis
+```
+
+Make an `AnalyzeComment` with Node.js:
+
+```javascript
+var googleapis = require('googleapis');
+
+API_KEY = 'YOUR_KEY_HERE'
+DISCOVERY_URL = 'https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1'
+
+googleapis.discoverAPI(DISCOVERY_URL, (err, client) => {
+  if (err) throw err;
+  var analyzeRequest = {
+    comment: {text: 'what kind of idiot name is foo?'},
+    requestedAttributes: {'TOXICITY': {}}
+  };
+  client.comments.analyze({key: API_KEY, resource: analyzeRequest}, (err, response) => {
+    if (err) throw err;
+    console.log(JSON.stringify(response, null, 2));
+  });
+});
+```
+
+You should see output similar to this:
+
+```json
+{
+  "attributeScores": {
+    "TOXICITY": {
+      "spanScores": [
+        {
+          "score": {
+            "value": 0.4445836,
+            "type": "PROBABILITY"
+          }
+        }
+      ],
+      "summaryScore": {
+        "value": 0.4445836,
+        "type": "PROBABILITY"
+      }
+    }
+  },
+  "languages": [
+    "en"
+  ]
+}
+```
 
 ## Stay updated
 
