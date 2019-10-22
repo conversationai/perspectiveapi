@@ -13,14 +13,14 @@ This repository contains the necessary documentation to start using the Perspect
 
 Download the [example data CSV](/example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
 
+### Improve the API
+
 Help improve the Perspective API by leveraging the `DoNotStore` flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the `SuggestCommentScore` method to submit corrections.
 
-## About this project
+## Related research
 
-If you would like to receive email updates about the API&mdash;for example when we add new models, or deprecate old ones&mdash;you can subscribe to the [perspective-announce Google Group](https://groups.google.com/forum/#!forum/perspective-announce/join). You will receive email updates from perspective-announce@googlegroups.com. This list will be used only to share release information and will never be used to ask you login details of any kind.
+Perspective is part of the [Conversation-AI research project](https://conversationai.github.io/). You can email your research-related questions to [conversationai-questions@google.com](mailto:conversationai-questions@google.com).
 
-For support and to contact us, visit [support.perspectiveapi.com](https://support.perspectiveapi.com/). 
+## Privacy and Terms of Service
 
 The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/), and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
-
-
