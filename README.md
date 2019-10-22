@@ -6,12 +6,15 @@ This repository contains the necessary documentation to start using the Perspect
 
 ## Using Perspective API
 
-+ [Get started with Perspective API](quickstart.md)
-+ [Score normalizaion guide](score_normalization.md)
-+ [API reference](api_reference.md)
-+ [Contribution guidelines](CONTRIBUTING.md)
++ [Get started with Perspective API](1-get-started/)
++ [API Reference](2-api/)
++ [Concepts](3-concepts/)
+   + [Score normalizaion guide](3-concepts/score-normalization.md)
++ [Case studies](4-case-studies/)
++ [Contribution guidelines](5-contribute/)
++ [Contact us](6-contact/)
 
-Download the [example data CSV](/example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
+Download the [example data CSV](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
 
 ### Improve the API
 
