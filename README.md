@@ -7,6 +7,7 @@ This repository contains the necessary documentation to start using the Perspect
 ## Using Perspective API
 
 + [Get started with Perspective API](quickstart.md)
++ [Glossary](glossary.md)
 + [Score normalizaion guide](score_normalization.md)
 + [API reference](api_reference.md)
 + [Contribution guidelines](CONTRIBUTING.md)
