@@ -14,7 +14,7 @@ The text to be scored. Each API request contains a single comment. A comment cou
 
 ### Model
 
-A dimension that the comment is scored on, for example, "toxic", "obscene", "thoughtful", "off-topic", etc. This is also sometimes referred to as an attribute or model attribute. Models can be labeled Alpha, meaning they are recommended for use, or experimental, meaning that they are still in development but are open for public use if you're comfortable using experimental, imperfect models. See our list of models here.
+A dimension that the comment is scored on, for example, "toxic", "obscene", "thoughtful", "off-topic", etc. This is also sometimes referred to as an attribute or model attribute. Models can be labeled `Prod`, meaning they are recommended for use, or experimental, meaning that they are still in development but are open for public use if you're comfortable using experimental, imperfect models. See our list of models here.
 
 ### Model summary score
 
