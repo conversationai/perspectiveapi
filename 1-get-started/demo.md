@@ -1,8 +1,8 @@
-[Back to Conversation AI Overview](https://conversationai.github.io/) | [Back to Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md)
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Get Started](README.md) > **Demos**
 
 # Demos
 
-Example demo code:
+See the API in action with demo servers and plugins.
 
 + [A simple server](https://github.com/conversationai/perspectiveapi-simple-server) that can hold your API key and access the Perspective API.
 + [An example of an authorship experience](https://github.com/conversationai/perspectiveapi-authorship-demo) gives an author feedback as they type.
