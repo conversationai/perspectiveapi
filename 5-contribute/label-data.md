@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Contribution guidelines](README.md) > **Labeled data**
+[Perspective API documentation](../README.md) > [Contribution guidelines](README.md) > **Labeled data**
 
 # Contributing labeled data
 

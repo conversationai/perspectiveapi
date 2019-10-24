@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [API Reference Docs](README.md) > **Languages**
+[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Languages**
 
 # Languages served by Perspective API
 

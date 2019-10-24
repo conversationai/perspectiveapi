@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Case studies](README.md) > **The New York Times**
+[Perspective API documentation](../README.md) > [Case studies](README.md) > **The New York Times**
 
 # The New York Times case study
 

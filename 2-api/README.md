@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **API Reference Docs**
+[Perspective API documentation](../README.md) > **API Reference Docs**
 
 # Perspective API Reference
 

@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **Contribution guidelines**
+[Perspective API documentation](../README.md) > **Contribution guidelines**
 
 # Contribute to Perspective API docs
 

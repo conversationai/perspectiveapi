@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Get Started](README.md) > **Sample requests**
+[Perspective API documentation](../README.md) > [Get Started](README.md) > **Sample requests**
 
 
 # Sample requests

@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **Contact**
+[Perspective API documentation](../README.md) > **Contact**
 
 # Contact
 
