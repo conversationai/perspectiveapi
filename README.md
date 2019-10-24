@@ -19,6 +19,7 @@ This repository contains the necessary documentation to start using the Perspect
    + [Key concepts](2-api/key-concepts)
    + [Clients](2-api/clients.md)
    + [Models](2-api/models.md)
+      + [Model cards](2-api/model-cards/README.md)
    + [Methods](2-api/methods.md)
    + [Language support](2-api/language.md)
    + [Limits and errors](2-api/limits.md)
