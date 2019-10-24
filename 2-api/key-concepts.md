@@ -2,7 +2,7 @@
 
 # Key concepts
 
-This section provides summary information that will be elaborated on further in the document.
+To best understand the reference documentation, you must first know these key concepts.
 
 ## Comment
 
@@ -17,6 +17,7 @@ a forum post, a message to a mailing list, a chat message, etc.
  as an **attribute** or **model attribute**.
 
 ### Model attribute scores
+
 The API can return **model attribute scores** in different formats, known as
 **score types**. Currently, the only score type supported is a probability score
 between 0 and 1, with higher values indicating greater likelihood of the attribute
@@ -27,7 +28,6 @@ label.
 A model's **summary score** provides an overall score for the entire
 comment. While the API may return multiple span scores for a given input, it
 will always return exactly one summary score.
-
 
 ## Span
 
@@ -45,6 +45,21 @@ for the comment; for example, an article that is being commented on, or
 another comment that is being replied to. It is used in the analysis of the
 comment text; for example, when determining the "off-topic" model score.
 
-Note:* you can send context with your requests, however our current models
-are not making use of it--so sending context won't change any model's
+**Note**: you can send context with your requests, however our current models
+are not making use of it&mdash;so sending context won't change any model's
 scores.
+
+## All reference materials
+
+Read more about the Perspective API and how to use it.
+
+* **Key concepts**
+* [Production and experimental models](models.md)
+   * [Model cards](model-cards/README.md)
+* [Methods](methods.md)
+   * [Scoring comments](methods.md#scoring-comments-analyzecomment)
+   * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)
+* [API client libraries](clients.md)
+* [Languages](languages.md)
+* [Limits and errors](limits.md)
+

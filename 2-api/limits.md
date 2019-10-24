@@ -15,7 +15,6 @@ Visit the Perspective API Support page to [request a quota increase](https://sup
 
 The maximum text size per request is 3000 bytes.
 
-
 ## Error messages
 
 When using Outline, you might see a variety of error messages. This article details what each of those error messages might mean. 
@@ -46,7 +45,6 @@ If you are able to connect while on the other network, then this is your issue.
 | **A firewall or antivirus software** is blocking access to your Outline server. | Try connecting to Outline from another device. Remember that you’d need an access key and the Outline app to use Outline on the other device. | Check your firewall or antivirus software settings to make sure they are set to allow VPN and Outline traffic through. | 
 | **Your server administrator may have destroyed the server or your ISP may be blocking your request**. | If you have access to more than one server, try connecting to the other one. | **Contact your server administrator** to see if the server has been destroyed. If you set up the server, try connecting to it through the Outline Manager or another method such as SSH. If that doesn’t work, you can try checking the cloud provider console, if any, to see if the server is still online. |
 
-
  ### “Sorry, it looks like Outline is not properly installed. Please try installing it again. If that doesn't work, please submit feedback through the app.” (Windows devices only)
  
 If you’re using Outline on Windows, occasionally, you may run into an unexpected error. In most cases, the Outline TAP adapter (driver) needs to be deleted and Outline should be reinstalled.
@@ -64,3 +62,16 @@ The steps may vary based on your Windows operating system version, but we’ve p
  
 If you’re still having trouble, you can also contact support by submitting feedback through the Outline app. This gives us some information about your environment that lets us better isolate the issue.
 
+## All reference materials
+
+Read more about the Perspective API and how to use it.
+
+* [Key concepts](key-concepts.md)
+* [Production and experimental models](models.md)
+   * [Model cards](model-cards/README.md)
+* [Methods](methods.md)
+   * [Scoring comments](methods.md#scoring-comments-analyzecomment)
+   * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)
+* [API client libraries](clients.md)
+* [Languages](languages.md)
+* **Limits and errors**
