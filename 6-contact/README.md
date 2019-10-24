@@ -1,3 +1,5 @@
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **Contact**
+
 # Contact
 
 For support and to contact us, visit [support.perspectiveapi.com](https://support.perspectiveapi.com/). 

@@ -1,4 +1,6 @@
-# How to contribute
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **Contribution guidelines**
+
+# Contribute to Perspective API docs
 
 We'd love to accept your patches and contributions to this project. There are
 just a few small guidelines you need to follow.

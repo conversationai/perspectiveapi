@@ -1,3 +1,5 @@
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Case studies](README.md) > **The New York Times**
+
 # The New York Times case study
 
 The New York Times (NYT) is using artificial intelligence to curb the online harassment happening in their own comments sections. This keeps authors free to report on the truth without fear of trolls or digital attacks. Since implementing Jigsaw tools, the NYT increased the number of articles where they offer comments by more than 300 percent. That means more people can engage on their platform with news that matters to them. 

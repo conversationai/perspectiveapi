@@ -1,3 +1,5 @@
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [Contribution guidelines](README.md) > **Privacy**
+
 # Privacy
 
 The Conversation AI team takes your data and privacy very seriously, both in the content of your comments and the anonymization of their authors.

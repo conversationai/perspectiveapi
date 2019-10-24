@@ -1,4 +1,6 @@
-# Case Studies
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > **Case studies**
+
+# Case studies
 
 See how Perspective API is being used across platforms and news sites to keep the web open, productive, and inclusive.
 

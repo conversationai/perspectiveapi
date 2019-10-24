@@ -90,7 +90,7 @@ You should see output similar to this:
 To use Node.js, you must have installed `npm` and the
 [`googleapis`](https://github.com/google/google-api-nodejs-client/) client:
 
-```
+```shell
 npm install googleapis
 ```
 
