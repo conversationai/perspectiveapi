@@ -1,3 +1,5 @@
+[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [API Reference Docs](https://github.com/conversationai/perspectiveapi/blob/master/2-api/README.md) > [Production and experimental models](https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md) > **Model Cards**
+
 # Perspective API Model Cards
 
 Model Cards are short documents that go alongside publicly available machine 
@@ -9,4 +11,19 @@ Model Cards were introduced at the 2019
 in *[Model Cards for Model Reporting](https://dl.acm.org/citation.cfm?id=3287596)*
 by M. Mitchell et al.
 
-See our TOXICITY model card [here](English/toxicity.md) and our [model card blog post](https://medium.com/the-false-positive/increasing-transparency-in-machine-learning-models-311ee08ca58a) for more information. More model cards to come!
+See our [TOXICITY model card](English/toxicity.md) and our [model card blog post](https://medium.com/the-false-positive/increasing-transparency-in-machine-learning-models-311ee08ca58a) for more information.
+
+## API reference
+
+Read more about the Perspective API and how to use it.
+
+* [Key concepts](key-concepts.md)
+* [Production and experimental models](models.md)
+   * **Model cards**
+* [Methods](methods.md)
+   * [Scoring comments](methods.md#scoring-comments-analyzecomment)
+   * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)
+* [API client libraries](clients.md)
+* [Languages](languages.md)
+* [Limits and errors](limits.md)
+
