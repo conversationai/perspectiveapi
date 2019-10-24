@@ -31,6 +31,15 @@ This repository contains the necessary documentation to start using the Perspect
 
 Download the [example data CSV](example_data/perspective_wikipedia_2k_score_sample_20180829.csv).
 
+### Releases and updates
+
+#### Wednesday, August 23, 2017
+
+[Perspective API score normalization: fixes for Toxicity](releases/20170823-score_normalization_v2.md)
+
+#### Tuesday, June 13, 2017
+[Perspective API score normalization change](releases/20170613-score_normalization_v1.md)
+
 ### Improve the API
 
 Help improve the Perspective API by leveraging the `DoNotStore` flag to ensure that all submitted
