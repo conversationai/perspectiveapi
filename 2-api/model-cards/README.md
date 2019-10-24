@@ -1,4 +1,4 @@
-[Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md) > [API Reference Docs](https://github.com/conversationai/perspectiveapi/blob/master/2-api/README.md) > [Production and experimental models](https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md) > **Model Cards**
+[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Production and experimental models](../models.md) > **Model Cards**
 
 # Perspective API Model Cards
 
