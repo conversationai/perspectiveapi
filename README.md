@@ -1,6 +1,6 @@
 # Perspective Comment Analyzer API documentation
 
-<img align="right" src="img/logo.png" />The Perspective API is part of the [Conversation AI](https://conversationai.github.io) research effort that
+<img align="right" src="img/logo.png" alt="Perspective API logo" />The Perspective API is part of the [Conversation AI](https://conversationai.github.io) research effort that
 aims to help increase empathy, participation, and quality in online conversation at scale.
 
 This repository contains the necessary documentation to start using the Perspective Comment Analyzer API. 
