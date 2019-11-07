@@ -4,6 +4,10 @@
 
 To best understand the reference documentation, you must first know these key concepts.
 
+## Attribute
+
+A comment label used for review. The most popular attributes are the toxicity and severe toxicity models.
+
 ## Comment
 
 A **comment** is the text to be scored. Each API request contains a single
@@ -31,12 +35,15 @@ will always return exactly one summary score.
 
 ## Span
 
-*   A **span** is a continuous section of text. The API can return **span
-    scores**, which are model scores for particular subparts of the request's
-    comment. For example, if the API only found one sentence in a paragraph to
-    be "toxic," it could return a high "toxic" span score for the span
-    corresponding to that sentence, while giving a low "toxic" span score to the
-    rest of the comment.
+A **span** is a continuous section of text. The API can return **span scores**, which are
+model scores for particular subparts of the request's comment. For example, if the API only
+found one sentence in a paragraph to be "toxic," it could return a high "toxic" span score
+for the span corresponding to that sentence, while giving a low "toxic" span score to the
+rest of the comment.
+
+### Span scores
+
+Model scores for particular subparts of the request's comment. For example, if the API only found one sentence in a paragraph to be "toxic", it could return a high "toxic" span score for the span corresponding to that sentence while giving a low "toxic" span score to the rest of the comment. This score is only available for some models.
 
 ## Context
 
@@ -48,6 +55,11 @@ comment text; for example, when determining the "off-topic" model score.
 **Note**: you can send context with your requests, however our current models
 are not making use of it&mdash;so sending context won't change any model's
 scores.
+
+## Toxicity
+
+One of the attributes that Perspective can score. Toxicity is defined as "a rude,
+disrespectful, or unreasonable comment that is likely to make you leave a discussion."
 
 ## All reference materials
 
