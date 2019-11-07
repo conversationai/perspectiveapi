@@ -268,7 +268,7 @@ The response is not particularly interesting:
 Read more about the Perspective API and how to use it.
 
 * [Key concepts](key-concepts.md)
-* [Production and experimental models](models.md)
+* [Models and attributes](models.md)
    * [Model cards](model-cards/README.md)
 * **Methods**
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)

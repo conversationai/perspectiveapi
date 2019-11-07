@@ -1,6 +1,6 @@
-[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Production and experimental models**
+[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Models and attributes**
 
-# Production and experimental models
+# Models and attributes
 
 This section details Perspective API’s production and experimental models, which are described in detail in the [All model types](#all-model-types) table below.
 
@@ -14,6 +14,12 @@ We recommend using production models for your API request. Production models hav
 
 We recommend reserving experimental models for non-production use cases. These models have not been tested as thoroughly as production models, and you’ll need to update your code when a model changes from experimental to production. We typically give one month’s notice before deprecating experimental models.
 
+### Important notes on using experimental models
+
+Experimental versions will be deprecated. These models are experimental and will eventually stop working when the production versions are created, so you will need to update the model name you are calling when the final version is available.
+
+Experimental versions will make even more mistakes than production models. They may not have been tested for issues including unintended bias and thus it is particularly important that they only be used in contexts where you have a human in the loop to identify and correct errors.
+
 ## Latest versions
 
 We retrain models and release new versions periodically. To call a specific version of a model, use the format `MODEL_NAME@VERSION_NUMBER` in the `requestedAttributes` field.
@@ -25,6 +31,28 @@ View the latest version numbers in the [All model types](#all-model-types) table
 ## Specifying language
 
 See the `languages` field description in the [Methods](#api-methods) section below to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
+
+### Languages in production 
+
+Currently, Perspective API has production `TOXICITY` and `SEVERE_TOXICITY` models in the following languages:
+
++ English (en)
++ Spanish (es)
++ French (fr)
+
+### Experimental models for other language(s)
+
+Developing Perspective API's models for production takes some time. We are actively working on expanding to more languages in production. The following languages are those that are still being developed for production but ready for experimental use:
+
++ German (de)
++ Portuguese (pt)
++ Italian (it)
+
+Only use the above model(s) if you are interested in testing an experimental model and are willing to change your code once the production models are available. If you are not sure, please wait until a production version is ready which we will announce via perspective-announce@.
+
+If you wish to test new experimental models please refer to [model reference](/api/models.md). 
+
+
 
 ## All model types
 
@@ -79,7 +107,7 @@ For each production model, we aim to publish an associated "Model Card" that sha
 Read more about the Perspective API and how to use it.
 
 * [Key concepts](key-concepts.md)
-* **Production and experimental models**
+* **Models and attributes**
    * [Model cards](model-cards/README.md)
 * [Methods](methods.md)
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
