@@ -1,4 +1,4 @@
-[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **LImits**
+[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Limits**
 
 # Limits and errors
 
