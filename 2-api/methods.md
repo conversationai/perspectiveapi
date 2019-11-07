@@ -2,6 +2,11 @@
 
 # API Methods
 
+There are two API methods: 
+
++ [`AnalyzeComment`](#scoring-comments-analyzecomment)
++ [`SuggestCommentScore`](#sending-feedback-suggestcommentscore)
+
 ## Scoring comments: `AnalyzeComment`
 
 To send a comment scoring request to the API, post a request object to this endpoint:
