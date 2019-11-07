@@ -11,7 +11,6 @@ This repository contains the necessary documentation to start using the Perspect
 
 1. [Get started with Perspective API](1-get-started/)
    + [About](1-get-started/about.md)
-   + [Glossary](1-get-started/glossary.md)
    + [Sample requests](1-get-started/sample.md)
    + [Support](1-get-started/support.md)
 1. [API Reference](2-api/)

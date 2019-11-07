@@ -31,7 +31,6 @@ You'll need a Google Cloud project to authenticate (but not necessarily host) yo
 
 ## What's next?
 
-+ [Glossary](glossary.md)
 + [About the API](about.md)
 + [Sample requests](sample.md)
 + [Support](support.md)

@@ -1,6 +1,5 @@
 [Perspective API documentation](../README.md) > [Get Started](README.md) > **Sample requests**
 
-
 # Sample requests
 
 ## Make an `AnalyzeComment` request
