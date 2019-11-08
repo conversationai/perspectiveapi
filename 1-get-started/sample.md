@@ -139,3 +139,11 @@ You should see output similar to this:
   ]
 }
 ```
+
+## Get started
+
++ [Get started](README.md)
++ [About the API](about.md)
++ **Sample requests**
++ [Support](support.md)
+
