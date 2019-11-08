@@ -129,5 +129,4 @@ Read more about the Perspective API and how to use it.
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
    * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)
 * **API client libraries**
-* [Languages](languages.md)
 * [Limits and errors](limits.md)
