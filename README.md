@@ -21,7 +21,7 @@ This repository contains the necessary documentation to start using the Perspect
    + [Methods](2-api/methods.md)
    + [Limits and errors](2-api/limits.md)
 1. [Concepts](3-concepts/)
-   + [Score normalizaion guide](3-concepts/score-normalization.md)
+   + [Score normalization guide](3-concepts/score-normalization.md)
 1. [Case studies](4-case-studies/)
    + [The New York Times](4-case-studies/nyt.md)
 1. [Contribution guidelines](5-contribute/)
