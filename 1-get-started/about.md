@@ -37,5 +37,10 @@ Make moderation easier with an ML assisted tool that helps prioritize comments f
    + [WordPress plugin](https://github.com/conversationai/conversationai-moderator-wordpress)
    + [Reddit plugin](https://github.com/conversationai/conversationai-moderator-reddit) &ndash; incomplete, as it does not yet support actions
 
+## Get started
 
++ [Get started](README.md)
++ **About the API**
++ [Sample requests](sample.md)
++ [Support](support.md)
 

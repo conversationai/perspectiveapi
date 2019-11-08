@@ -52,8 +52,6 @@ Only use the above model(s) if you are interested in testing an experimental mod
 
 If you wish to test new experimental models please refer to [model reference](/api/models.md). 
 
-
-
 ## All model types
 
 ### Toxicity models
@@ -113,6 +111,5 @@ Read more about the Perspective API and how to use it.
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
    * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)
 * [API client libraries](clients.md)
-* [Languages](languages.md)
 * [Limits and errors](limits.md)
 
