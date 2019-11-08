@@ -1,4 +1,6 @@
-# Score Normalization and Feedback
+[Perspective API documentation](../README.md) >  [Concepts](README.md) > **Score normalization and feedback**
+
+# Score normalization and feedback
 
 ## What is score normalization for?
 

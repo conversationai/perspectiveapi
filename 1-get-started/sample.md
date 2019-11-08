@@ -1,33 +1,6 @@
-[Back to Conversation AI Overview](https://conversationai.github.io/) | [Back to Perspective API documentation](https://github.com/conversationai/perspectiveapi/blob/master/README.md)
+[Perspective API documentation](../README.md) > [Get Started](README.md) > **Sample requests**
 
-# Perspective API Quickstart
-
-## Prerequisites
-
-You'll need a Google Cloud project to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and either use an existing project, or follow these steps to create a new one:
-
-1. Sign in with your Google account, if necessary.
-
-1. Click **Create**, or click the "Project" drop-down at the top of the page and then click **New Project**.
-
-1. Name the project.
-
-1. Click **Create** again. The project is now included in the "Project" drop-down at the top of the page.
-
-## Enable the API
-
-1. Enable the API via command line or the web UI.
-    1. Command line:
-       `gcloud services enable commentanalyzer.googleapis.com`
-    1. Web UI: navigate to the [Perspective API's overview page](https://console.developers.google.com/apis/api/commentanalyzer.googleapis.com/overview) and click **Enable**.
-
-1. Generate an API key to authenticate your requests.
-   
-   Go to the [API credentials page](https://console.developers.google.com/apis/credentials), click **Create credentials**, and choose "API Key".
-
-   > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
-	
-   Note that it typically takes only a few minutes for a new API key to have access after the API is enabled, but it can on occasion take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+# Sample requests
 
 ## Make an `AnalyzeComment` request
    
@@ -42,6 +15,8 @@ Read the [API reference documentation](api_reference.md) for details on all of t
 ### Using cURL
 
 Make an `AnalyzeComment` request with cURL. The following command should work for most Mac and Linux users. You may need to install cURL to run this command.
+
+Replace `YOUR_KEY_HERE` with your API key.
    
    ```shell
    $ curl -H "Content-Type: application/json" --data \
@@ -108,9 +83,59 @@ You should see output similar to this:
       ]
    }
    ```
+   
+### Using Node.js
 
-## Stay updated
+To use Node.js, you must have installed `npm` and the
+[`googleapis`](https://github.com/google/google-api-nodejs-client/) client:
 
-Subscribe to our [perspectiveapi-announce@ Google Group](https://groups.google.com/forum/#!forum/perspective-announce/join) to get notified when we make changes to the API.
+```shell
+npm install googleapis
+```
 
-For support and to contact us, visit our [support site](https://support.perspectiveapi.com). 
+Make an `AnalyzeComment` with Node.js:
+
+```javascript
+var googleapis = require('googleapis');
+
+API_KEY = 'YOUR_KEY_HERE'
+DISCOVERY_URL = 'https://commentanalyzer.googleapis.com/$discovery/rest?version=v1alpha1'
+
+googleapis.discoverAPI(DISCOVERY_URL, (err, client) => {
+  if (err) throw err;
+  var analyzeRequest = {
+    comment: {text: 'what kind of idiot name is foo?'},
+    requestedAttributes: {'TOXICITY': {}}
+  };
+  client.comments.analyze({key: API_KEY, resource: analyzeRequest}, (err, response) => {
+    if (err) throw err;
+    console.log(JSON.stringify(response, null, 2));
+  });
+});
+```
+
+You should see output similar to this:
+
+```json
+{
+  "attributeScores": {
+    "TOXICITY": {
+      "spanScores": [
+        {
+          "score": {
+            "value": 0.4445836,
+            "type": "PROBABILITY"
+          }
+        }
+      ],
+      "summaryScore": {
+        "value": 0.4445836,
+        "type": "PROBABILITY"
+      }
+    }
+  },
+  "languages": [
+    "en"
+  ]
+}
+```
