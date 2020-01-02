@@ -2,7 +2,9 @@
 
 # API Methods
 
-There are two API methods: 
+A method is a procedure associating a message (or request) with an object (which consists of data and behavior). Once run, a method returns a new object.
+
+There are two methods available for Perspective API: 
 
 + [`AnalyzeComment`](#scoring-comments-analyzecomment)
 + [`SuggestCommentScore`](#sending-feedback-suggestcommentscore)
@@ -15,7 +17,7 @@ To send a comment scoring request to the API, post a request object to this endp
 https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze
 ```
 
-If you're using API key authentication, append `?key=YOUR_API_KEY` to the end of the request. See the [quickstart guide](quickstart.md) for an example.
+If you're using API key authentication, append `?key=YOUR_API_KEY` to the end of the request. See the [get started guide](../1-get-started/README.md) for an example.
 
 ### `AnalyzeComment` request
 

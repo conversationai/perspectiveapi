@@ -27,11 +27,23 @@ comment text, such as when determining the "off-topic" model score.
 are not making use of it. At this time, sending context won't change a model's
 scores.
 
+## Method
+
+A **method** is a procedure associating a message (or request) with an
+object (which consists of data and behavior). A method request will return
+a new object.
+
+For example, the [`AnalyzeComment` method](methods.md#scoring-comments-analyzecomment)
+sends a request to score the comment object. The comment object includes
+comment text, context, and more. The method then return the attribute span
+scores.
+
 ## Model
 
-A **model** is a collection of attributes for scoring a comment. For example,
-the Toxicty model contains attributes such as "Toxcity", "Profanity",
-"Fliratation", and more.
+A **model** is a collection of attributes for scoring a comment.
+
+For example, the Toxicty model contains attributes such as "Toxcity",
+"Profanity", "Fliratation", and more.
 
 ### Score types
 
