@@ -2,6 +2,10 @@
 
 # Limits and errors
 
+The Perspective API uses limits and quotas to protect the system from receiving more data than it can handle, and to ensure equitable distribution of the system resources. These limits and quotas are subject to change.
+
+You may encounter an error if the quota of your request exceeds the limit.
+
 ## Quota limit
 
 By default, we set the quota to 1 QPS for all Perspective projects.
