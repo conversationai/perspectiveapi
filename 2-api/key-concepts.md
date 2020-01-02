@@ -2,12 +2,13 @@
 
 # Key concepts
 
-To best understand the reference documentation, you must first understand these key concepts.
+To best understand the reference documentation, you must first understand these
+key concepts.
 
 ## Attribute
 
-An **attribute** is a comment label used for review. The most popular
-attributes are the toxicity and severe toxicity models.
+An **attribute** or **model attribute** is a comment label used for review.
+The most popular attribute is "toxicity".
 
 ## Comment
 
@@ -17,7 +18,7 @@ a forum post, a message to a mailing list, a chat message, etc.
 
 ## Context (coming soon)
 
-*(Coming soon)* **Context** is a representation of the conversation context
+_(Coming soon)_ **Context** is a representation of the conversation context
 for the comment, such as an article that is being commented on, or another
 comment that is being replied to. It is used in the analysis of the
 comment text, such as when determining the "off-topic" model score.
@@ -28,9 +29,9 @@ scores.
 
 ## Model
 
-A **model** is a dimension that the comment is scored on; for example,
-"toxic," "obscene," "thoughtful," "off-topic," etc. This is also sometimes 
-referred to as an **attribute** or **model attribute**.
+A **model** is a collection of attributes for scoring a comment. For example,
+the Toxicty model contains attributes such as "Toxcity", "Profanity",
+"Fliratation", and more.
 
 ### Score types
 
@@ -41,15 +42,12 @@ of the attribute label.
 
 ## Span
 
-A **span** is a continuous section of text. The API can return **span scores**, which are
-model scores for particular subparts of the request's comment. For example, if the API only
-found one sentence in a paragraph to be "toxic," it could return a high "toxic" span score
-for the span corresponding to that sentence, while giving a low "toxic" span score to the
-rest of the comment.
+A **span** is a continuous section of text. The API can return span scores,
+which are model scores for particular subparts of the request's comment.
 
 ### Span scores
 
-A **span score** is a model score for subparts of the request's comment.
+A **span score** is a score type for subparts of the request's comment.
 
 For example, if the API only found one sentence in a paragraph to be "toxic",
 it could return a high "toxic" span score for the span corresponding to that

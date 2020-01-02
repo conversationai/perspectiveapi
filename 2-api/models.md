@@ -2,35 +2,39 @@
 
 # Models and attributes
 
-This section details Perspective API’s production and experimental models, which are described in detail in the [All model types](#all-model-types) table below.
+A model is a set of attributes (sometimes called "model attributes") on which a comment is scored on. For example, the Toxicity model contains attributes such as "Toxcity", "Profanity", "Fliratation", and more. [See all model types](#all-model-types). Models can be in-production or experimental.
 
-We recommend subscribing to [perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new models, updates to existing models, and deprecations. 
+[Join the perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new models, updates to existing models, and deprecations. 
 
 ## Production models
 
-We recommend using production models for your API request. Production models have been tested across multiple domains and trained on hundreds of thousands of human-annotated comments.
+Production models have been tested across multiple domains and trained on hundreds of thousands of human-annotated comments.
+
+We recommend using production models for your API requests.
 
 ## Experimental models
 
-We recommend reserving experimental models for non-production use cases. These models have not been tested as thoroughly as production models, and you’ll need to update your code when a model changes from experimental to production. We typically give one month’s notice before deprecating experimental models.
+Experimental models have not been tested as thoroughly as production models. If using these models, you’ll need to update your code when a model changes from experimental to production. We typically give one month’s notice before deprecating experimental models.
+
+We recommend using experimental models only in non-production environments.
 
 ### Important notes on using experimental models
 
-Experimental versions will be deprecated. These models are experimental and will eventually stop working when the production versions are created, so you will need to update the model name you are calling when the final version is available.
+Experimental models will be deprecated. Once deprecated and once production versions of these models are created, the experimental model will stop working. If that happens, you will need to update the API call's model name to the new production model name.
 
-Experimental versions will make even more mistakes than production models. They may not have been tested for issues including unintended bias and thus it is particularly important that they only be used in contexts where you have a human in the loop to identify and correct errors.
+Experimental versions will make even more mistakes than production models. They may not have been tested for issues, such as unintended bias, and thus it is particularly important that they only be used where a human is tasked with indentifying and correcting errors.
 
 ## Latest versions
 
 We retrain models and release new versions periodically. To call a specific version of a model, use the format `MODEL_NAME@VERSION_NUMBER` in the `requestedAttributes` field.
 
-If a request does not specify a `@VERSION_NUMBER` at the end of a model name, it uses the default version, which is often, but not always, the latest version of the model.
+If a request does not specify a `@VERSION_NUMBER` at the end of a model name, it uses the default version, which is often (but not always) the latest version of the model.
  
-View the latest version numbers in the [All model types](#all-model-types) table below.
+View the latest version numbers in the [All model types table](#all-model-types).
 
 ## Specifying language
 
-See the `languages` field description in the [Methods](#api-methods) section below to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
+See the `languages` field description in the [Methods](#api-methods) section to learn about how to specify language in your request. If you are using a production model, language is autodetected if not specified in the request.
 
 ### Languages in production 
 
