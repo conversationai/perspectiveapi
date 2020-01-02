@@ -2,9 +2,9 @@
 
 # Concepts
 
-## What is score normalization for?
+## Score normalization
 
-Score normalization of our models is intended to do two things:
+We use score normalization for our models, which is intended to do two things:
 
 *   Provide a way to interpret the scores of a model as a probability (e.g. how
     likely is it that the comment will be perceived as toxic).
@@ -13,4 +13,4 @@ Score normalization of our models is intended to do two things:
     thresholds they use each time our models are retrained with additional
     examples.
 
-[Read more](score-normalization.md)
+[Read more about score normalization](score-normalization.md)

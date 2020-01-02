@@ -2,8 +2,6 @@
 
 # Score normalization and feedback
 
-## What is score normalization for?
-
 Score normalization of our models is intended to do two things:
 
 *   Provide a way to interpret the scores of a model as a probability (e.g. how
