@@ -20,9 +20,9 @@ We recommend using experimental models only in non-production environments.
 
 ### Important notes on using experimental models
 
-Experimental models will be deprecated. Once deprecated and once production versions of these models are created, the experimental model will stop working. If that happens, you will need to update the API call's model name to the new production model name.
+Once experimental models are deprecated and production versions of these models are created, the experimental model will stop working. If that happens, you will need to update the API call's model name to the new production model name.
 
-Experimental versions will make even more mistakes than production models. They may not have been tested for issues, such as unintended bias, and thus it is particularly important that they only be used where a human is tasked with indentifying and correcting errors.
+Experimental versions will make even more mistakes than production models. They may not have been tested for issues, such as unintended bias. For these models in particular, we strongly recommend a human be tasked with identifying and correcting errors.
 
 ## Latest versions
 
