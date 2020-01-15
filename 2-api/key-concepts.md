@@ -10,6 +10,8 @@ key concepts.
 An **attribute** or **model attribute** is a comment label used for review.
 The most popular attribute is "toxicity".
 
+This was previously known also as "model".
+
 ## Comment
 
 A **comment** is the text to be scored. Each API request contains a single
@@ -38,12 +40,6 @@ sends a request to score the comment object. The comment object includes
 comment text, context, and more. The method then return the attribute span
 scores.
 
-## Model
-
-A **model** is a collection of attributes for scoring a comment.
-
-For example, the Toxicty model contains attributes such as "Toxcity",
-"Profanity", "Fliratation", and more.
 
 ### Score types
 
