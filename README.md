@@ -16,8 +16,8 @@ This repository contains the necessary documentation to start using the Perspect
 1. [API Reference](2-api/)
    + [Key concepts](2-api/key-concepts.md)
    + [Clients](2-api/clients.md)
-   + [Models and attributes](2-api/models.md)
-      + [Model cards](2-api/model-cards/README.md)
+   + [Attributes](2-api/models.md)
+      + [Attribute cards](2-api/model-cards/README.md)
    + [Methods](2-api/methods.md)
    + [Limits and errors](2-api/limits.md)
 1. [Concepts](3-concepts/)
@@ -48,7 +48,7 @@ to submit corrections.
 
 ## About this project
 
-Perspective was created by Jigsaw and Google’s Counter Abuse Technology team in a collaborative research project called [Conversation-AI](https://conversationai.github.io/). We open source experiments, models, and research data to explore the strengths and weaknesses of ML as a tool for online discussion.
+Perspective was created by Jigsaw and Google’s Counter Abuse Technology team in a collaborative research project called [Conversation-AI](https://conversationai.github.io/). We open source experiments, attributes, and research data to explore the strengths and weaknesses of ML as a tool for online discussion.
 
 You can email your research-related questions to [conversationai-questions@google.com](mailto:conversationai-questions@google.com).
 

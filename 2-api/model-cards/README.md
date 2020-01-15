@@ -1,4 +1,4 @@
-[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Production and experimental models](../models.md) > **Model Cards**
+[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Attributes](../models.md) > **Attribute Cards**
 
 # Perspective API Model Cards
 

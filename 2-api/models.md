@@ -1,10 +1,10 @@
-[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Models and attributes**
+[Perspective API documentation](../README.md) > [API Reference Docs](README.md) > **Attributes**
 
 # Attributes
 
 An attribute (sometimes called "model attributes" or "models") is a label on which a comment is scored. For example, the some attributes scored by Perspective API include as "Toxcity", "Profanity", "Fliratation", and more. [See all attribute types](#all-attribute-types). Attributes can be in-production or experimental.
 
-[Join the perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new attributes, updates to existing attributes, and deprecations. 
+[Join the perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new attributes, updates to existing attributes, and deprecations.
 
 ## Production attributes
 
