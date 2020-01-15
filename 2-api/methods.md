@@ -53,15 +53,15 @@ If you're using API key authentication, append `?key=YOUR_API_KEY` to the end of
 | `context.entries` | *(optional)* A list of objects providing the context for `comment`. Currently not supported by the API. |
 | `context.entries[].text` | *(optional)* The text of a context object. The maximum size of context entry is 1MB. |
 | `context.entries[].type` | *(optional)* The text type of the corresponding context text. Same type as `comment.text`. Currently only `"PLAIN TEXT"` is supported. |
-| `requestedAttributes`    | **(required)** A map from model's attribute name to a configuration object. See the [models section](#all-model-types) for a list of available model attribute names. If no configuration options are specified, defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple model names here to get scores from multiple models in a single request. |
-| `requestedAttributes[name].scoreType` | *(optional)* The score type returned for this model attribute. Currently, only `"PROBABILITY"` is supported. Probability scores are in the range `[0,1]`. |
-| `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this model attribute. By default, all scores are returned. |
+| `requestedAttributes`    | **(required)** A map from attribute name to a configuration object. See the [attributes section](models.md#all-attribute-types) for a list of available attribute names. If no configuration options are specified, defaults are used, so the empty object `{}` is a valid (and common) choice. You can specify multiple attribute names here to get scores from multiple attributes in a single request. |
+| `requestedAttributes[name].scoreType` | *(optional)* The score type returned for this attribute. Currently, only `"PROBABILITY"` is supported. Probability scores are in the range `[0,1]`. |
+| `requestedAttributes[name].scoreThreshold` | *(optional)* The API won't return scores that are below this threshold for this attribute. By default, all scores are returned. |
 | `spanAnnotations` | *(optional)* A boolean value that indicates if the request should return spans that describe the scores for each part of the text (currently done at per-sentence level). Defaults to false. |
-| `languages` | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, `"en"`, `"es"`, `"fr"`, `"de"`, etc). If unspecified, the API will auto-detect the comment language. If language detection fails, the API returns an error. **Note:** Currently, all production models only support English, Spanish, and French. There is no simple way to use the API across languages with production support and languages with experimental support only. |
-| `doNotStore` | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community model building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to false (request data may be stored). **Warning**: This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old. |
+| `languages` | *(optional)* A list of [ISO 631-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two-letter language codes specifying the language(s) that `comment` is in (for example, `"en"`, `"es"`, `"fr"`, `"de"`, etc). If unspecified, the API will auto-detect the comment language. If language detection fails, the API returns an error. **Note:** Currently, all production attributes only support English, Spanish, and French. There is no simple way to use the API across languages with production support and languages with experimental support only. |
+| `doNotStore` | *(optional)* Whether the API is permitted to store `comment` and `context` from this request. Stored comments will be used for future research and community attribute building purposes to improve the API over time. We also plan to provide dashboards and automated analysis of the comments submitted, which will apply only to those stored. Defaults to false (request data may be stored). **Warning**: This should be set to true if data being submitted is private (i.e. not publicly accessible), or if the data submitted contains content written by someone under 13 years old. |
 | `clientToken` | *(optional)* An opaque token that is echoed back in the response. |
-| `sessionId` | *(optional)* An opaque session id. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction. |
-| `suggestCommentScore` | *(optional)* Used to notify the Perspective API team of specific biases, in order to help us improve our model. Many kinds of toxic language are disproportionately represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases. Use this method to help us correct them. |
+| `sessionId` | *(optional)* An opaque session ID. This should be set for authorship experiences by the client side so that groups of requests can be grouped together into a session. This should not be used for any user-specific id. This is intended for abuse protection and individual sessions of interaction. |
+| `suggestCommentScore` | *(optional)* Used to notify the Perspective API team of specific biases, in order to help us improve our attribute. Many kinds of toxic language are disproportionately represented in our dataset, which leads to some obviously incorrect scores, as well as unintended biases. Use this method to help us correct them. |
 
 Note that only `comment.text` and `requestedAttributes` are required.
 
@@ -92,8 +92,8 @@ Note that only `comment.text` and `requestedAttributes` are required.
 
 | Field | Description |
 | ----- | ----------- |
-| `attributeScores` | A map from model attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
-| `attributeScores[name].summaryScore.value` | The model attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed). |
+| `attributeScores` | A map from attribute name to per-attribute score objects. The attribute names will mirror the request's `requestedAttributes`.
+| `attributeScores[name].summaryScore.value` | The attribute summary score for the entire comment. All attributes will return a `summaryScore` (unless the request specified a `scoreThreshold` for the attribute that the `summaryScore` did not exceed). |
 | `attributeScores[name].summaryScore.type` | This mirrors the requested `scoreType` for this attribute. |
 | `attributeScores[name].spanScores` | A list of per-span scores for this attribute. These scores apply to different parts of the request's `comment.text`. **Note:** Some attributes may not return `spanScores` at all. |
 | `attributeScores[name].spanScores[].begin` | Beginning of the text span in the request comment. |
@@ -105,7 +105,7 @@ Note that only `comment.text` and `requestedAttributes` are required.
 
 ### `AnalyzeComment` example
 
-This is a request for the `TOXICITY` and `UNSUBSTANTIAL` models for a comment that's explicitly in English.
+This is a request for the `TOXICITY` and `UNSUBSTANTIAL` attributes for a comment that's explicitly in English.
 
 ```json
 // Request
@@ -121,9 +121,9 @@ This is a request for the `TOXICITY` and `UNSUBSTANTIAL` models for a comment th
 }
 ```
  
-The response contains the `TOXICITY` and `UNSUBSTANTIAL` model scores. Each attribute has a single overall `summaryScore` as well as two `spanScores`.
+The response contains the `TOXICITY` and `UNSUBSTANTIAL` attribute scores. Each attribute has a single overall `summaryScore` as well as two `spanScores`.
 
-Both models return the same spans in this case: the span `[0,31)` (corresponding to "What kind of idiot name is foo?") and the span `[32,56)` (corresponding to "Sorry, I like your name."). However, models may not always return the same spans.
+Both attributes return the same spans in this case: the span `[0,31)` (corresponding to "What kind of idiot name is foo?") and the span `[32,56)` (corresponding to "Sorry, I like your name."). However, attributes may not always return the same spans.
 
 ```json
 // Response
@@ -170,7 +170,7 @@ Both models return the same spans in this case: the span `[0,31)` (corresponding
 
 The `SuggestCommentScore` endpoints submits feedback to the API in the form of a
 suggested score. You can use this method if you disagree with a score and would
-like to improve the model. All submissions to `SuggestCommentScore` are stored
+like to improve the attribute. All submissions to `SuggestCommentScore` are stored
 and used to improve the API and related services. This method should **not** be
 used for private data (i.e., for data that is not accessible publicly), or if the
 data submitted contains content written by someone under 13 years old.

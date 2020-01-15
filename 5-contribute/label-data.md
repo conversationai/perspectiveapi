@@ -7,8 +7,8 @@ but you can also contribute data from your own community.
 
 ### Why contribute labeled data
 
-Submitting labeled data lets the Perspective API team train the models on more
-comments, and makes it possible for the API to improve and learn from your
+Submitting labeled data lets the Perspective API team train the attributes on
+more comments, and makes it possible for the API to improve and learn from your
 particular use-case.
 
 ### What types of datasets are useful?
