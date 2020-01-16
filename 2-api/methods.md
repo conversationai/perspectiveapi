@@ -7,7 +7,7 @@ A method is a procedure associating a message (or request) with an object (which
 There are two methods available for Perspective API, where each method is a different type of request a user can send:
 
 + [`AnalyzeComment`](#scoring-comments-analyzecomment), where a user sends a request for a comment to be analyzed, and a score is returned
-+ [`SuggestCommentScore`](#sending-feedback-suggestcommentscore), where a user can suggest a better score fora comment
++ [`SuggestCommentScore`](#sending-feedback-suggestcommentscore), where a user can suggest a better score for a comment
 
 ## Scoring comments: `AnalyzeComment`
 
