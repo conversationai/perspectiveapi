@@ -1,4 +1,4 @@
-[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Attributes](../models.md) > **Attribute Cards**
+[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Attributes](../models.md) > **Model Cards**
 
 # Perspective API Model Cards
 
@@ -18,7 +18,7 @@ See our [TOXICITY model card](English/toxicity.md) and our [model card blog post
 Read more about the Perspective API and how to use it.
 
 * [Key concepts](../key-concepts.md)
-* [PModels and attributes](../models.md)
+* [Attributes](../models.md)
    * **Model cards**
 * [Methods](../methods.md)
    * [Scoring comments](../methods.md#scoring-comments-analyzecomment)

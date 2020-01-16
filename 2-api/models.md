@@ -2,7 +2,7 @@
 
 # Attributes
 
-An attribute (sometimes called "model attributes" or "models") is a label on which a comment is scored. For example, the some attributes scored by Perspective API include as "Toxcity", "Profanity", "Fliratation", and more. [See all attribute types](#all-attribute-types). Attributes can be in-production or experimental.
+An attribute (sometimes called "models") is a label on which a comment is scored. For example, the some attributes scored by Perspective API include as "Toxcity", "Profanity", "Fliratation", and more. [See all attribute types](#all-attribute-types). Attributes can be in-production or experimental.
 
 [Join the perspective-announce email group](https://groups.google.com/forum/#!forum/perspective-announce) to stay in the loop on important information about new attributes, updates to existing attributes, and deprecations.
 
@@ -44,7 +44,7 @@ Currently, Perspective API has production `TOXICITY` and `SEVERE_TOXICITY` attri
 + Spanish (es)
 + French (fr)
 
-### Experimental models for other language(s)
+### Experimental attributes for other language(s)
 
 Developing Perspective API's attributes for production takes some time. We are actively working on expanding to more languages in production. The following languages are those that are still being developed for production but ready for experimental use:
 
@@ -62,7 +62,7 @@ Only use the above attribute(s) if you are interested in testing an experimental
 | -------------------- | ---- | ----------- | -------- | -------------- |
 | `TOXICITY` | prod. | Rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. | en, fr, es | 6 |
 | `TOXICITY_EXPERIMENTAL` | exp. | &nbsp; | de, it, pt | &nbsp; |
-| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity model. | en, fr, es | 2 |
+| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity attribute. | en, fr, es | 2 |
 | `SEVERE_TOXICITY_EXPERIMENTAL` | exp. | &nbsp; | de, it, pt | &nbsp; |
 | `TOXICITY_FAST` | exp. | This attribute is similar to `TOXICITY`, but has lower latency and lower accuracy in its predictions. Unlike `TOXICITY`, this attribute returns summary scores as well as span scores. This attribute uses character-level n-grams fed into a logistic regression, a method that has been surprisingly effective at detecting abusive language. | en | &nbsp; |
 | `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en | 2 |
@@ -94,7 +94,7 @@ These attributes are experimental because they are trained on a single source of
 
 ## Attribute architecture
 
-Most of our attributes are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on our [public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore our [open-source attribute training tools](https://github.com/conversationai/conversationai-models) to train your own attributes. Our [Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge) also has lots of useful resources to help build your own models.
+Most of our attributes are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on our [public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore our [open-source attribute training tools](https://github.com/conversationai/conversationai-models) to train your own attributes. Our [Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge) also has lots of useful resources to help build your own attributes.
 
 ## Attribute cards
 
@@ -108,7 +108,7 @@ Read more about the Perspective API and how to use it.
 
 * [Key concepts](key-concepts.md)
 * **Attributes**
-   * [Attribute cards](model-cards/README.md)
+   * [Model cards](model-cards/README.md)
 * [Methods](methods.md)
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
    * [Sending feedback](methods.md#sending-feedback-suggestcommentscore)

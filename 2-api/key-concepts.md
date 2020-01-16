@@ -7,8 +7,8 @@ key concepts.
 
 ## Attribute
 
-An **attribute** or **model attribute** is a comment label used for review.
-The most popular attribute is "toxicity".
+An **attribute** is a comment label used for review. The most popular attribute
+is "toxicity".
 
 This was previously known also as "model".
 
@@ -79,7 +79,7 @@ leave a discussion."
 Read more about the Perspective API and how to use it.
 
 * **Key concepts**
-* [Models and attributes](models.md)
+* [Attributes](models.md)
    * [Model cards](model-cards/README.md)
 * [Methods](methods.md)
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
