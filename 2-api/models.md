@@ -96,11 +96,11 @@ These attributes are experimental because they are trained on a single source of
 
 Most of our attributes are [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) (CNN) trained with [word-vector](https://www.tensorflow.org/tutorials/word2vec) inputs. You can also train your own [deep CNN for text classification](http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/) on our [public toxicity dataset](https://figshare.com/articles/Wikipedia_Talk_Labels_Toxicity/4563973), and explore our [open-source attribute training tools](https://github.com/conversationai/conversationai-models) to train your own attributes. Our [Toxicity Kaggle Competition](https://kaggle.com/c/jigsaw-toxic-comment-classification-challenge) also has lots of useful resources to help build your own attributes.
 
-## Attribute cards
+## Model cards
 
-For each production attribute, we aim to publish an associated "Attribute card" that shares details about intended usage, attribute training processes, and evaluation results.
+For each production attribute, we aim to publish an associated "Model card" that shares details about intended usage, attribute training processes, and evaluation results.
 
-[View the current attribute cards](model-cards/README.md).
+[View the current model cards](model-cards/README.md).
 
 ## All reference materials
 
