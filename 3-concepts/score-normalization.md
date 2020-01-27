@@ -44,11 +44,11 @@ better ways to do this, please
 
 ## About score feedback
 
-Our attributes are not perfect and will make errors. It will be unable to
-detect patterns of toxicity it has not seen before, and it will falsely detect
-comments similar to patterns of previous toxic conversations. To help improve
-the machine learning, the API supports sending our team suggested scores and
-corrections.
+Our machine learning attributes are not perfect and will make errors. It will
+be unable to detect patterns of toxicity it has not seen before, and it will
+falsely detect comments similar to patterns of previous toxic conversations.
+To help improve the machine learning, the API supports sending our team
+suggested scores and corrections.
 
 ## Reporting issues with scores
  
