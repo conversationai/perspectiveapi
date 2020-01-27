@@ -8,7 +8,7 @@ You may encounter an error if your request exceeds the limit.
 
 ## Quota limit
 
-By default, we set the quota to 1 QPS for all Perspective projects.
+By default, we set the quota to 1 query per second (QPS) for all Perspective projects.
 
 Check your quota limits by going to [your Google Cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
