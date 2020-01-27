@@ -25,9 +25,9 @@ for the comment, such as an article that is being commented on, or another
 comment that is being replied to. It is used in the analysis of the
 comment text, such as when determining the `OFF_TOPIC` model score.
 
-**Note**: you can send context with your requests, however our current models
-are not making use of it. At this time, sending context won't change an
-attribute's scores.
+**Note**: you can send context with your requests, however our current
+attributes are not making use of it. At this time, sending context won't
+change an attribute's scores.
 
 ## Method
 
