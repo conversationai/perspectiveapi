@@ -10,7 +10,13 @@ key concepts.
 An **attribute** is a comment label used for review. The most popular attribute
 is `TOXICITY`.
 
-This was previously known also as "model".
+Attribute was previously known as "model". 
+
+#### Why did we make this name change?
+
+Machine Learning is a fast-moving discipline, with a lot of community-driven and historical terminalogy. It's our believe that the community has rough consensus on the term "machine learning model (ML model)". This term artifact, a neural net architecture together with the weights that result from training that neural net, defines something that can take inputs ("features") and produce outputs (class labels, regression scores, sometimes known as targets). Models generally can produce multiple outputs.
+
+Our current API design chooses to expose each of these outputs as a separate name. We call the outputs attributes.
 
 ## Comment
 
