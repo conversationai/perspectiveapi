@@ -2,9 +2,11 @@
 
 # Get started with Perspective API
 
+Perspective API uses machine learning models to score the perceived impact a comment might have on a conversation. Developers and publishers can use this score to give realtime feedback to commenters or help moderators do their job, or allow readers to more easily find relevant information.
+
 ## Prerequisites
 
-You'll need a Google Cloud project to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and either use an existing project, or follow these steps to create a new one:
+You need a Google Cloud project to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and use an existing project or follow these steps to create a new one:
 
 1. Sign in with your Google account, if necessary.
 

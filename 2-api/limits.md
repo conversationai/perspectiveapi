@@ -2,9 +2,13 @@
 
 # Limits and errors
 
+The Perspective API uses limits and quotas to protect the system from receiving more data than it can handle, and to ensure equitable distribution of the system resources. These limits and quotas are subject to change.
+
+You may encounter an error if your request exceeds the limit.
+
 ## Quota limit
 
-By default, we set the quota to 1 QPS for all Perspective projects.
+By default, we set the quota to 1 query per second (QPS) for all Perspective projects.
 
 Check your quota limits by going to [your Google Cloud project's Perspective API page](https://console.cloud.google.com/apis/api/commentanalyzer.googleapis.com/quotas), and check your project's quota usage at
 [the cloud console quota usage page](https://console.cloud.google.com/iam-admin/quotas).
@@ -20,7 +24,7 @@ The maximum text size per request is 3000 bytes.
 Read more about the Perspective API and how to use it.
 
 * [Key concepts](key-concepts.md)
-* [Models and attributes](models.md)
+* [Attributes](models.md)
    * [Model cards](model-cards/README.md)
 * [Methods](methods.md)
    * [Scoring comments](methods.md#scoring-comments-analyzecomment)
