@@ -52,7 +52,7 @@ Perspective was created by Jigsaw and Google’s Counter Abuse Technology team i
 
 You can email your research-related questions to [conversationai-questions@google.com](mailto:conversationai-questions@google.com).
 
-![Jigsaw logo](img/jigsaw-20200.png)
+![Jigsaw logo](img/jigsaw-2020.png)
 
 ## Privacy and Terms of Service
 
