@@ -1,6 +1,6 @@
 # Perspective Comment Analyzer API documentation
 
-<img align="right" src="img/logo.png" alt="Perspective API logo" />The Perspective API is part of the [Conversation AI](https://conversationai.github.io) research effort that
+<img align="right" src="img/perspective_icon-2020.png" alt="Perspective API logo" />The Perspective API is part of the [Conversation AI](https://conversationai.github.io) research effort that
 aims to help increase empathy, participation, and quality in online conversation at scale.
 
 This repository contains the necessary documentation to start using the Perspective Comment Analyzer API. 
@@ -52,7 +52,7 @@ Perspective was created by Jigsaw and Google’s Counter Abuse Technology team i
 
 You can email your research-related questions to [conversationai-questions@google.com](mailto:conversationai-questions@google.com).
 
-![Jigsaw logo](img/jigsaw-logo.jpg)
+![Jigsaw logo](img/jigsaw-2020.png)
 
 ## Privacy and Terms of Service
 
