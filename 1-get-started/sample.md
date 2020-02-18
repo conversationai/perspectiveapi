@@ -10,7 +10,7 @@ The `AnalyzeComment` command issues an API request to analyze the `comment.text`
 
 Leverage the `DoNotStore` flag to ensure that all submitted comments are automatically deleted after scores are returned and/or the `SuggestCommentScore` method to submit corrections to improve Perspective over time.
 
-Read the [API reference documentation](../2-api/README.md) for details on all of the request and response fields, as well as the available values for `requestedAttributes`. There are [experimental models](https://github.com/conversationai/perspectiveapi/blob/master/api_reference.md#models), such as "obscene", "attack on a commenter", "spam", etc., that you may also use.
+Read the [API reference documentation](../2-api/README.md) for details on all of the request and response fields, as well as the available values for `requestedAttributes`. There are [experimental attributes](../2-api/models.md), such as "obscene", "attack on a commenter", "spam", etc., that you may also use.
 
 ### Using cURL
 
@@ -44,7 +44,7 @@ In the following response, the field `attributeScores.TOXICITY.summaryScore.valu
    }
    ```
 
-Learn more about model attribute scores the ["Key concepts" section of our API reference](api_reference.md#key-concepts).
+Learn more about model attribute scores the ["Key concepts" section of our API reference](../2-api/key-concepts.md).
 
 ### Using Python
 
