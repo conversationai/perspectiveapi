@@ -43,16 +43,15 @@ Currently, Perspective API has production `TOXICITY` and `SEVERE_TOXICITY` attri
 + English (en)
 + Spanish (es)
 + French (fr)
-
-### Experimental attributes for other language(s)
-
-Developing Perspective API's attributes for production takes some time. We are actively working on expanding to more languages in production. The following languages are those that are still being developed for production but ready for experimental use:
-
 + German (de)
 + Portuguese (pt)
 + Italian (it)
 
-Only use the above attribute(s) if you are interested in testing an experimental attribute and are willing to change your code once the production attributes are available. If you are not sure, please wait until a production version is ready which we will announce via perspective-announce@.
+### Experimental attributes for other language(s)
+
+Developing Perspective API's attributes for production takes some time. We are actively working on expanding to more languages in both experimental and production attributes and will update here when new languages are available.
+
+Only use the experimental attribute(s) if you are interested in testing and are willing to change your code once the production attributes are available. If you are not sure, please wait until a production version is ready which we will announce via perspective-announce@.
 
 ## All attribute types
 
