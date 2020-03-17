@@ -50,7 +50,7 @@ to submit corrections.
 
 Perspective was created by Jigsaw and Google’s Counter Abuse Technology team in a collaborative research project called [Conversation-AI](https://conversationai.github.io/). We open source experiments, attributes, and research data to explore the strengths and weaknesses of ML as a tool for online discussion.
 
-You can email your research-related questions to [conversationai-questions@google.com](mailto:conversationai-questions@google.com).
+[Contact us](https://support.perspectiveapi.com/s/contactsupport) if you have questions.
 
 ![Jigsaw logo](img/jigsaw-2020.png)
 
