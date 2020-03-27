@@ -20,9 +20,9 @@ We recommend using experimental attributes only in non-production environments.
 
 ### Important notes on using experimental attributes
 
-Once experimental attributes are deprecated and production versions of these attributes are created, the experimental attribute will stop working. If that happens, you will need to update the API call's attribute name to the new production attribute name.
+Once experimental attributes are deprecated and production attributes are created, the experimental attribute will stop working. If that happens, you will need to update the API call's attribute name to the new production attribute name.
 
-Experimental versions will make even more mistakes than production attributes. They may not have been tested for issues, such as unintended bias. For these attributes in particular, we strongly recommend a human be tasked with identifying and correcting errors.
+Experimental attributes will make even more mistakes than production attributes. They may not have been tested for issues, such as unintended bias. For these attributes in particular, we strongly recommend a human be tasked with identifying and correcting errors.
 
 ## Specifying language
 
@@ -43,7 +43,7 @@ Currently, Perspective API has production `TOXICITY` and `SEVERE_TOXICITY` attri
 
 Developing Perspective API's attributes for production takes some time. We are actively working on expanding to more languages in both experimental and production attributes and will update here when new languages are available.
 
-Only use the experimental attribute(s) if you are interested in testing and are willing to change your code once the production attributes are available. If you are not sure, please wait until a production version is ready which we will announce via perspective-announce@.
+Only use the experimental attribute(s) if you are interested in testing and are willing to change your code once the production attributes are available. If you are not sure, please wait until a production attribue is ready which we will announce via perspective-announce@.
 
 ## All attribute types
 
