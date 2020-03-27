@@ -24,14 +24,6 @@ Once experimental attributes are deprecated and production versions of these att
 
 Experimental versions will make even more mistakes than production attributes. They may not have been tested for issues, such as unintended bias. For these attributes in particular, we strongly recommend a human be tasked with identifying and correcting errors.
 
-## Latest versions
-
-We retrain attributes and release new versions periodically. To call a specific version of an attribute, use the format `ATTRIBUTE_NAME@VERSION_NUMBER` in the `requestedAttributes` field.
-
-If a request does not specify a `@VERSION_NUMBER` at the end of an attribute name, it uses the default version, which is often (but not always) the latest version of the attribute.
- 
-View the latest version numbers in the [All attribute types table](#all-attribute-types).
-
 ## Specifying language
 
 See the `languages` field description in the [Methods](#api-methods) section to learn about how to specify language in your request. If you are using a production attribute, language is auto-detected if not specified in the request.
@@ -57,36 +49,36 @@ Only use the experimental attribute(s) if you are interested in testing and are 
 
 ### Toxicity attributes
  
-| Attribute name | Type | Description | Language | Latest version |
-| -------------------- | ---- | ----------- | -------- | -------------- |
+| Attribute name | Type | Description | Language |
+| -------------------- | ---- | ----------- | -------- |
 | `TOXICITY` | prod. | Rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. | en, fr, es, de, it, pt | 6 |
-| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity attribute. | en, fr, es, de, it, pt | 2 |
-| `TOXICITY_FAST` | exp. | This attribute is similar to `TOXICITY`, but has lower latency and lower accuracy in its predictions. Unlike `TOXICITY`, this attribute returns summary scores as well as span scores. This attribute uses character-level n-grams fed into a logistic regression, a method that has been surprisingly effective at detecting abusive language. | en | &nbsp; |
-| `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en, de, it, pt | 2 |
-| `IDENTITY_ATTACK_EXPERIMENTAL` | exp. | &nbsp; | fr, es | &nbsp; |
-| `INSULT` | exp. | Insulting, inflammatory, or negative comment towards a person or a group of people. | en, de, it, pt | 2 |
-| `INSULT_EXPERIMENTAL` | exp. | &nbsp; | fr, es | &nbsp; |
-| `PROFANITY` | exp. | Swear words, curse words, or other obscene or profane language. | en, de, it, pt | 2 |
-| `PROFANITY_EXPERIMENTAL` | exp. | &nbsp; | fr, es | &nbsp; |
-| `THREAT` | exp. | Describes an intention to inflict pain, injury, or violence against an individual or group. | en, de, it, pt | 2 |
-| `THREAT_EXPERIMENTAL` | exp. | &nbsp; | fr, es | &nbsp; |
-| `SEXUALLY_EXPLICIT` | exp. |Contains references to sexual acts, body parts, or other lewd content. | en | 2 |
-|`FLIRTATION` | exp. | Pickup lines, complimenting appearance, subtle sexual innuendos, etc. | en | 2 |
+| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity attribute. | en, fr, es, de, it, pt |
+| `TOXICITY_FAST` | exp. | This attribute is similar to `TOXICITY`, but has lower latency and lower accuracy in its predictions. Unlike `TOXICITY`, this attribute returns summary scores as well as span scores. This attribute uses character-level n-grams fed into a logistic regression, a method that has been surprisingly effective at detecting abusive language. | en |
+| `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en, de, it, pt |
+| `IDENTITY_ATTACK_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
+| `INSULT` | exp. | Insulting, inflammatory, or negative comment towards a person or a group of people. | en, de, it, pt |
+| `INSULT_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
+| `PROFANITY` | exp. | Swear words, curse words, or other obscene or profane language. | en, de, it, pt |
+| `PROFANITY_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
+| `THREAT` | exp. | Describes an intention to inflict pain, injury, or violence against an individual or group. | en, de, it, pt |
+| `THREAT_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
+| `SEXUALLY_EXPLICIT` | exp. |Contains references to sexual acts, body parts, or other lewd content. | en |
+|`FLIRTATION` | exp. | Pickup lines, complimenting appearance, subtle sexual innuendos, etc. | en |
  
 ### New York Times attributes
 
 These attributes are experimental because they are trained on a single source of comments&mdash;New York Times (NYT) data tagged by their moderation team&mdash;and therefore may not work well for every use case. 
 
-| Attribute name | Type | Description | Language | Latest version |
+| Attribute name | Type | Description | Language |
 | -------------------- | ---- | ----------- | -------- | -------------- |
-| `ATTACK_ON_AUTHOR` | exp. | Attack on the author of an article or post. | en | 2 |
-| `ATTACK_ON_COMMENTER` | exp. | Attack on fellow commenter. | en | 2 |
-| `INCOHERENT` | exp. | Difficult to understand, nonsensical. | en | 2 |
-| `INFLAMMATORY` | exp. | Intending to provoke or inflame. | en | 2 |
-| `LIKELY_TO_REJECT` | exp. | Overall measure of the likelihood for the comment to be rejected according to the NYT's moderation. | en | 2 |
-| `OBSCENE` | exp. | Obscene or vulgar language such as cursing. | en | 2 |
-| `SPAM` | exp. | Irrelevant and unsolicited commercial content. | en | 1 |
-| `UNSUBSTANTIAL` | exp. | Trivial or short comments. | en | 2 |
+| `ATTACK_ON_AUTHOR` | exp. | Attack on the author of an article or post. | en |
+| `ATTACK_ON_COMMENTER` | exp. | Attack on fellow commenter. | en |
+| `INCOHERENT` | exp. | Difficult to understand, nonsensical. | en |
+| `INFLAMMATORY` | exp. | Intending to provoke or inflame. | en |
+| `LIKELY_TO_REJECT` | exp. | Overall measure of the likelihood for the comment to be rejected according to the NYT's moderation. | en |
+| `OBSCENE` | exp. | Obscene or vulgar language such as cursing. | en |
+| `SPAM` | exp. | Irrelevant and unsolicited commercial content. | en |
+| `UNSUBSTANTIAL` | exp. | Trivial or short comments. | en |
 
 
 ## Attribute architecture
