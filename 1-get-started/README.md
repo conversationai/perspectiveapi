@@ -12,11 +12,15 @@ You also must have a Google Cloud project to authenticate (but not necessarily h
 
 1. [Sign in](https://console.developers.google.com/) with your Google account.
 
-1. Click **Create**, or click the "Project" drop-down at the top of the page and then click **New Project**.
+1. On the [Console page](https://console.developers.google.com/), either:
+   + Click **Create Project**
+	+ Click the "Select a Project" drop-down, and then click **New Project**.
 
 1. Name the project.
 
-1. Click **Create** again. The project is now included in the "Project" drop-down at the top of the page.
+1. Click **Create** again. The project is now included in the "Project" drop-down.
+
+1. After you have created a project, please fill out [our form to request access to the API](https://forms.gle/WG6t45x7mXADKjfa8). After it is submitted, you will receive an email confirmation and be able to enable the API. 
 
 ## Enable the API
 
@@ -31,7 +35,7 @@ You also must have a Google Cloud project to authenticate (but not necessarily h
 
    > **Warning**: If you make requests from a client-side language like JavaScript, your API key will be exposed to all visitors. We strongly recommend that you [add key restrictions](https://cloud.google.com/docs/authentication/api-keys#api_key_restrictions) so that only your production server can use that key.
 	
-   It typically takes only a few minutes for a new API key to have access after the API is enabled, but it can take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
+It typically takes only a few minutes for a new API key to have access after the API is enabled, but it can take up to an hour. Until the API key is enabled, you may get errors of the form "API Key not found. Please pass a valid API key."
 
 ## What's next?
 
