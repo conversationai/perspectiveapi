@@ -20,8 +20,6 @@ You also must have a Google Cloud project to authenticate (but not necessarily h
 
 1. Click **Create** again. The project is now included in the "Project" drop-down.
 
-1. After you have created a project, please fill out [our form to request access to the API](https://forms.gle/WG6t45x7mXADKjfa8). After it is submitted, you will receive an email confirmation and be able to enable the API. 
-
 ## Enable the API
 
 1. Enable the API via command line or the web UI.
