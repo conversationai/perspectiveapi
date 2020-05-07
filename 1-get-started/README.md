@@ -6,7 +6,9 @@ Perspective API uses machine learning models to score the perceived impact a com
 
 ## Prerequisites
 
-You must have a [Google account](https://support.google.com/accounts/answer/27441), giving you access to the suite of Google products including Google Cloud. 
+You must have a [Google account](https://support.google.com/accounts/answer/27441), which gives you access to the suite of Google products including Google Cloud. 
+
+### Use Google Cloud to authenticate your API requests
 
 You also must have a Google Cloud project to authenticate (but not necessarily host) your API requests. Go to the [Google Cloud console](https://console.developers.google.com/) and use an existing project or follow these steps to create a new one:
 
@@ -18,9 +20,13 @@ You also must have a Google Cloud project to authenticate (but not necessarily h
 
 1. Name the project.
 
-1. Click **Create** again. The project is now included in the "Project" drop-down.
+1. Click **Create** again. Your project is now included in the "Project" drop-down.
 
-1. After you have created a project, please fill out [our form to request access to the API](https://forms.gle/Pdj5KitPgoYHV9do7). After it is submitted, you will receive an email confirmation and be able to enable the API. 
+## Request access to the API
+
+After you have created a Google Cloud project, please fill out [our form to request access to the API](https://forms.gle/Pdj5KitPgoYHV9do7).
+
+Upon submission, you will receive an email confirmation and be able to view and enable the API. 
 
 ## Enable the API
 
