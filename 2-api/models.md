@@ -70,7 +70,7 @@ Only use the experimental attribute(s) if you are interested in testing and are 
 These attributes are experimental because they are trained on a single source of comments&mdash;New York Times (NYT) data tagged by their moderation team&mdash;and therefore may not work well for every use case. 
 
 | Attribute name | Type | Description | Language |
-| -------------------- | ---- | ----------- | -------- | -------------- |
+| -------------------- | ---- | ----------- | -------- |
 | `ATTACK_ON_AUTHOR` | exp. | Attack on the author of an article or post. | en |
 | `ATTACK_ON_COMMENTER` | exp. | Attack on fellow commenter. | en |
 | `INCOHERENT` | exp. | Difficult to understand, nonsensical. | en |
