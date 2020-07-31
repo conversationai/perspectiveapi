@@ -57,4 +57,4 @@ Perspective was created by Jigsaw and Google’s Counter Abuse Technology team i
 ## Privacy and Terms of Service
 
 The Perspective API is provided under the [Google Privacy Policy](https://www.google.com/intl/en/policies/privacy/),
-and the [Google Cloud API terms of service](https://www.google.com/intl/en/policies/terms/).
+and the [Google APIs Terms of Service](https://developers.google.com/terms/).
