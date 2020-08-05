@@ -31,7 +31,10 @@ $ Comment text too long.
 ```
 
 The maximum text size per request is 20 KB. One character does not
-necessarily equal one byte, as different characters have different encodings. Note that the models are trained on online comments, so performance will be best on text around that length.
+necessarily equal one byte, as different characters have different
+encodings. Note that the models are trained on online comments, so
+performance will be best on text around that length.
+
 [Read the W3C guide on character encoding](https://www.w3.org/International/questions/qa-what-is-encoding).
 
 
