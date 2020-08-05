@@ -30,7 +30,7 @@ You may encounter the following error:
 $ Comment text too long.
 ```
 
-The maximum text size per request is 3000 bytes. One character does not
+The maximum text size per request is 20 KB. One character does not
 necessarily equal one byte, as different characters have different encodings.
 For example, a UTF-8 Unicode character has an encoding between 1 byte and 4
 bytes.
