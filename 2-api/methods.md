@@ -175,8 +175,10 @@ and used to improve the API and related services. This method should **not** be
 used for private data (i.e., for data that is not accessible publicly), or if the
 data submitted contains content written by someone under 13 years old.
 
-> **POST** https://commentanalyzer.googleapis.com/v1alpha1/comments:suggestscore
-
+To send a suggested score to the API, post a request object to this endpoint:
+```
+https://commentanalyzer.googleapis.com/v1alpha1/comments:suggestscore
+```
 ### `SuggestCommentScore` request
 
 ```
