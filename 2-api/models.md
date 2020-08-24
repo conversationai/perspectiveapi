@@ -38,6 +38,7 @@ Currently, Perspective API has production `TOXICITY` and `SEVERE_TOXICITY` attri
 + German (de)
 + Portuguese (pt)
 + Italian (it)
++ Russian (ru)
 
 ### Experimental attributes for other language(s)
 
@@ -51,16 +52,16 @@ Only use the experimental attribute(s) if you are interested in testing and are 
  
 | Attribute name | Type | Description | Language |
 | -------------------- | ---- | ----------- | -------- |
-| `TOXICITY` | prod. | Rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. | en, fr, es, de, it, pt | 6 |
-| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity attribute. | en, fr, es, de, it, pt |
+| `TOXICITY` | prod. | Rude, disrespectful, or unreasonable comment that is likely to make people leave a discussion. | en, fr, es, de, it, pt, ru | 6 |
+| `SEVERE_TOXICITY` | prod. | A very hateful, aggressive, disrespectful comment or otherwise very likely to make a user leave a discussion or give up on sharing their perspective. This attribute is much less sensitive to comments that include positive uses of curse words, for example. A labelled dataset and details of the methodology can be found in the same toxicity dataset that is available for the toxicity attribute. | en, fr, es, de, it, pt, ru |
 | `TOXICITY_FAST` | exp. | This attribute is similar to `TOXICITY`, but has lower latency and lower accuracy in its predictions. Unlike `TOXICITY`, this attribute returns summary scores as well as span scores. This attribute uses character-level n-grams fed into a logistic regression, a method that has been surprisingly effective at detecting abusive language. | en |
-| `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en, de, it, pt |
+| `IDENTITY_ATTACK` | exp. | Negative or hateful comments targeting someone because of their identity. | en, de, it, pt, ru |
 | `IDENTITY_ATTACK_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
-| `INSULT` | exp. | Insulting, inflammatory, or negative comment towards a person or a group of people. | en, de, it, pt |
+| `INSULT` | exp. | Insulting, inflammatory, or negative comment towards a person or a group of people. | en, de, it, pt, ru |
 | `INSULT_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
-| `PROFANITY` | exp. | Swear words, curse words, or other obscene or profane language. | en, de, it, pt |
+| `PROFANITY` | exp. | Swear words, curse words, or other obscene or profane language. | en, de, it, pt, ru |
 | `PROFANITY_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
-| `THREAT` | exp. | Describes an intention to inflict pain, injury, or violence against an individual or group. | en, de, it, pt |
+| `THREAT` | exp. | Describes an intention to inflict pain, injury, or violence against an individual or group. | en, de, it, pt, ru |
 | `THREAT_EXPERIMENTAL` | exp. | &nbsp; | fr, es |
 | `SEXUALLY_EXPLICIT` | exp. |Contains references to sexual acts, body parts, or other lewd content. | en |
 |`FLIRTATION` | exp. | Pickup lines, complimenting appearance, subtle sexual innuendos, etc. | en |
