@@ -1,9 +1,9 @@
-# Perspective Comment Analyzer API documentation
+# Perspective API documentation
 
-<img align="right" src="img/perspective_icon-2020.png" alt="Perspective API logo" />The Perspective API is part of the [Conversation AI](https://conversationai.github.io) research effort that
-aims to help increase empathy, participation, and quality in online conversation at scale.
-
-This repository contains the necessary documentation to start using the Perspective Comment Analyzer API. 
+<img align="right" src="img/perspective_icon-2020.png" alt="Perspective API logo" />Perspective is a free API that helps you host better conversations online. The API uses machine learning models to score the perceived impact a comment might have on a conversation. You can use this score to give feedback to commenters, help moderators more easily review comments, allow readers to more easily find interesting or productive comments, and more.
+ 
+Perspective was created by Jigsaw and the Google Counter Abuse Technology team in a collaborative research initiative called [Conversation-AI](https://conversationai.github.io/). Check out PerspectiveAPI.com to learn more about the API. For developer documentation and instructions on how to get started, please visit our Developers site at [support.perspectiveapi.com](https://support.perspectiveapi.com/s/). If you can’t find the answer you’re looking for, [contact us](https://support.perspectiveapi.com/s/contact-us).
+Check out [our other repositories](https://github.com/conversationai) for open source experiments, tools, and research data that explore ways to combat online toxicity and harassment.
 
 **NOTE**: While there are example calls to the API and demos in this repository, the code for the API is not open source.
 
