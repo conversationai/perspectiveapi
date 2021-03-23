@@ -1,5 +1,3 @@
-[Perspective API documentation](../../README.md) >  [API Reference Docs](../README.md) > [Attributes](../models.md) > **Model Cards**
-
 # Perspective API Model Cards
 
 Model Cards are short documents that go alongside publicly available machine 
@@ -13,16 +11,4 @@ by M. Mitchell et al.
 
 See our [TOXICITY model card](English/toxicity.md) and our [model card blog post](https://medium.com/the-false-positive/increasing-transparency-in-machine-learning-models-311ee08ca58a) for more information.
 
-## API reference
-
-Read more about the Perspective API and how to use it.
-
-* [Key concepts](../key-concepts.md)
-* [Attributes](../models.md)
-   * **Model cards**
-* [Methods](../methods.md)
-   * [Scoring comments](../methods.md#scoring-comments-analyzecomment)
-   * [Sending feedback](../methods.md#sending-feedback-suggestcommentscore)
-* [API client libraries](../clients.md)
-* [Limits and errors](../limits.md)
 
